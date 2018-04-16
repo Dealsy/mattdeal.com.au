@@ -1,0 +1,87 @@
+{% include header.html %}
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Parallax Template - Materialize</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="/static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body  style="background-color: black">
+<div class="navbar-fixed">
+    <nav class="white" role="navigation">
+
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="/" class="brand-logo" style="font-weight: bold; font-family: Impact, Charcoal, sans-serif; color: #009688 ">MattDeal.com.au</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/">Home</a></li>
+                <li><a href="/resume">Resume</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/about">About Me</a></li>
+                <li><a href="/new_projects">test</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="#">Navbar Link</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+</div>
+
+
+{{ content }}
+
+
+<footer class="page-footer teal">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Contact</h5>
+
+                <ul class="grey-text text-lighten-4">
+                    <li><b>Phone Number:</b> +61 400 640 639</li>
+                <li><b>Email:</b> matt@datapipeline.com.au</li>
+                </ul>
+
+
+            </div>
+             <div class="col l3 s12">
+                <h5 class="white-text">Connect</h5>
+                <ul>
+                    <li><a class="white-text" href="https://www.facebook.com/matt.deal.735"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a class="white-text" href="https://twitter.com/Dealzy_23"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a class="white-text" href="https://www.linkedin.com/in/matt-deal-038177b5/"><i class="fab fa-linkedin"></i> Linkedin</a></li>
+                    <li><a class="white-text" href="https://github.com/Dealsy"><i class="fab fa-github"></i> Github</a></li>
+                </ul>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Menu</h5>
+                <ul>
+                    <li><a class="white-text" href="/"><i class="material-icons">home</i> Home</a></li>
+                    <li><a class="white-text" href="/resume"><i class="material-icons">library_books</i> Resume</a></li>
+                    <li><a class="white-text" href="/projects"><i class="material-icons">code</i> Projects</a></li>
+                    <li><a class="white-text" href="/about"><i class="material-icons">person</i> About Me</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+
+        </div>
+    </div>
+</footer>
+
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/static/js/materialize.js"></script>
+<script src="/static/js/init.js"></script>
+
+</>
+</html>

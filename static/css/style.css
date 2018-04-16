@@ -1,0 +1,247 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.sidenav-trigger {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+
+
+.body{
+
+    background-color: white;
+    padding: 0px;
+
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+.sidenav li > a{
+
+    font-size: 24px;
+
+}
+
+.profile_ul{
+    line-height: 30px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.label_font{
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.heading{
+
+    width: 400px;
+    height: 80px;
+    margin-left: 400px;
+
+}
+
+.sidenav li > a > i, .sidenav li > a > [class^="mdi-"], .sidenav li > a li > a > [class*="mdi-"], .sidenav li > a > i.material-icons{
+
+    font-weight: bold;
+    color: black;
+    font-size: 25px;
+
+}
+
+.card_layout{
+    width: 140px;
+    height: 180px;
+
+}
+
+.card .card-image .card-title{
+
+    color: black;
+    font-weight: bold;
+}
+
+
+.card .card-content{
+
+    font-size: 18px;
+    padding: 10px;
+    color: black;
+
+}
+
+.card_image{
+    width: 110px;
+    padding: 10px;
+
+
+}
+
+.card_image_js{
+    width: 110px;
+
+}
+
+.card_image_python{
+      width: 110px;
+    padding: 10px;
+}
+
+.page_headers{
+
+    padding-left: 500px;
+    background-color: #009688 ;
+    margin-bottom: 20px;
+    color: #FFF;
+
+}
+
+.footer_background{
+
+    background-color: #009688 ;
+    color: #FFF;
+
+}
+
+.nav_colour{
+
+    color: #009688;
+}
+
+.title_css{
+    color: #009688 ;
+
+}
+.nav_title{
+    padding-left: 20px;
+    border-bottom: solid grey;
+    background-color: #009688 ;
+    color: #FFF;
+    height: 80px;
+}
+
+ .waves-effect.waves-blue .waves-ripple {
+   /* The alpha value allows the text and background color
+   of the button to still show through. */
+    background-color: #009688 ;
+
+  }
+
+
+.lbc {
+    font-size: 24px;
+     font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: black;
+     padding-top: 50px;
+
+}
+
+ .site_title{
+     font-size: 53px;
+     font-family: 'Courier New', monospace;
+    font-weight: bold;
+
+
+ }
+
+ .project_box{
+     margin-top: 20px;
+
+
+ }
+
+ .project_heading{
+
+     background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+     background: rgba(204, 204, 204, 0.8);
+     margin-bottom: 20px;
+
+ }
+
+ .card .card-title{
+
+     color: black;
+     font-weight: bold;
+ }
+
+
+ .card_hover:hover{
+     cursor: pointer;
+      background-color: #009688;
+
+
+
+ }
+
+ .pro-tekt_canvas{
+     background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+     background: rgba(204, 204, 204, 0.2);
+     color: white;
+     margin-top: 70px;
+ }
