@@ -245,3 +245,17 @@ footer.page-footer {
      color: white;
      margin-top: 70px;
  }
+
+ .blockchain{
+
+      background: url(/static/images/noisy_texture_section0-200x200.png) repeat 0 0 #F9F9F9;
+     color: black;
+
+ }
+
+
+.front-heading > span {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+    font-size: 55px;
+}
