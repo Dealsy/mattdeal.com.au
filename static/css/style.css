@@ -232,7 +232,6 @@ footer.page-footer {
 
 
  .card_hover:hover{
-     cursor: pointer;
       background-color: #009688;
 
 
@@ -258,4 +257,14 @@ footer.page-footer {
   font-family: 'Courier New', monospace;
   font-weight: bold;
     font-size: 55px;
+}
+
+.card_buttons{
+
+    display: none;
+    background-color: #009688;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
 }
