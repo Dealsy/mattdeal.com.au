@@ -6,36 +6,11 @@ layout: page
 {% include header.html %}
 
 
+
+
 <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css"/>
 
 
-<div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-        <div class="container">
-            <br><br>
-            <div class="row">
-                <div class="col s12 ">
-                    <svg class="logo" height="30" width="100%">
-                        <text  font-weight="bold" x="0" y="15" fill=" #009688">Matt Deal</text>
-                    </svg>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12">
-                    <svg class="sub_logo" height="50" width="100%">
-                        <text font-weight="bolder" x="0" y="15" fill=" #009688">Web applications, Web development,
-                            Blockchain
-                            Consultant
-                        </text>
-                    </svg>
-                </div>
-            </div>
-
-
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
-            <script src="/static/js/main.js"></script>
-
-        </div>
         <script>
 
             var elem = document.querySelector('.parallax');
@@ -58,11 +33,27 @@ layout: page
 
         </script>
 
+
+<div id="grad" >
+<div class="container" >
+    <div class="section" >
+
+    <h1 class="center-align white-text">Matthew Deal</h1>
+    <span><h5 class="center-align white-text">Web Development, Web Applications and Blockchain Consultant</h5>    </span>
+
+
+
     </div>
-    <div class="parallax"><img src="/static/images/group_bikes.jpg" alt="Unsplashed background img 1"></div>
+        <div class="cylinder_chart " id="index_chart"></div>
+</div>
 </div>
 
-
+    <script src="/static/js/chart.js"></script>
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 <div class="container">
     <div class="section">
 
@@ -134,16 +125,19 @@ layout: page
 
 
 
-                <div class="row">
-                    <img class="col s6 center" style="width: 200px;" src="/static/images/lab79.png">
-                    <div class="col s6 center">
-                        <p class=" center light center">I work from Lab79 in Ballarat Victoria, Australia. Lab79 is a
-                            co-working space for teach based
-                            start ups. You can find me at lab79 most days of the week. However, I am more than happy to
-                            travel for work.
-                            For more on Lab 79 click <a href="https://lab79.io/">here</a></p>
-                    </div>
-                </div>
+
+
+<!-- HTML -->
+        <div class="row">
+<div class="col s6" id="chartdiv"></div>
+<div class="col s6">
+
+    <h3>Time Is Money</h3>
+    <p class="flow-text"> Creating your own site can take a lot of time, which can cost you a lot more money!
+    I specialize in creating websites, in a timely and efficient way. </p>
+
+</div>
+</div>
             </div>
         </div>
 </div>
@@ -162,3 +156,24 @@ layout: page
     <div class="parallax"><img src="/static/images/my_bike.jpg" alt="Unsplashed background img 3"></div>
 </div>
 
+
+<script>
+  var options = [
+      {selector: '#profile', offset: 50, callback: function(el) {
+        Materialize.toast("This is our ScrollFire Demo!", 1500 );
+      } },
+      {selector: '#staggered-test', offset: 205, callback: function(el) {
+        Materialize.toast("Please continue scrolling!", 1500 );
+
+      } },
+      {selector: '#staggered-test', offset: 400, callback: function(el) {
+        Materialize.showStaggeredList($(el));
+      } },
+      {selector: '#image-test', offset: 500, callback: function(el) {
+        Materialize.fadeInImage($(el));
+      } }
+    ];
+    Materialize.scrollFire(options);
+
+</script>
+      <script src="/static/js/clock.js"></script>
