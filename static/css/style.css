@@ -288,3 +288,9 @@ footer.page-footer {
 	height	: 250px;
     margin: auto;
 }
+
+#staggered-test{
+
+    opacity: 0;
+
+}

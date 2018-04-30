@@ -51,15 +51,15 @@ layout: page
 <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
 <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all"/>
 <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
-<div class="container">
-    <div class="section">
+<div class="container ">
+    <div class="section services" style="opacity: 0">
 
         <!--   Icon Section   -->
-        <h3 class="center" style="color: #54A2CC"><b>Services</b></h3>
+        <h3 class="center " style="color: #54A2CC"><b>Services</b></h3>
         <div class="row">
 
 
-            <div class="col s12 m4">
+            <div class="col s12 m4 ">
                 <div class="icon-block">
                     <h2 class="center" style=" color: #54A2CC"><i class="material-icons">web</i></h2>
                     <h5 class="center"> Web Development</h5>
@@ -122,7 +122,7 @@ layout: page
 
 
             <!-- HTML -->
-            <div class="row">
+            <div class="row time" style="opacity: 0">
                 <div class="col s6" id="chartdiv"></div>
                 <div class="col s6">
 
@@ -151,33 +151,18 @@ layout: page
     </div>
     <div class="parallax"><img src="/static/images/my_bike.jpg" alt="Unsplashed background img 3"></div>
 </div>
-
-
 <script>
-    var options = [
-        {
-            selector: '#profile', offset: 50, callback: function (el) {
-                Materialize.toast("This is our ScrollFire Demo!", 1500);
-            }
-        },
-        {
-            selector: '#staggered-test', offset: 205, callback: function (el) {
-                Materialize.toast("Please continue scrolling!", 1500);
-
-            }
-        },
-        {
-            selector: '#staggered-test', offset: 400, callback: function (el) {
-                Materialize.showStaggeredList($(el));
-            }
-        },
-        {
-            selector: '#image-test', offset: 500, callback: function (el) {
-                Materialize.fadeInImage($(el));
-            }
-        }
+  var options = [
+       {selector: '.services', offset: 50, callback: function(el) {
+        Materialize.fadeInImage($(el));
+      } },
+           {selector: '.time', offset: 200, callback: function(el) {
+        Materialize.fadeInImage($(el));
+      } }
     ];
     Materialize.scrollFire(options);
 
 </script>
+
+
 <script src="/static/js/clock.js"></script>

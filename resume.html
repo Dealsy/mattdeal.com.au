@@ -59,7 +59,7 @@ permalink: /resume/
         <h1 class="center-align" id="index-banner">Profile</h1>
     </div>
  <div class="container">
-    <div class="row" id="staggered ">
+    <div class="row" >
         <div class="section col s6">
             <ul class="profile_ul">
                 <li>
@@ -104,7 +104,7 @@ permalink: /resume/
     <div class="container">
     <div class="row">
         <div class="section">
-            <div class="col s12">
+            <div class="col s12"  id="staggered-test" >
             <img style="width: 400px;" src="/static/images/datapipeline.png">
             <p style="font-size: 20px;">
 
@@ -118,7 +118,7 @@ permalink: /resume/
 
                 My skills as a Technology innovational officer include but are not limited too:</p>
 
-            <ul class="browser-default staggered-test">
+            <ul class="browser-default" >
 
                 <li>Blockchain technologies</li>
 
@@ -622,11 +622,8 @@ permalink: /resume/
 
 <script>
   var options = [
-       {selector: '#staggered', offset: 50, callback: function(el) {
-        Materialize.showStaggeredList($(el));
-      } },
-       {selector: '.staggered-test', offset: 400, callback: function(el) {
-        Materialize.showStaggeredList($(el));
+       {selector: '#staggered-test', offset: 400, callback: function(el) {
+        Materialize.fadeInImage($(el));
       } }
     ];
     Materialize.scrollFire(options);
