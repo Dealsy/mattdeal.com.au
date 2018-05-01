@@ -152,7 +152,7 @@ layout: page
     <div class="parallax"><img src="/static/images/my_bike.jpg" alt="Unsplashed background img 3"></div>
 </div>
 
-<div class="carousel carousel-slider center testimonial" data-indicators="true">
+<div class="carousel carousel-slider center testimonial testi"  style="opacity: 0" data-indicators="true">
     <div class="carousel-item  white-text " href="#one!">
         <div class="container">
       <h2>Testimonials</h2>
@@ -187,6 +187,9 @@ layout: page
         Materialize.fadeInImage($(el));
       } },
            {selector: '.time', offset: 200, callback: function(el) {
+        Materialize.fadeInImage($(el));
+      } },
+                 {selector: '.testi', offset: 200, callback: function(el) {
         Materialize.fadeInImage($(el));
       } }
     ];
