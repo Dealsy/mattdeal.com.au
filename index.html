@@ -151,6 +151,36 @@ layout: page
     </div>
     <div class="parallax"><img src="/static/images/my_bike.jpg" alt="Unsplashed background img 3"></div>
 </div>
+
+<div class="carousel carousel-slider center testimonial" data-indicators="true">
+    <div class="carousel-item  white-text " href="#one!">
+        <div class="container">
+      <h2>Testimonials</h2>
+      <p class="align-left flow-text">Matt worked for me for three years, during which time he showed a great ability to navigate a wide range of tasks.
+          His role wasn't easy, with new requirements on a weekly basis (we are a small company, so it's all hands on deck),
+          but Matt has worked eagerly to pick up new skills and take charge of several projects.</p>
+
+          <p class="align-left flow-text">He has performed quite a range of tasks, including web development, programming, system administration, content creation and managing projects.
+          With each, his knowledge grew quite extensively. Matt also has a great passion for technology, including cryptocurrency and websites.
+          Matt also helped with customer facing tasks with a personable style and customer-focused attitude, including attending conferences,
+              shows and directly dealing with customers.</p>
+
+            <i class="align-right">-Robert Layton, dataPipeline</i>
+
+            </div>
+    </div>
+  </div>
+
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+
+            </div>
+        </div>
+    </div>
+    <div class="parallax"><img src="/static/images/my_bike.jpg" alt="Unsplashed background img 3"></div>
+</div>
 <script>
   var options = [
        {selector: '.services', offset: 50, callback: function(el) {
@@ -162,6 +192,11 @@ layout: page
     ];
     Materialize.scrollFire(options);
 
+
+      $('.carousel.carousel-slider').carousel({
+          fullWidth: true,
+          indicators: true
+      });
 </script>
 
 

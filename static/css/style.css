@@ -294,3 +294,8 @@ footer.page-footer {
     opacity: 0;
 
 }
+
+.testimonial{
+
+     background: linear-gradient( #626dd4, #5d3bb4 );
+}
