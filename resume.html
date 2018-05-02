@@ -55,10 +55,10 @@ permalink: /resume/
 </script>
 
 
-    <div class="section page_headers " >
-        <h1 class="center-align" id="index-banner">Profile</h1>
+    <div class="section page_headers "   >
+        <h1 class="center-align">Profile</h1>
     </div>
- <div class="container">
+ <div class="container" id="pro_intro">
     <div class="row" >
         <div class="section col s6">
             <ul class="profile_ul">
@@ -163,9 +163,9 @@ permalink: /resume/
     </div>
 
     <hr>
- <div class="container">
+ <div class="container" >
     <div class="row">
-        <div class="section ">
+        <div class="section" id="southern-cross" style="opacity: 0">
             <img style="width: 500px;" src="/static/images/sc.png">
             <p style="font-size: 20px;">
                 Southern Cross Computer Systems, was responsible for installing computer infrastructure for many
@@ -195,9 +195,9 @@ permalink: /resume/
 
 
 
- <div class="container">
-        <h2 style="padding-bottom: 50px; ">Languages</h2>
-        <div class="row">
+ <div class="container"  >
+        <h2  style="padding-bottom: 50px; ">Languages</h2>
+        <div class="row" id="languages" style="opacity: 0">
             <div class="col s2 ">
                 <div class="card card_layout z-depth-3">
                     <div class="card-image">
@@ -276,7 +276,7 @@ permalink: /resume/
 
         <h2 style="padding-bottom: 50px; ">Frameworks</h2>
 
-        <div class="row">
+        <div class="row" id="frameworks" style='opacity: 0;'>
             <div class="col s2 ">
                 <div class="card card_layout z-depth-3">
                     <div class="card-image">
@@ -341,9 +341,9 @@ permalink: /resume/
 
         </div>
 
-        <h2 style="padding-bottom: 50px; ">Tools</h2>
+        <h2 style="padding-bottom: 50px; " >Tools</h2>
 
-        <div class="row">
+        <div class="row"  id="tools" style="opacity: 0">
             <div class="col s2 ">
                 <div class="card card_layout z-depth-3">
                     <div class="card-image">
@@ -419,7 +419,7 @@ permalink: /resume/
         </div>
 
         <h2 style="padding-bottom: 50px; ">Data</h2>
-        <div class="row">
+        <div class="row" id="data" style="opacity: 0;">
             <div class="col s2 ">
                 <div class="card card_layout z-depth-3">
                     <div class="card-image">
@@ -463,7 +463,7 @@ permalink: /resume/
         </div>
 
         <h2 style="padding-bottom: 50px; ">Operating Systems</h2>
-        <div class="row">
+        <div class="row" id="os" style="opacity: 0">
             <div class="col s2 ">
                 <div class="card card_layout z-depth-3">
                     <div class="card-image">
@@ -489,7 +489,7 @@ permalink: /resume/
 
 
         <h2 style="padding-bottom: 50px; ">Other</h2>
-        <div class="row">
+        <div class="row" id="other" style="opacity: 0">
             <div class="col s2 ">
                 <div class="card card_layout z-depth-3">
                     <div class="card-image">
@@ -509,7 +509,7 @@ permalink: /resume/
     </div>
     <div class="section " >
 
- <div class="container">
+ <div class="container" id="computer-power" style="opacity: 0">
         <h3>Computer power institute 2016-2017 </h3>
 
 
@@ -534,8 +534,27 @@ permalink: /resume/
     </div>
         </div>
 
+        <hr>
+
+    <div class="section " >
+
+ <div class="container" id="material-course" style="opacity: 0">
+        <h3>Materialize CSS From Scratch With 5 Projects -- Completed.</h3>
+        I covered the following topics in this course
+        <ul class="browser-default">
+            <li>Learned to correctly structure HTML 5 documents with semantic tags and attributes</li>
+            <li>Learned and create amazing high quality Materialize themes and UIs from scratch</li>
+            <li>Learned the Materialize utilities, classes, components & JS widgets using a custom sandbox environment</li>
+            <li>Learned some custom JavaScript/JQuery to make  themes more interactive</li>
+        </ul>
+
+
+    </div>
+        </div>
+
+
     <hr>
- <div class="container">
+ <div class="container" id="python-comp" style="opacity: 0">
     <div class="section" >
         <h3>Complete Python Web Course: Build 8 Python Web Apps - In Progress</h3>
         <h5>Over the entire course I will learn:</h5>
@@ -555,7 +574,7 @@ permalink: /resume/
     </div>
  </div>
     <hr>
-      <div class="container">
+      <div class="container" id="eth-course" style="opacity: 0">
     <div class="section">
         <h3>Ethereum and Solidity: The Complete Developer's Guide - In Progress</h3>
         <h5>What am I going to get from this course?</h5>
@@ -576,7 +595,7 @@ permalink: /resume/
     </div>
       </div>
     <hr>
-           <div class="container">
+           <div class="container" id="java-course" style="opacity: 0">
     <div class="section" >
         <h3>The Complete JavaScript Course: Build a Real-World Project - In Progress</h3>
         <h5>Here is exactly what we cover in this course:</h5>
@@ -622,9 +641,49 @@ permalink: /resume/
 
 <script>
   var options = [
-       {selector: '#staggered-test', offset: 400, callback: function(el) {
+       {selector: '#pro_intro', offset: 50, callback: function(el) {
+        Materialize.fadeInImage($(el));
+      } },
+         {selector: '#staggered-test', offset: 300, callback: function(el) {
+        Materialize.fadeInImage($(el));
+      } },
+         {selector: '#southern-cross', offset: 300, callback: function(el) {
+        Materialize.fadeInImage($(el));
+      } },
+         {selector: '#languages', offset: 300, callback: function(el) {
+        Materialize.fadeInImage($(el));
+      } },
+         {selector: '#frameworks', offset: 300, callback: function(el) {
+        Materialize.fadeInImage($(el));
+      } },
+         {selector: '#tools', offset: 300, callback: function(el) {
+        Materialize.fadeInImage($(el));
+      } },
+       {selector: '#data', offset: 300, callback: function(el) {
+        Materialize.fadeInImage($(el));
+      } },
+       {selector: '#os', offset: 300, callback: function(el) {
+        Materialize.fadeInImage($(el));
+      } },
+       {selector: '#other', offset: 300, callback: function(el) {
+        Materialize.fadeInImage($(el));
+      } },
+       {selector: '#computer-power', offset: 300, callback: function(el) {
+        Materialize.fadeInImage($(el));
+      } },
+         {selector: '#material-course', offset: 300, callback: function(el) {
+        Materialize.fadeInImage($(el));
+      } },
+         {selector: '#python-comp', offset: 300, callback: function(el) {
+        Materialize.fadeInImage($(el));
+      } },
+         {selector: '#eth-course', offset: 300, callback: function(el) {
+        Materialize.fadeInImage($(el));
+      } },
+         {selector: '#java-course', offset: 300, callback: function(el) {
         Materialize.fadeInImage($(el));
       } }
+
     ];
     Materialize.scrollFire(options);
 
