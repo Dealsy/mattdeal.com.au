@@ -11,37 +11,32 @@ layout: page
 
 <script>
 
-    var elem = document.querySelector('.parallax');
-    // Or with jQuery
 
     $(document).ready(function () {
         $('.parallax').parallax();
     });
 
 
-    var instance = M.Parallax.getInstance(elem);
-
-    /* jQuery Method Calls
-     You can still use the old jQuery plugin method calls.
-     But you won't be able to access instance properties.
-
-     $('.parallax').parallax('methodName');
-     $('.parallax').parallax('methodName', paramName);
-     */
 
 </script>
 
 
 <div id="grad">
-    <div class="container">
+    <div class="container" style="height: 900px;">
         <div class="section">
 
-            <h1 class="center-align white-text">Matthew Deal</h1>
-            <span><h5 class="center-align white-text">Web Development, Web Applications and Blockchain Consultant</h5>    </span>
+            <h1 class="animated fadeInLeft center-align white-text" style="margin-top: 100px;">Matthew Deal</h1>
+            <span><h5 class="animated fadeinRight center-align white-text">Web Development, Web Applications and Blockchain Consultant</h5>    </span>
 
 
         </div>
         <div class="cylinder_chart " id="index_chart"></div>
+
+       <div class="arrow bounce" style="margin-top: 200px;">
+           <a><i class="Large material-icons" >arrow_downward </i></a>
+</div>
+
+</div>
     </div>
 </div>
 
@@ -55,7 +50,7 @@ layout: page
     <div class="section services" style="opacity: 0">
 
         <!--   Icon Section   -->
-        <h3 class="center " style="color: #54A2CC"><b>Services</b></h3>
+        <h3 class="center " id="services" style="color: #54A2CC"><b>Services</b></h3>
         <div class="row">
 
 
