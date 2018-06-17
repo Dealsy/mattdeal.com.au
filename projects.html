@@ -36,8 +36,6 @@ permalink: /projects/
     <div class="parallax"><img src="/static/images/code.jpg" alt="Unsplashed background img 1"></div>
 
 
-
-
     <div class="container">
 
         <div class="section project_heading">
@@ -56,13 +54,13 @@ permalink: /projects/
                             <img src="/static/images/LTF_pic.PNG">
                         </div>
                         <div class="card-content ">
-                            <p>LearingTensorFlow is a website to help people understand TensorFlow, TensorFlow is a python based programming language.</p>
-                             <a href="http://learningtensorflow.com/index.html">
-                                <button type="button"  class="card_buttons" >Website</button>
+                            <p>LearingTensorFlow is a website to help people understand TensorFlow, TensorFlow is a
+                                python based programming language.</p>
+                            <a href="http://learningtensorflow.com/index.html">
+                                <button type="button" class="card_buttons">Website</button>
                             </a>
-                            <a href="/ltf">
-                                <button type="button"  class="card_buttons"> Detailed overview
-                                </button>
+                            <a class="waves-effect waves-light  modal-trigger" href="#ltf">
+                                <button type="button" class="card_buttons"> Detailed overview</button>
                             </a>
                         </div>
 
@@ -73,6 +71,65 @@ permalink: /projects/
                     </div>
                 </div>
             </a>
+
+
+            <!-- LTF Modal Structure -->
+            <div id="ltf" class="modal">
+                <div class="modal-content">
+                        <div class="row">
+                            <div class=" center section">
+                                <div>
+                                    <img src="/static/images/Drawing.png">
+                                </div>
+                            </div>
+
+                                <div class="row">
+                                    <div class="col s6 black-text">
+                                        <h4>Beginner-level tutorials for a powerful framework</h4>
+                                        <p>Discover Google's amazing library for deep learning and computation,
+                                            TensorFlow.</p>
+                                        <p>TensorFlow allows you to perform large-scale numerical computation,
+                                            distributed across many
+                                            machines.</p>
+                                        <p>This site teaches from the ground up, how to do this with
+                                            LearningTensorFlow.com!</p>
+                                        Click <a href="https://www.learningtensorflow.com/">here</a> to see the full
+                                        page!
+                                    </div>
+                                    <div class="col s6"><img style="width: 400px;" src="/static/images/tensorflow.PNG">
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+
+
+                <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect green waves-light btn-flat">Close</a>
+                </div>
+            </div>
+
+            <script>
+
+                $(document).ready(function () {
+                    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+                    $('#ltf').modal();
+                });
+                  $(document).ready(function () {
+                    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+                    $('#blockdeals').modal();
+                });
+                    $(document).ready(function () {
+                    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+                    $('#lbc').modal();
+                });
+                      $(document).ready(function () {
+                    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+                    $('#pro-tekt').modal();
+                });
+
+            </script>
+
+
             <script>
                 $(document).ready(function () {
                     $(document).on('mouseenter', '.divbutton', function () {
@@ -92,14 +149,14 @@ permalink: /projects/
 
                         </div>
                         <div class="card-content">
-                            <p>Blockdeals is a site for posting hot deals you find, Blockdeals is built on the Steem blockchain.
-                               </p>
-                             <a href="https://blockdeals.org/">
-                                <button type="button"  class="card_buttons" >Website</button>
+                            <p>Blockdeals is a site for posting hot deals you find, Blockdeals is built on the Steem
+                                blockchain.
+                            </p>
+                            <a href="https://blockdeals.org/">
+                                <button type="button" class="card_buttons">Website</button>
                             </a>
-                            <a href="/blockdeals">
-                                <button type="button"  class="card_buttons"> Detailed overview
-                                </button>
+                             <a class="waves-effect waves-light  modal-trigger" href="#blockdeals">
+                                <button type="button" class="card_buttons"> Detailed overview</button>
                             </a>
                         </div>
                         <div class="card-action">
@@ -108,6 +165,165 @@ permalink: /projects/
                     </div>
                 </div>
             </a>
+
+                        <!-- Blockdeals Modal Structure -->
+            <div id="blockdeals" class="modal">
+                <div class="modal-content">
+
+
+<div class="container">
+    <div class="row">
+
+        <div class=" center section">
+
+            <img src="/static/images/blockdeals_logo.png">
+
+        </div>
+    </div>
+</div>
+
+
+<div class="black-text" style="line-height: 1.5">
+    <div class="row">
+        <p>I am one of the project founders of blockdeals.org, myself and one of my team mates Scott, are the lead developers on this project.
+            Below is the release notes that were given to the Steem community to give them a deep look into what blockdeals is and where it is going.
+        </p>
+
+<h5>Detailed overview</h5>
+       <p>BlockDeals.org is a Steem Blockchain frontend specially tailored to the deals and bargains community. The Deals
+        community alone is estimated to be around $5 Billion per year just in the USA, although we're starting with the
+        feeder communities which thrive on finding and sharing awesome bargains.
+           These feeder communities command well over 10 million views per month globally so once we're established we
+        expect our reach to be far and wide. And this is good news for the Steem blockchain because we're powered by
+        Steem. But we're different to the existing deals and bargain hunting communities like:- slickdeals.net, hotukdeals.com,
+        ozbagain.com.au as their revenue model heavily relies on the advertising and affiliates income model and yet
+        none of this money is feed back to the members.</p>
+
+        And this is our point of difference.
+
+         <p>Thanks to the power of Steem we will be able to reward our users with Steem for sharing deals, upvoting and
+        contributing to active discussions.</p>
+
+         <p>And if the Steem community is generous with their SP delegations our goal is to achieve a 10% market share by
+        the end of 2018 and hopefully bringing with it another 100K Steem accounts who we expect will flow into other
+        Steem technologies such as Steemit, Dlive, Dtube etc.</p>
+
+         <p>Yes, we are building this with scalability in-mind from the ground up.</p>
+
+         <p>Best of all we've designed Block Deals so it can work anywhere in the world, which means the opportunities are
+        almost endless.</p>
+
+        <img class="responsive-img" src="/static/images/blockdeals.PNG">
+
+        <h5>Current Features</h5>
+
+        <ul class="browser-default">
+            <li>Post Bargains</li>
+            <li>Filter by Country</li>
+            <li>Filter by 'Freebies'</li>
+            <li>Identify Expiring Deals</li>
+            <li>Login via Steemconnect</li>
+            <li>View Details</li>
+            <li>Upvote Deals</li>
+            <li>Comment on Deals (Redirect to Steemit)</li>
+        </ul>
+
+        Yes, we are still transitioning to a fully integrated website but we are building this from the ground up so
+        it'll take time.
+
+        Our Development Mantra is "Release Early, Release Often" so expect subtle changes almost on a daily basis.
+
+        And check out the Road Map below for more information on what's to come.
+
+        <h5>Technology Stack</h5>
+        <ul class="browser-default">
+            <li>Ubuntu</li>
+            <li>Flask (A Python Micro Framework)</li>
+            <li>Mongo DB</li>
+            <li>Docker</li>
+            <li>MaterializeCSS</li>
+            <li>Gunicorn (Web Server)</li>
+        </ul>
+
+        <h5>Roadmap</h5>
+        <ul class="browser-default">
+            <li>Fully Integrated Website (Beta Release)</li>
+            <li>Add post details page within Blockdeals.org
+                (Will allow for commenting, upvoting within Blockdeals.org)
+            </li>
+            <li>Add post metadata to summary feed. (upvotes, downvotes, comments, etc.)</li>
+            <li>Add auto country select (IP lookup to determine which country deals to display)</li>
+            <li>Add 'Featured' Tab ( Only verified deals will make the front page)</li>
+            <li>Add 'Live Feed' Tab (All deals will be listed here)</li>
+            <li>Add 'Community' Tab (Active community discussions)</li>
+            <li>Add basic Wallet features</li>
+            <li>Future Development</li>
+            <li>Add multi-Language Support</li>
+            <li>Advanced Wallet Features</li>
+            <li>Optimise SEO (bulk of traffic expected thru organic search)</li>
+            <li>Mobile App</li>
+            <li>Adding Support for Group Buying Deals</li>
+        </ul>
+
+        <h5>Marketing Campaign</h5>
+        Once the Beta version is released and we've accumulated enough SP to support a rapidly growing community we'll
+        begin advertising through traditional
+        means and begin bringing new users to the Steem Blockchain.
+
+        <h5>How you can contribute?</h5>
+        <ul class="browser-default">
+            <li><b>SP Donations</b> - We have an immediate need for SP as this will be a prerequisite before we begin
+                our mass
+                marketing campaign. Any SP donations will be greatly appreciated.
+                ( It's hard to disrupt an established industry with 10 x 20 cent upvotes per day )
+            </li>
+
+            <li><b>Bug Hunting</b> - Any bugs you find should be logged through Utopian.io so we can keep track of them.
+            </li>
+
+            <li><b>Translations</b> - We aren't ready for translators just yet, but when we've released the full Beta
+                version we'll be
+                rolling out to non-English speaking countries too. Look for our update posts for more details.
+            </li>
+
+            <li><b> Logo Design</b> - We've seen some awesome logo designs submitted through Utopian.io so we didn't
+                spend a lot of time
+                on ours. If you have a better logo design in mind then feel free to submit via Utopian.io
+            </li>
+
+            <li><b>Add Some Deals</b> - We've already had a few keen Steemians adding deals to the site, but we need
+                more, so if you
+                want to get rewarded for adding deals and bargains, then please start contributing.
+                Ideally we need a few good people to act as moderators and champions for their country and expect these
+                power
+                users will receive extra rewards for their effort.
+            </li>
+        </ul>
+        <h5>We Are Live</h5>
+        <p>Yes, an Alpha release is already live and initially we're focusing on existing Steemians who already know their
+        way around the blockchain. Visit <a href="https://blockdeals.org/"> BlockDeals.org</a> and add a deal today!</p>
+
+
+            <h5>The Team!</h5>
+        From left to right
+        <ul class="browser-default">
+            <li>Ian</li>
+            <li>Matt (Me)</li>
+            <li>Drew</li>
+            <li>Scott</li>
+
+        </ul>
+        <img class="responsive-img" src="/static/images/block_team.jpg">
+    </div>
+</div>
+                    </div>
+
+
+                <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect green waves-light btn-flat">Close</a>
+                </div>
+            </div>
+
 
 
             <a href="/lbc">
@@ -121,12 +337,11 @@ permalink: /projects/
                             <p>Learingblockchains, is a website to help people better understand
                                 blockchain and cryptocurrency technologies.
                             </p>
-                             <a href="http://learningblockchains.com">
-                                <button type="button"  class="card_buttons" >Website</button>
+                            <a href="http://learningblockchains.com">
+                                <button type="button" class="card_buttons">Website</button>
                             </a>
-                            <a href="/lbc">
-                                <button type="button"  class="card_buttons"> Detailed overview
-                                </button>
+                             <a class="waves-effect waves-light  modal-trigger" href="#ltf">
+                                <button type="button" class="card_buttons"> Detailed overview</button>
                             </a>
                         </div>
                         <div class="card-action">
@@ -136,6 +351,43 @@ permalink: /projects/
                 </div>
             </a>
         </div>
+
+
+                    <!-- LTF Modal Structure -->
+            <div id="ltf" class="modal">
+                <div class="modal-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class=" center section">
+                                <div>
+                                    <img src="/static/images/Drawing.png">
+                                </div>
+                            </div>
+
+                                <div class="row">
+                                    <div class="col s6 black-text">
+                                        <h4>Beginner-level tutorials for a powerful framework</h4>
+                                        <p>Discover Google's amazing library for deep learning and computation,
+                                            TensorFlow.</p>
+                                        <p>TensorFlow allows you to perform large-scale numerical computation,
+                                            distributed across many
+                                            machines.</p>
+                                        <p>This site teaches from the ground up, how to do this with
+                                            LearningTensorFlow.com!</p>
+                                        Click <a href="https://www.learningtensorflow.com/">here</a> to see the full
+                                        page!
+                                    </div>
+                                    <div class="col s6"><img style="width: 400px;" src="/static/images/tensorflow.PNG">
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect green waves-light btn-flat">Close</a>
+                </div>
+            </div>
 
 
         <div class="section project_heading">
@@ -150,17 +402,16 @@ permalink: /projects/
                 <div class=" col s4 m4 card_hover divbutton">
                     <div class="card medium">
                         <div class="card-image">
-                            <img style="height: 200px;"  src="/static/images/map.PNG">
+                            <img style="height: 200px;" src="/static/images/map.PNG">
 
                         </div>
-                        <div  class="card-content">
+                        <div class="card-content">
                             <p>Pro-tekt is a 24/7 live vehicle tracking system </p>
-                             <a href="https://pro-tekt.com.au/">
-                                <button type="button"  class="card_buttons" >Website</button>
+                            <a href="https://pro-tekt.com.au/">
+                                <button type="button" class="card_buttons">Website</button>
                             </a>
-                            <a href="/pro-tekt">
-                                <button type="button"  class="card_buttons"> Detailed overview
-                                </button>
+                             <a class="waves-effect waves-light  modal-trigger" href="#ltf">
+                                <button type="button" class="card_buttons"> Detailed overview</button>
                             </a>
                         </div>
                         <div class="card-action">
@@ -169,6 +420,66 @@ permalink: /projects/
                     </div>
                 </div>
             </a>
+
+
+                        <!-- LTF Modal Structure -->
+            <div id="ltf" class="modal">
+                <div class="modal-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class=" center section">
+                                <div>
+                                    <img src="/static/images/Drawing.png">
+                                </div>
+                            </div>
+
+                                <div class="row">
+                                    <div class="col s6 black-text">
+                                        <h4>Beginner-level tutorials for a powerful framework</h4>
+                                        <p>Discover Google's amazing library for deep learning and computation,
+                                            TensorFlow.</p>
+                                        <p>TensorFlow allows you to perform large-scale numerical computation,
+                                            distributed across many
+                                            machines.</p>
+                                        <p>This site teaches from the ground up, how to do this with
+                                            LearningTensorFlow.com!</p>
+                                        Click <a href="https://www.learningtensorflow.com/">here</a> to see the full
+                                        page!
+                                    </div>
+                                    <div class="col s6"><img style="width: 400px;" src="/static/images/tensorflow.PNG">
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect green waves-light btn-flat">Close</a>
+                </div>
+            </div>
+
+
+                       <a href="/grad">
+                <div class=" col s4 m4 card_hover divbutton">
+                    <div class="card medium">
+                        <div class="card-image">
+                            <img src="/static/images/grad.png">
+
+                        </div>
+                        <div class="card-content">
+                            <p>A background gradiant color chooser</p>
+                            <a href="/grad">
+                                <button type="button" class="card_buttons">Website</button>
+                            </a>
+                
+                        </div>
+                        <div class="card-action">
+                            <span class="card-title">Background Generator</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
 
             <a href="#">
                 <div class=" col s4 m4 card_hover divbutton">
@@ -179,11 +490,11 @@ permalink: /projects/
                         </div>
                         <div class="card-content">
                             <p>A react.js site, that uses youtube API calls to create a simple youtube with react.js</p>
-                             <a href="#">
-                                <button type="button"  class="card_buttons" >Website</button>
+                            <a href="#">
+                                <button type="button" class="card_buttons">Website</button>
                             </a>
                             <a href="#">
-                                <button type="button"  class="card_buttons"> Detailed overview
+                                <button type="button" class="card_buttons"> Detailed overview
                                 </button>
                             </a>
                         </div>
@@ -194,8 +505,14 @@ permalink: /projects/
                 </div>
             </a>
 
+
+
+  
+
+
         </div>
 
     </div>
 </div>
+
 

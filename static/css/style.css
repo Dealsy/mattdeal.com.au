@@ -310,6 +310,7 @@ footer.page-footer {
   margin: 8% 0;
 }
 .bounce {
+
   -moz-animation: bounce 2s infinite;
   -webkit-animation: bounce 2s infinite;
   animation: bounce 2s infinite;
@@ -326,3 +327,4 @@ footer.page-footer {
         transform: translateY(-15px);
     }
 }
+
