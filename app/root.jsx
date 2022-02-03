@@ -8,10 +8,15 @@ import {
   ScrollRestoration,
 } from "remix";
 
+import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
 import globalStylesUrl from "../styles/global.css";
 import styles from "./styles/app.css";
 
 export const links = () => [
+  {
+    rel: "stylesheet",
+    href: bootstrap,
+  },
   {
     rel: "stylesheet",
     href: styles,
@@ -36,7 +41,7 @@ export default function App() {
   );
 }
 
-function Document({ children, title }) {
+function Document({ children, Title }) {
   return (
     <html lang="en">
       <head>
@@ -58,19 +63,28 @@ function Document({ children, title }) {
 function Layout({ children }) {
   return (
     <>
-      <nav className="navbar">
-        <Link to="/" className="logo">
-          MattDeal.com.au
+      <nav className="navbar1">
+        <Link to="/" className="logo @apply font-sans text-white">
+          Matt Deal
         </Link>
 
-        <ul className="nav">
+        <ul className=" @apply font-sans text-white">
           <li>
-            <Link to="/posts">Posts</Link>
+            <Link to="/projects">Projects</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/blog">Blog</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
       </nav>
 
-      <div className="container ">{children}</div>
+      <div>{children}</div>
     </>
   );
 }
