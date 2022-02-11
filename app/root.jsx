@@ -11,11 +11,16 @@ import {
 import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
 import globalStylesUrl from "../styles/global.css";
 import styles from "./styles/app.css";
+import Card from "./styles/card.css";
 
 export const links = () => [
   {
     rel: "stylesheet",
     href: bootstrap,
+  },
+  {
+    rel: "stylesheet",
+    href: Card,
   },
   {
     rel: "stylesheet",
@@ -70,7 +75,7 @@ function Layout({ children }) {
 
         <ul className=" @apply font-sans text-white">
           <li>
-            <Link to="/projects">Projects</Link>
+            <Link to="#projects">Projects</Link>
           </li>
           <li>
             <Link to="/about">About</Link>

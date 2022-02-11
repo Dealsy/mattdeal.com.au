@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="mb-36">
+    <div className="mb-36 mt-10">
       <h1 className="@apply   text-center font-sans text-5xl font-bold">
         About Me
       </h1>

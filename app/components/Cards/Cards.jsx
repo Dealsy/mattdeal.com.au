@@ -1,118 +1,51 @@
-import Card from "react-bootstrap/Card";
-import { Row, Col } from "react-bootstrap";
-import Fulcrum from "../../../public/assets/images/Fulcrum.svg";
-import Protekt from "../../../public/assets/images/protekt.svg";
-import LA from "../../../public/assets/images/Laneon.svg";
 import { Link } from "remix";
+import { Row } from "react-bootstrap";
+import styles from "~/styles/card.css";
+
+export function links() {
+  return [{ rel: "stylesheet", href: styles }];
+}
 
 export default function Cards() {
-  const [hover, setHover] = React.useState();
-  const [laHover, setLaHover] = React.useState();
-  const [proHover, setProHover] = React.useState();
-
-  const handleMouseIn = () => {
-    setHover(true);
-  };
-
-  const handleMouseOut = () => {
-    setHover(false);
-  };
-  const handleMouseInPro = () => {
-    setProHover(true);
-  };
-
-  const handleMouseOutPro = () => {
-    setProHover(false);
-  };
-  const handleMouseInLa = () => {
-    setLaHover(true);
-  };
-
-  const handleMouseOutLa = () => {
-    setLaHover(false);
-  };
-
   return (
     <Row>
-      <Col md={4}>
-        {hover ? (
-          <div className="relative">
-            <Link
-              className=" absolute  w-full bg-purple-700  text-center text-lg font-bold text-white"
-              to="/projects"
-            >
-              Learn More
-              <Card.Img
-                onMouseOver={handleMouseIn}
-                onMouseOut={handleMouseOut}
-                className=" cursor-pointer opacity-50 "
-                variant="top"
-                src={Fulcrum}
-              />
-            </Link>
-          </div>
-        ) : (
-          <Card.Img
-            onMouseOver={handleMouseIn}
-            onMouseOut={handleMouseOut}
-            variant="top"
-            src={Fulcrum}
-          />
-        )}
-      </Col>
+      <div className="card">
+        <div className="card-content">
+          <p className="card-title"> Pro-Tekt Asset Protection </p>
+          <p className="card-body">
+            Pro-tekt is an Australian made GPS vehicle tracking system that
+            helps you keep track of your assets{" "}
+          </p>
+          <Link to="/protekt" className="button">
+            Learn More
+          </Link>
+        </div>
+      </div>
 
-      <Col md={4}>
-        {laHover ? (
-          <div className="relative">
-            <Link
-              className=" absolute  w-full bg-gray-300  text-center text-lg font-bold text-white"
-              to="/projects"
-            >
-              Learn More
-              <Card.Img
-                onMouseOver={handleMouseInLa}
-                onMouseOut={handleMouseOutLa}
-                className=" cursor-pointer opacity-50 "
-                variant="top"
-                src={LA}
-              />
-            </Link>
-          </div>
-        ) : (
-          <Card.Img
-            onMouseOver={handleMouseInLa}
-            onMouseOut={handleMouseOutLa}
-            variant="top"
-            src={LA}
-          />
-        )}
-      </Col>
-      <Col md={4}>
-        {proHover ? (
-          <div className="relative">
-            <Link
-              className=" absolute  w-full bg-gray-800  text-center text-lg font-bold text-white"
-              to="/projects"
-            >
-              Learn More
-              <Card.Img
-                onMouseOver={handleMouseInPro}
-                onMouseOut={handleMouseOutPro}
-                className=" cursor-pointer opacity-50 "
-                variant="top"
-                src={Protekt}
-              />
-            </Link>
-          </div>
-        ) : (
-          <Card.Img
-            onMouseOver={handleMouseInPro}
-            onMouseOut={handleMouseOutPro}
-            variant="top"
-            src={Protekt}
-          />
-        )}
-      </Col>
+      <div className="fulcrum_card">
+        <div className="fulcrum_card-content">
+          <p className="fulcrum_card-title"> Fulcrum Software Solutions </p>
+          <p className="card-body">
+            Fulcrum Software Solutions is my business website, I help you build
+            your Dream website or business app.{" "}
+          </p>
+          <Link to="/fulcrum" className="fulcrum_button">
+            Learn More
+          </Link>
+        </div>
+      </div>
+      <div className="La_card">
+        <div className="La_card-content">
+          <p className="La_card-title"> LA Neon Events </p>
+          <p className="card-body">
+            LA Neon Events is a Ecommerce website, that sell Neon lights, this
+            site is built fully with React and uses Storyblok as a Headless CMS
+          </p>
+          <Link to="/laneon" className="La_button">
+            Learn More
+          </Link>
+        </div>
+      </div>
     </Row>
   );
 }

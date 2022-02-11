@@ -35,7 +35,7 @@ export default function Home() {
         <p className="@apply mb-36 text-center font-sans text-lg">
           Listed below are a few projects I have worked on
         </p>
-        <Container className="mb-20">
+        <Container>
           <Cards />
         </Container>
         <Container>
