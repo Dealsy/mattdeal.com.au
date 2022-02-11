@@ -1,0 +1,349 @@
+.card {
+    margin: auto;
+    color: white;
+    background-image: url(/assets/images/protekt.svg);
+    background-size: cover;
+    padding: 10rem 0 0;
+    max-width: 35ch;
+    border-radius: .5rem;
+    overflow: hidden;
+    transition: 500ms ease;
+}
+
+.card:hover,
+.card:focus-within {
+    transform: scale(1.05);
+}
+
+.card:hover {
+    transform: scale(1.05);
+
+}
+
+.card-content {
+    --padding: 1.5rem;
+    padding: var(--padding);
+    padding: 1.5em;
+    line-height: 1.5rem;
+    background: linear-gradient(hsl(0 0% 0% / 0), hsl(0 0% 0% /0.2) 1%, hsl(0 0% 0% /1));
+}
+
+@media (hover) {
+    .card-content {
+        transform: translateY(70%);
+        transition: 500ms ease;
+    }
+
+    .card:hover .card-content,
+    .card:focus-within .card-content {
+        transform: translateY(0);
+        transition-delay: 500ms;
+    }
+
+    .card:focus-within .card-content {
+        transition-duration: 0ms;
+    }
+
+    .card-content>*:not(.card-title) {
+        opacity: 0;
+        transition: opacity 600ms linear;
+    }
+
+    .card:hover .card-content *:not(.card-title),
+    .card:focus-within .card-content *:not(.card-title) {
+        opacity: 1;
+        transition-delay: 1000ms;
+    }
+
+    .card-title::after {
+        transform: scaleX(0);
+    }
+
+}
+
+
+.card-title::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    left: calc(var(--padding) * -1);
+    bottom: 0;
+    background: #3fd333;
+    width: calc(100% + var(--padding));
+
+    transform-origin: left;
+    transition: 500ms ease;
+
+}
+
+.card:hover .card-title::after,
+.card:focus-within .card-title::after {
+    transform: scaleX(1);
+}
+
+.card-title {
+    width: max-content;
+    position: relative;
+    font-weight: bolder;
+    font-size: 22px;
+
+}
+
+.card-body {
+    color: rgb(255, 255, 225 / 1)
+}
+
+.button {
+    cursor: pointer;
+    display: inline;
+    text-decoration: none;
+    color: black;
+    background: #3fd333;
+    padding: .5em 1.25em;
+    border-radius: .25rem;
+}
+
+.button:hover,
+.button:focus {
+    background-color: #fff;
+    color: #000;
+}
+
+/* FulCrum CSS  */
+.fulcrum_card {
+    margin: auto;
+    color: white;
+    background-image: url(/assets/images/Fulcrum.svg);
+    background-size: cover;
+    padding: 10rem 0 0;
+    max-width: 35ch;
+    border-radius: .5rem;
+    overflow: hidden;
+    transition: 500ms ease;
+}
+
+.fulcrum_card:hover,
+.fulcrum_card:focus-within {
+    transform: scale(1.05);
+}
+
+.fulcrum_card:hover {
+    transform: scale(1.05);
+
+}
+
+.fulcrum_card-content {
+    --padding: 1.5rem;
+    padding: var(--padding);
+    line-height: 1.5rem;
+    background: linear-gradient(hsl(0 0% 0% / 0), hsl(0 0% 0% /0.2) 1%, hsl(0 0% 0% /1));
+}
+
+@media (hover) {
+    .fulcrum_card-content {
+        transform: translateY(70%);
+        transition: 500ms ease;
+    }
+
+    .fulcrum_card:hover .fulcrum_card-content,
+    .fulcrum_card:focus-within .fulcrum_card-content {
+        transform: translateY(0);
+        transition-delay: 500ms;
+    }
+
+    .fulcrum_card:focus-within .fulcrum_card-content {
+        transition-duration: 0ms;
+    }
+
+    .fulcrum_card-content>*:not(.fulcrum_card-title) {
+        opacity: 0;
+        transition: opacity 600ms linear;
+    }
+
+    .fulcrum_card:hover .fulcrum_card-content *:not(.fulcrum_card-title),
+    .fulcrum_card:focus-within .fulcrum_card-content *:not(.fulcrum_card-title) {
+        opacity: 1;
+        transition-delay: 1000ms;
+    }
+
+    .fulcrum_card-title::after {
+        transform: scaleX(0);
+    }
+
+}
+
+.fulcrum_card-title::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    left: calc(var(--padding) * -1);
+    bottom: 0;
+    background: #5c02cc;
+    width: calc(100% + var(--padding));
+    transform-origin: left;
+    transition: 500ms ease;
+}
+
+.fulcrum_card:hover .fulcrum_card-title::after,
+.fulcrum_card:focus-within .fulcrum_card-title::after {
+    transform: scaleX(1);
+}
+
+.fulcrum_card-title {
+    width: max-content;
+    position: relative;
+    font-weight: bolder;
+    font-size: 20px;
+
+}
+
+.fulcrum_card-body {
+    color: rgb(255, 255, 225 / 1)
+}
+
+.fulcrum_button {
+    cursor: pointer;
+    display: inline;
+    text-decoration: none;
+    color: white;
+    background: #5c02cc;
+    padding: .5em 1.25em;
+    border-radius: .25rem;
+
+}
+
+.fulcrum_button:hover,
+.fulcrum_button:focus {
+    background-color: #fff;
+    color: #000;
+}
+
+
+/* LA NEON  */
+
+.La_card {
+    margin: auto;
+    color: white;
+    background-image: url(/assets/images/Laneon.svg);
+    background-size: cover;
+    padding: 10rem 0 0;
+    max-width: 35ch;
+    border-radius: .5rem;
+    overflow: hidden;
+    transition: 500ms ease;
+}
+
+.La_card:hover,
+.La_card:focus-within {
+    transform: scale(1.05);
+}
+
+.La_card:hover {
+    transform: scale(1.05);
+
+}
+
+.La_card-content {
+    --padding: 1.5rem;
+    padding: var(--padding);
+    padding: 1.5em;
+    line-height: 1.5rem;
+    background: linear-gradient(hsl(0 0% 0% / 0), hsl(0 0% 0% /0.2) 1%, hsl(0 0% 0% /1));
+}
+
+@media (hover) {
+    .La_card-content {
+        transform: translateY(70%);
+        transition: 500ms ease;
+    }
+
+    .La_card:hover .La_card-content,
+    .La_card:focus-within .La_card-content {
+        transform: translateY(0);
+        transition-delay: 500ms;
+    }
+
+    .La_card:focus-within .La_card-content {
+        transition-duration: 0ms;
+    }
+
+    .La_card-content>*:not(.La_card-title) {
+        opacity: 0;
+        transition: opacity 600ms linear;
+    }
+
+    .La_card:hover .La_card-content *:not(.La_card-title),
+    .La_card:focus-within .La_card-content *:not(.La_card-title) {
+        opacity: 1;
+        transition-delay: 1000ms;
+    }
+
+    .La_card-title::after {
+        transform: scaleX(0);
+    }
+
+}
+
+
+.La_card-title::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    left: calc(var(--padding) * -1);
+    bottom: 0;
+    background: #fbe2e1;
+    width: calc(100% + var(--padding));
+
+    transform-origin: left;
+    transition: 500ms ease;
+
+}
+
+.La_card:hover .La_card-title::after,
+.La_card:focus-within .La_card-title::after {
+    transform: scaleX(1);
+}
+
+.La_card-title {
+    width: max-content;
+    position: relative;
+    font-weight: bolder;
+    font-size: 22px;
+
+}
+
+.La_card-body {
+    color: rgb(255, 255, 225 / 1)
+}
+
+.La_button {
+    cursor: pointer;
+    display: inline;
+    text-decoration: none;
+    color: black;
+    background: #fbe2e1;
+    padding: .5em 1.25em;
+    border-radius: .25rem;
+}
+
+.La_button:hover,
+.La_button:focus {
+    background-color: #fff;
+    color: #000;
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+
+}

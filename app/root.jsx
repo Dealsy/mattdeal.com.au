@@ -11,7 +11,7 @@ import {
 import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
 import globalStylesUrl from "../styles/global.css";
 import styles from "./styles/app.css";
-import Card from "/styles/card.css";
+import Card from "./styles/card.css";
 
 export const links = () => [
   {
