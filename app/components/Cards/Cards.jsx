@@ -1,10 +1,5 @@
 import { Link } from "remix";
 import { Row } from "react-bootstrap";
-import styles from "~/styles/card.css";
-
-export function links() {
-  return [{ rel: "stylesheet", href: styles }];
-}
 
 export default function Cards() {
   return (
