@@ -12,8 +12,13 @@ export default function Home() {
         <Col md={6}>
           <div>
             <div>
-              <p className="@apply mt-24 ml-32 p-10 font-sans text-7xl  ">
+              <p className="@apply  mt-24 ml-32 pl-10 pb-5 font-sans text-7xl  leading-none">
                 Frontend Developer & UI / UX Designer
+              </p>
+              <p className=" ml-32 max-w-prose	pb-5 pl-10  text-lg leading-7 text-gray-300">
+                {" "}
+                I build beautiful and responsive websites and applications for
+                small businesses and the every day Joe a like
               </p>
             </div>
           </div>
