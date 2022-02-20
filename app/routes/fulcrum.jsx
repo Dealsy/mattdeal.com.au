@@ -1,10 +1,16 @@
+import Banner from "../components/Banner/Banner.jsx";
+
 export default function Fulcrom() {
   return (
     <div>
-      <div className="h-96 bg-violet-800">
-        <div className="m-auto w-fit pt-20  font-mono text-3xl font-black text-white">
-          Fulcrum Software Solutions
-        </div>{" "}
+      <div>
+        <Banner
+          subheaderCss="subheader_Fulcrum"
+          headerCss="header_Fulcrum"
+          style="banner_Fulcrum"
+          header="Fulcrum Software solutions"
+          subheader="Desgin Your Dream Website "
+        />
       </div>
     </div>
   );

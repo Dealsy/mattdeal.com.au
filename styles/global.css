@@ -1,29 +1,89 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
-.BorderSize{
+
+/* Protekt  */
+.header_protekt {
+  color: #3dd12e;
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.subheader_protekt {
+  color: #fff;
+  font-size: 16px;
+}
+
+.banner_protekt {
+  padding: 80px;
+  text-align: center;
+  background: #000;
+}
+
+/* Fulcrum  */
+
+.header_Fulcrum {
+  color: #fff;
+  font-size: 45px;
+  font-weight: 700;
+  font-family: Rubik, sans-serif;
+}
+
+.subheader_Fulcrum {
+  color: #fff;
+  font-size: 16px;
+  font-family: Rubik, sans-serif;
+}
+
+.banner_Fulcrum {
+  padding: 80px;
+  text-align: center;
+  background: #5c02cc;
+}
+
+/* LA Neon  */
+
+.header_LA {
+  color: #fff;
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.subheader_LA {
+  color: #000;
+  font-size: 16px;
+}
+
+.banner_LA {
+  padding: 80px;
+  text-align: center;
+  background: #fbe2e1;
+}
+
+
+.BorderSize {
   width: 60rem;
 }
 
-.row{
-  bs-gutter-x: 0rem !important; 
+.row {
+  bs-gutter-x: 0rem !important;
 }
-.PhoneImage{
+
+.PhoneImage {
   height: 40rem;
 }
 
 
-.backgroundStripe{
-    background: linear-gradient(to bottom right, #818cf8 50%, white 50%);
-    height: 900px;
+.backgroundStripe {
+  background: linear-gradient(to bottom right, #818cf8 50%, white 50%);
+  height: 900px;
 }
 
 /* .backgroundStripe2{
   background: linear-gradient(to top left, #fff 90%, #818cf8 10%);
 } */
 
-.backgroundStripe3{
-  background: linear-gradient(to  top left, #818cf8 50%, #fff 50%);
+.backgroundStripe3 {
+  background: linear-gradient(to top left, #818cf8 50%, #fff 50%);
 }
 
 .logo {
@@ -40,7 +100,7 @@
 
 .navbar1 ul {
   display: flex;
-  
+
 }
 
 
@@ -55,4 +115,3 @@
   color: #333;
   border-bottom: 1px solid #333;
 }
-
