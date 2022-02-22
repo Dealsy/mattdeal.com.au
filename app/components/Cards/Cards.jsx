@@ -1,9 +1,15 @@
 import { Link } from "remix";
 import { Row } from "react-bootstrap";
+import SectionTitle from "../Sections/Section_Title/Section-title";
 
 export default function Cards() {
   return (
     <Row>
+      <SectionTitle
+        title="Projects"
+        subtitle="Listed below are a few projects I have worked on"
+      />
+
       <div className="card">
         <div className="card-content">
           <p className="card-title"> Pro-Tekt Asset Protection </p>

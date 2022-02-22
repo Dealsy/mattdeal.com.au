@@ -115,3 +115,69 @@
   color: #333;
   border-bottom: 1px solid #333;
 }
+
+
+
+.imageSize {
+  width: 40%;
+  flex-grow: 1;
+}
+
+
+
+.myForm {
+
+  display: flex;
+  width: 60%;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 2px solid #bcbcbcad;
+  box-shadow: 2px 2px 2px #bcbcbcad;
+  padding: 1.8em;
+  font-size: 2rem;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  order: 2;
+  width: 70%;
+}
+
+.message>textarea {
+  flex: 1;
+  min-width: 14em;
+}
+
+.contact {
+  padding: 1.8rem;
+  border: 0;
+  width: 50%;
+  order: 1;
+  margin-right: 0.5rem;
+  flex-grow: -1;
+}
+
+.contact input {
+  width: 80%;
+  padding: 2rem;
+}
+
+.img_message>textarea {
+  width: 80%;
+  padding: 2rem;
+}
+
+.contact input:focus::placeholder {
+  color: #707efb;
+  font-weight: 600;
+}
+
+
+.messageBox:focus::placeholder {
+  color: #707efb;
+  font-weight: 600;
+}

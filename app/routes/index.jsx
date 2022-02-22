@@ -34,12 +34,6 @@ export default function Home() {
         </Col>
       </Row>
       <div className="backgroundStripe2">
-        <p className="@apply   text-center font-sans text-5xl font-bold">
-          Projects
-        </p>
-        <p className="@apply mb-36 text-center font-sans text-lg">
-          Listed below are a few projects I have worked on
-        </p>
         <Container>
           <Cards />
         </Container>

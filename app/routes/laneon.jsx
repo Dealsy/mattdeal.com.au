@@ -1,4 +1,4 @@
-import Banner from "../components/Banner/banner.jsx";
+import Banner from "../components/Sections/Banner/banner.jsx";
 
 export default function LaNeon() {
   return (

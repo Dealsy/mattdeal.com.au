@@ -1,9 +1,9 @@
+import SectionTitle from "../Sections/Section_Title/Section-title";
+
 export default function About() {
   return (
     <div className="mb-36 mt-10">
-      <h1 className="@apply   text-center font-sans text-5xl font-bold">
-        About Me
-      </h1>
+      <SectionTitle title="About me" />
       <div className="  text-center">
         <p>
           This is an about section about mat deal and all of the cool web stuff
