@@ -80,6 +80,47 @@
   width: 20ch;
 }
 
+.About-content>p {
+  width: 60ch;
+  color: rgb(129, 129, 129);
+  line-height: 1.7rem;
+  padding: 5px;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+.About-content.a {
+  color: #818cf8;
+  font-weight: 600;
+}
+
+.Section-Title {
+  color: rgb(129, 129, 129)
+}
+
+@media (max-width: 1000px) {
+
+  .About-content>p {
+    width: 25ch;
+    font-size: 1.5rem;
+    color: rgb(129, 129, 129);
+    line-height: 1.7rem;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+  }
+
+  .Section-Title {
+    color: rgb(129, 129, 129);
+    font-size: 1.5rem;
+    width: 30ch;
+
+  }
+
+}
+
 @media (max-width: 1000px) {
   .Responsive-Container>p {
     width: 30ch;
@@ -255,20 +296,23 @@
   .myForm {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     flex-grow: 1;
-    width: 60%;
+    width: 100%;
     margin: auto;
     background-color: #fff;
     border-radius: 3px;
     border: 2px solid #bcbcbcad;
     box-shadow: 2px 2px 2px #bcbcbcad;
-    padding: 1.8em;
+
     font-size: 1.2rem;
   }
 
   .contact {
     justify-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     flex-grow: 1;
     border: 0;
     width: 100%;
@@ -276,13 +320,21 @@
     padding: 0 0 0 0;
   }
 
-  .message {
+  .img_message>textarea {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-top: 45px;
-    margin-left: 35px;
-    flex-grow: 1;
-    width: 70%;
+    width: 100%;
+
+  }
+
+  .Contact_Button {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+
+  .message {
+    display: none;
+
   }
 }

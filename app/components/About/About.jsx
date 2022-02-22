@@ -4,14 +4,32 @@ export default function About() {
   return (
     <div className="mb-36 mt-10">
       <SectionTitle title="About me" />
-      <div className="  text-center">
+      <div className=" About-content ">
         <p>
-          This is an about section about mat deal and all of the cool web stuff
-          he has created
+          My Name is Matt, I have been doing web development as a hobby for the
+          past 5 years, however in the last year I have started my own business
+          called{" "}
+          <b>
+            <a href="https://fulcrumsoftwaresolutions.com.au/">
+              fulcrumsoftwaresolutions
+            </a>
+          </b>
         </p>
         <p>
-          This is some reall good desceiption of some cool website stuff that
-          Matt has made over the years for people and things for fun yay
+          I am mainly a React Developer who actually loves CSS! I love all
+          things web development related and just can't get enough of that
+          feeling you get when you fianlly get that project done, or even that
+          one part of the project that's been a bit of a pain, and now it's
+          compelete and you get a great sense of satisfaction.
+        </p>
+
+        <p>
+          {" "}
+          I've just started to learn Remix which you can find out more about at{" "}
+          <b>
+            <a href="https://remix.run/"> Remix.run</a>
+          </b>
+          . Inface this portfolio is built on Remix!{" "}
         </p>
       </div>
     </div>
