@@ -11,7 +11,7 @@ export default function Contact() {
         subtitle="Lets chat about your web needs"
       />
 
-      <Form className="myForm">
+      <Form id="#contact" className="myForm">
         <div className="message">
           <img className="Contact_Image" src={Image} alt="contact us" />
         </div>

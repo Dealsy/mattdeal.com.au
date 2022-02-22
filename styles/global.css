@@ -172,6 +172,7 @@
 }
 
 .navbar1 {
+  margin-right: 500px;
   display: flex;
   background-color: #818cf8;
   padding: 10px 30px;

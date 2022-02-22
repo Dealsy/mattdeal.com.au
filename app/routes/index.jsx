@@ -4,12 +4,15 @@ import { Container, Row, Col } from "react-bootstrap";
 import Cards from "../components/Cards/Cards";
 import About from "../components/About/About";
 import Contact from "../components/Contact/Contact";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import Nav from "../components/Nav/nav";
 
 export default function Home() {
   return (
     <div>
       <div className="backgroundStripe">
-        <Container>
+        <Nav />
+        <Container className="mb-36">
           <Row>
             <Col md={6}>
               <div>
@@ -25,7 +28,9 @@ export default function Home() {
                 </div>
               </div>
               <div>
-                <MainButton children="Learn More" />
+                <AnchorLink href="#projects">
+                  <MainButton children="Learn More" />
+                </AnchorLink>
               </div>
             </Col>
             <Col>
@@ -38,13 +43,15 @@ export default function Home() {
         </Container>
       </div>
       <div className="backgroundStripe2">
-        <Container>
+        <Container id="projects">
           <Cards />
         </Container>
-        <Container>
+        <Container id="about">
           <About />
         </Container>
-        <Contact />
+        <div id="contact">
+          <Contact />
+        </div>
       </div>
     </div>
   );

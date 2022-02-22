@@ -4,7 +4,7 @@ export default function SectionTitle(props) {
       <h1 className="@apply  text-center font-sans text-5xl font-bold">
         {props.title}
       </h1>
-      <p className="@apply Section-Title mb-20 text-center font-sans text-lg">
+      <p className="@apply Section-Title mb-10 text-center font-sans text-lg">
         {props.subtitle}
       </p>
     </div>

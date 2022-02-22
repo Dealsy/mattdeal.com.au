@@ -2,7 +2,7 @@ import SectionTitle from "../Sections/Section_Title/Section-title";
 
 export default function About() {
   return (
-    <div className="mb-36 mt-10">
+    <div className="mb-24 mt-10">
       <SectionTitle title="About me" />
       <div className=" About-content ">
         <p>
@@ -25,11 +25,12 @@ export default function About() {
 
         <p>
           {" "}
-          I've just started to learn Remix which you can find out more about at{" "}
+          I've also just started to learn Remix which you can find out more
+          about at{" "}
           <b>
             <a href="https://remix.run/"> Remix.run</a>
           </b>
-          . Inface this portfolio is built on Remix!{" "}
+          . Infact this portfolio is built on Remix!{" "}
         </p>
       </div>
     </div>
