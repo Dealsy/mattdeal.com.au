@@ -69,13 +69,52 @@
 }
 
 .PhoneImage {
-  height: 40rem;
+  width: 30rem;
+}
+
+.Text-distance {
+  width: 50ch;
+}
+
+.Text-distance-Header {
+  width: 20ch;
+}
+
+@media (max-width: 1000px) {
+  .Responsive-Container>p {
+    width: 30ch;
+    justify-content: left;
+    color: #fff;
+  }
+}
+
+@media (max-width: 1000px) {
+  .Responsive-Container>h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    width: 19ch;
+  }
+}
+
+@media (max-width: 1000px) {
+  .PhoneImage {
+    display: none;
+  }
+
 }
 
 
 .backgroundStripe {
   background: linear-gradient(to bottom right, #818cf8 50%, white 50%);
-  height: 900px;
+  min-height: 5rem;
+}
+
+@media (max-width: 1000px) {
+  .backgroundStripe {
+    background: #818cf8 50%;
+    min-height: 40rem;
+  }
+
 }
 
 /* .backgroundStripe2{
@@ -85,6 +124,7 @@
 .backgroundStripe3 {
   background: linear-gradient(to top left, #818cf8 50%, #fff 50%);
 }
+
 
 .logo {
   font-size: 48px;
@@ -135,8 +175,9 @@
   border: 2px solid #bcbcbcad;
   box-shadow: 2px 2px 2px #bcbcbcad;
   padding: 1.8em;
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
+
 
 .message {
   display: flex;
@@ -153,7 +194,8 @@
 }
 
 .contact {
-  padding: 1.8rem;
+  padding-left: 6.8rem;
+  padding-top: 1.8rem;
   border: 0;
   width: 50%;
   order: 1;
@@ -161,14 +203,16 @@
   flex-grow: -1;
 }
 
+
+
 .contact input {
   width: 80%;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .img_message>textarea {
   width: 80%;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .contact input:focus::placeholder {
@@ -180,4 +224,65 @@
 .messageBox:focus::placeholder {
   color: #707efb;
   font-weight: 600;
+}
+
+.Contact_Image {
+  -webkit-animation: mover 2s infinite alternate;
+  animation: mover 2s infinite alternate;
+}
+
+@-webkit-keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+@media (max-width: 1000px) {
+  .myForm {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 60%;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 2px solid #bcbcbcad;
+    box-shadow: 2px 2px 2px #bcbcbcad;
+    padding: 1.8em;
+    font-size: 1.2rem;
+  }
+
+  .contact {
+    justify-content: center;
+    flex-grow: 1;
+    border: 0;
+    width: 100%;
+    order: 1;
+    padding: 0 0 0 0;
+  }
+
+  .message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 45px;
+    margin-left: 35px;
+    flex-grow: 1;
+    width: 70%;
+  }
 }

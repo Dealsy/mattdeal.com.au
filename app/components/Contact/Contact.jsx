@@ -13,7 +13,7 @@ export default function Contact() {
 
       <Form className="myForm">
         <div className="message">
-          <img src={Image} alt="contact us" />
+          <img className="Contact_Image" src={Image} alt="contact us" />
         </div>
         <div className="contact">
           <input placeholder="Your Name" type="text" id="name" />
@@ -22,6 +22,8 @@ export default function Contact() {
 
           <div className="img_message">
             <textarea
+              rows="5"
+              cols="45"
               className="messageBox"
               placeholder="Message"
               id="msg"
