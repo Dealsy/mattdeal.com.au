@@ -12,15 +12,15 @@ export default function Home() {
     <div>
       <div className="backgroundStripe">
         <Nav />
-        <Container className="mb-36">
+        <Container className="TopContainer">
           <Row>
-            <Col md={6}>
+            <Col md={7}>
               <div>
                 <div className="Responsive-Container">
-                  <h1 className="@apply  Text-distance-Header mt-24 pb-5 font-sans  text-7xl leading-none">
+                  <h1 className="topHeader">
                     Frontend Developer & UI / UX Designer
                   </h1>
-                  <p className=" 	Text-distance pb-5 text-lg leading-7 text-gray-300">
+                  <p className=" TopSubHeader">
                     {" "}
                     I build beautiful and responsive websites and applications
                     for small businesses and the every day Joe a like
@@ -34,10 +34,7 @@ export default function Home() {
               </div>
             </Col>
             <Col>
-              <img
-                src={PhonePlaceHolder}
-                className="PhoneImage mt-24 ml-20 drop-shadow-lg "
-              />
+              <img src={PhonePlaceHolder} className="PhoneImage " />
             </Col>
           </Row>
         </Container>

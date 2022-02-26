@@ -2,8 +2,8 @@ import SectionTitle from "../Sections/Section_Title/Section-title";
 
 export default function About() {
   return (
-    <div className="mb-24 mt-10">
-      <SectionTitle title="About me" />
+    <div className="AboutContainer">
+      <SectionTitle style="Section-Title-Header" title="About me" />
       <div className=" About-content ">
         <p>
           My Name is Matt, I have been doing web development as a hobby for the

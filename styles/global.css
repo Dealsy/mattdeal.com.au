@@ -1,4 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro&family=Roboto:wght@300&display=swap');
+
+
+:root {
+  --Roboto: 'Roboto', sans-serif;
+}
+
+
+.h1 {
+  font-size: 20px;
+  font-weight: normal !important;
+}
+
+#h1 {
+  font-weight: 400 !important;
+}
 
 
 /* Protekt  */
@@ -86,6 +102,7 @@
   line-height: 1.7rem;
   padding: 5px;
   justify-content: center;
+  font-family: var(--Roboto);
   text-align: center;
   margin: auto;
 }
@@ -95,9 +112,29 @@
   font-weight: 600;
 }
 
-.Section-Title {
-  color: rgb(129, 129, 129)
+.AboutContainer {
+  margin-top: 24px;
+  margin-bottom: 10px;
 }
+
+.Section-Title {
+  color: rgb(129, 129, 129);
+  font-family: var(--Roboto);
+  margin: auto;
+  width: 22rem;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+.Section-Title-Header {
+  text-align: center;
+  font-family: var(--Roboto);
+  font-size: 40px;
+  font-weight: bold;
+
+}
+
+
 
 @media (max-width: 1000px) {
 
@@ -164,11 +201,20 @@
 
 .backgroundStripe3 {
   background: linear-gradient(to top left, #818cf8 50%, #fff 50%);
+  padding-bottom: 5rem;
 }
 
 
 .logo {
   font-size: 48px;
+  color: #fff;
+  font-family: var(--Roboto);
+  text-decoration: none;
+}
+
+.logo:hover {
+  color: #333;
+  text-decoration: none;
 }
 
 .navbar1 {
@@ -178,6 +224,8 @@
   padding: 10px 30px;
   flex-wrap: wrap;
   align-items: center;
+  text-decoration: none;
+  align-items: flex-end
 }
 
 .navbar1 ul {
@@ -188,14 +236,15 @@
 
 .navbar1 ul li a {
   color: #fff;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: bold;
   margin-left: 30px;
+  text-decoration: none;
 }
 
 .navbar1 ul li a:hover {
   color: #333;
-  border-bottom: 1px solid #333;
+  text-decoration: none;
 }
 
 
@@ -210,7 +259,7 @@
 .myForm {
 
   display: flex;
-  width: 60%;
+  width: 80%;
   margin: auto;
   background-color: #fff;
   border-radius: 3px;
@@ -250,11 +299,13 @@
 .contact input {
   width: 80%;
   padding: 1rem;
+  margin-top: 1rem;
 }
 
 .img_message>textarea {
   width: 80%;
   padding: 1rem;
+  margin-top: 1rem;
 }
 
 .contact input:focus::placeholder {
@@ -328,14 +379,142 @@
 
   }
 
-  .Contact_Button {
-    display: flex;
-    flex-wrap: wrap;
-  }
+
 
 
   .message {
     display: none;
 
   }
+}
+
+.Markdown {
+  line-height: 1.5rem;
+  justify-content: center;
+  align-content: center;
+}
+
+.Nav-list {
+  font-family: var(--Roboto);
+  color: #fff;
+}
+
+.topHeader {
+  margin-top: 10rem;
+  padding-bottom: 1rem;
+  font-family: var(--Roboto);
+  line-height: 4.5rem;
+  font-size: 5.4rem !important;
+}
+
+
+
+.TopSubHeader {
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  width: 45ch;
+  font-family: var(--Roboto);
+  line-height: 1.8rem;
+  color: rgb(209 213 219);
+  font-size: 1.2rem !important;
+}
+
+.TopContainer {
+  padding-bottom: 25rem;
+}
+
+.mainButton {
+  width: 10rem;
+  padding: 5px;
+  cursor: pointer;
+  border: rgb(238, 151, 166);
+  background-color: rgb(245, 159, 173);
+  border-radius: 4px 4px 4px 4px;
+  font-family: var(--Roboto);
+  font-size: 1.5rem;
+  color: #fff;
+  box-shadow: 2px 2px 2px 2px solid rgb(172, 172, 172);
+}
+
+.mainButton:hover {
+  background-color: rgb(238, 129, 147)
+}
+
+.mainButton:active {
+  background-color: rgb(243, 142, 159)
+}
+
+.BlogCard {
+  padding-bottom: 2rem;
+  margin: 2rem;
+  width: 30rem;
+
+}
+
+.BlogContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.blog-Card-Inner-Container {
+  padding: 2rem;
+  line-height: 1.5rem;
+
+}
+
+.blog-title {
+  line-height: 2.2rem;
+
+}
+
+.blog-excerpt {
+  line-height: 1.5rem;
+  font-style: italic;
+
+}
+
+.blog-date {}
+
+.blog-link {
+  text-decoration: none;
+}
+
+.Section-Title-Blog-Header {
+  text-align: center;
+  font-family: var(--Roboto);
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 3rem;
+
+}
+
+.Blog-main-container {
+  background: linear-gradient(to bottom right, #818cf8 50%, white 50%);
+  min-height: 5rem;
+}
+
+.blog-image {
+  width: 25rem;
+}
+
+.post-Container {
+  width: 80ch;
+  font-family: var(--Roboto);
+  line-height: 1.5rem;
+  color: white;
+  margin: auto;
+
+}
+
+.post-Header {
+  padding-top: 4rem;
+}
+
+.Post-background {
+  min-height: 5rem;
+  background: #0e182a;
 }

@@ -6,11 +6,12 @@ export default function Cards() {
   return (
     <Row>
       <SectionTitle
+        style="Section-Title-Header"
         title="Projects"
         subtitle="Listed below are a few projects I have worked on"
       />
 
-      <div className="card">
+      <div className="Protekt_card ">
         <div className="card-content">
           <p className="card-title"> Pro-Tekt Asset Protection </p>
           <p className="card-body">

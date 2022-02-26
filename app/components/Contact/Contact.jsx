@@ -5,8 +5,9 @@ import Image from "../../../public/assets/images/home-2-img.png";
 
 export default function Contact() {
   return (
-    <div className="backgroundStripe3 pb-10">
+    <div className="backgroundStripe3">
       <SectionTitle
+        style="Section-Title-Header"
         title="Reach Out"
         subtitle="Lets chat about your web needs"
       />
@@ -22,16 +23,13 @@ export default function Contact() {
 
           <div className="img_message">
             <textarea
-              rows="5"
-              cols="45"
+              rows="10"
               className="messageBox"
               placeholder="Message"
               id="msg"
             ></textarea>
           </div>
-          <div className="Contact_Button ">
-            <MainButton children="Send" />
-          </div>
+          <MainButton children="Send" />
         </div>
       </Form>
     </div>
