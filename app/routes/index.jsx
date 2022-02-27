@@ -25,8 +25,8 @@ export default function Home() {
                   </h1>
                   <p className=" TopSubHeader">
                     {" "}
-                    I build beautiful and responsive websites and applications
-                    for small businesses and the every day Joe a like
+                    I build beautiful responsive websites and applications for
+                    small businesses and the every day Joe a like
                   </p>
                 </div>
               </div>

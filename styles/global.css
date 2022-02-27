@@ -255,6 +255,41 @@ h3 {
   text-decoration: none;
 }
 
+@media (min-width: 2200) {
+  .navbar1 {
+    width: 90rem;
+    display: flex;
+    background-color: #818cf8;
+    padding: 10px 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    text-decoration: none;
+    align-items: flex-end;
+    justify-content: space-between;
+
+  }
+
+  .navbar1 ul {
+    display: flex;
+
+  }
+
+
+  .navbar1 ul li a {
+    color: rgb(209 213 219);
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 30px;
+    text-decoration: none;
+  }
+
+  .navbar1 ul li a:hover {
+    color: #333;
+    text-decoration: none;
+  }
+
+}
+
 @media (max-width: 1000px) {
   .navbar1 {
     display: none;
@@ -324,9 +359,8 @@ h3 {
 
 
 .myForm {
-
   display: flex;
-  width: 80%;
+  width: 90%;
   margin: auto;
   background-color: #fff;
   border-radius: 3px;
