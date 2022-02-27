@@ -62,12 +62,12 @@ export default function Blog() {
                     <h3 className="blog-title">{title}</h3>
                     <p className="blog-excerpt">{excerpt}</p>
                     <p className="blog-date">Created {date}</p>
+                    <div className="Author">
+                      <p>Author: {author.name}</p>
+                      <em>Title: {author.title}</em>
+                    </div>
                   </div>
                   <img className="blog-image" src={coverImage.url} />
-                  <div className="Author">
-                    <p>Author: {author.name}</p>
-                    <em>Title: {author.title}</em>
-                  </div>
                 </Card>
               </Link>
             )

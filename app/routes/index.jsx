@@ -6,12 +6,15 @@ import About from "../components/About/About";
 import Contact from "../components/Contact/Contact";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import Nav from "../components/Nav/nav";
+import MobileNav from "../components/Nav/mobileNav";
 
 export default function Home() {
   return (
     <div>
       <div className="backgroundStripe">
+        <MobileNav />
         <Nav />
+
         <Container className="TopContainer">
           <Row>
             <Col md={7}>
