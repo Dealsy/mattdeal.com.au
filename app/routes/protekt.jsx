@@ -9,6 +9,8 @@ export default function Protekt() {
         style="banner_protekt"
         header="Pro-Tekt"
         subheader="Asset Protection"
+        homeButton="Protekt_Home_button "
+        arrow="Protekt-arrow left"
       />{" "}
     </div>
   );

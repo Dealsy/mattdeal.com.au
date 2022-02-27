@@ -1,7 +1,7 @@
-import { useLoaderData, json } from "remix";
+import { useLoaderData, json, Link } from "remix";
 import { GraphQLClient, gql } from "graphql-request";
 import Markdown from "markdown-to-jsx";
-import { Container } from "react-bootstrap";
+import "prismjs/themes/prism-tomorrow.css";
 
 const GetPostBySlug = gql`
   query ($slug: String) {
@@ -34,12 +34,18 @@ export default function ProductPage() {
 
   return (
     <div className="Post-background">
-      <Container>
-        <div className="post-Container">
-          <h1 className="post-Header">{data.post.title}</h1>
-          <Markdown className="Markdown">{data.post.content.markdown}</Markdown>
-        </div>
-      </Container>
+      <div className="post-Container">
+        <Link className="Return_Blog_button" to="/blog/posts/">
+          <i className="return_arrow left"></i> Back to blog
+        </Link>
+        <h1 className="post-Header">{data.post.title}</h1>
+        <Markdown className="Markdown Code">
+          {data.post.content.markdown}
+        </Markdown>
+        <Link className="Return_Blog_button" to="/blog/posts/">
+          <i className="return_arrow left"></i> Back to blog
+        </Link>
+      </div>
     </div>
   );
 }

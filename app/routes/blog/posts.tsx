@@ -37,11 +37,16 @@ export default function Blog() {
   console.log(data);
   return (
     <div>
-      <SectionTitle
-        style="Section-Title-Blog-Header"
-        title="Blog"
-        subtitle="A blog for learning the web"
-      />
+      <div className="blog-title-flex">
+        <SectionTitle
+          style="Section-Title-Blog-Header"
+          title="Blog"
+          subtitle="This blog is powered by Remix and GraphQL CMS"
+        />
+        <Link className="Home_button" to="/">
+          <i className="arrow left"></i> Home
+        </Link>
+      </div>
       <Container className="Blog-main-container">
         <div className="BlogContainer">
           {data.posts.map(
@@ -56,8 +61,12 @@ export default function Blog() {
                   <div className="blog-Card-Inner-Container">
                     <h3 className="blog-title">{title}</h3>
                     <p className="blog-excerpt">{excerpt}</p>
-                    <p className="blog-date">{date}</p>
-                    <img className="blog-image" src={coverImage.url} />
+                    <p className="blog-date">Created {date}</p>
+                  </div>
+                  <img className="blog-image" src={coverImage.url} />
+                  <div className="Author">
+                    <p>Author: {author.name}</p>
+                    <em>Title: {author.title}</em>
                   </div>
                 </Card>
               </Link>
