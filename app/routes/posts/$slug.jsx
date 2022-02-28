@@ -1,6 +1,8 @@
 import { useLoaderData, json, Link } from "remix";
 import { GraphQLClient, gql } from "graphql-request";
 import { RichText } from "@graphcms/rich-text-react-renderer";
+import BackButton from "../../components/button/backButton";
+import { FaArrowLeft } from "react-icons/fa";
 import { useEffect } from "react";
 // import Markdown from "markdown-to-jsx";
 import Prism from "prismjs";
@@ -37,17 +39,17 @@ export default function ProductPage() {
   }, []);
   let data = useLoaderData();
   console.log(data);
+  const BackArrow = <FaArrowLeft />;
 
   return (
     <div className="Post-background">
       <div className="post-Container">
-        <Link
-          prefetch="intent"
-          className="Return_Blog_button"
-          to="/blog/posts/"
-        >
-          <i className="return_arrow left"></i> Back to blog
-        </Link>
+        <BackButton
+          btnStyle="Return_Blog_button"
+          url="/blog/posts/"
+          title="Back to Blog"
+          image={BackArrow}
+        />
         <h1 className="post-Header">{data.post.title}</h1>
         {/* <Markdown className="Markdown"> */}
         <div className="Markdown">
@@ -63,13 +65,12 @@ export default function ProductPage() {
               },
             }}
           />
-          <Link
-            prefetch="intent"
-            className="Return_Blog_button"
-            to="/blog/posts/"
-          >
-            <i className="return_arrow left"></i> Back to blog
-          </Link>
+          <BackButton
+            btnStyle="Return_Blog_button"
+            url="/blog/posts/"
+            title="Back to Blog"
+            image={BackArrow}
+          />
         </div>
         ;{/* </Markdown> */}
       </div>

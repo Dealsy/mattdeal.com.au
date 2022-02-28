@@ -1,7 +1,9 @@
 import { useLoaderData, json, Link } from "remix";
 import { GraphQLClient, gql } from "graphql-request";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import { FaArrowLeft } from "react-icons/fa";
 import Card from "react-bootstrap/Card";
+import BackButton from "../../components/button/backButton";
 import SectionTitle from "../../components/Sections/Section_Title/Section-title";
 const GetPostsQuery = gql`
   {
@@ -34,6 +36,7 @@ export let loader = async () => {
 
 export default function Blog() {
   const data = useLoaderData();
+  const BackArrow = <FaArrowLeft />;
   console.log(data);
   return (
     <div>
@@ -43,9 +46,12 @@ export default function Blog() {
           title="Blog"
           subtitle="This blog is powered by Remix and GraphQL CMS"
         />
-        <Link className="Home_button" prefetch="intent" to="/">
-          <i className="arrow left"></i> Home
-        </Link>
+        <BackButton
+          btnStyle="Home_button"
+          url="/"
+          title="Home"
+          image={BackArrow}
+        />
       </div>
       <Container className="Blog-main-container">
         <div className="BlogContainer">

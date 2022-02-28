@@ -580,10 +580,11 @@ h3 {
 
 .blog-title-flex {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   flex-wrap: nowrap;
   align-items: baseline;
-  justify-content: center;
+  justify-content: space-around;
+  width: 84%;
 }
 
 .blog-excerpt {
@@ -734,7 +735,17 @@ h3 {
 
 .Home_button {
   text-decoration: none;
-  color: #212529;
+  color: #ffffff;
+  background-color: #212529;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px #00000033;
+  padding: 8px;
+}
+
+.Home_button:hover {
+  text-decoration: none;
+  color: #fff;
+  background-color: #818cf8;
 }
 
 .Protekt_Home_button {
@@ -808,9 +819,8 @@ h3 {
 
 .Return_Blog_button {
   text-decoration: none;
-  color: #a4a8bb;
+  color: #808185;
   padding: 5px;
-  margin-top: 10rem;
   margin-bottom: 2rem;
 }
 
