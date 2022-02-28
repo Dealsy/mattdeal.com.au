@@ -1,7 +1,9 @@
 import { useLoaderData, json, Link } from "remix";
 import { GraphQLClient, gql } from "graphql-request";
-import Markdown from "markdown-to-jsx";
-import "prismjs/themes/prism-tomorrow.css";
+import { RichText } from "@graphcms/rich-text-react-renderer";
+import { useEffect } from "react";
+// import Markdown from "markdown-to-jsx";
+import Prism from "prismjs";
 
 const GetPostBySlug = gql`
   query ($slug: String) {
@@ -9,7 +11,7 @@ const GetPostBySlug = gql`
       title
       excerpt
       content {
-        markdown
+        raw
       }
     }
   }
@@ -30,7 +32,11 @@ export let loader = async ({ params }) => {
 };
 
 export default function ProductPage() {
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
   let data = useLoaderData();
+  console.log(data);
 
   return (
     <div className="Post-background">
@@ -39,9 +45,22 @@ export default function ProductPage() {
           <i className="return_arrow left"></i> Back to blog
         </Link>
         <h1 className="post-Header">{data.post.title}</h1>
-        <Markdown className="Markdown Code">
-          {data.post.content.markdown}
-        </Markdown>
+        {/* <Markdown className="Markdown"> */}
+        <div className="Markdown">
+          <RichText
+            content={data.post.content.raw.children}
+            renderers={{
+              code_block: ({ children }) => {
+                return (
+                  <pre className="line-numbers">
+                    <code className="language-js ">{children}</code>
+                  </pre>
+                );
+              },
+            }}
+          />
+        </div>
+        ;{/* </Markdown> */}
         <Link className="Return_Blog_button" to="/blog/posts/">
           <i className="return_arrow left"></i> Back to blog
         </Link>

@@ -233,7 +233,6 @@ h3 {
   text-decoration: none;
   align-items: flex-end;
   justify-content: space-between;
-
 }
 
 .navbar1 ul {
@@ -775,9 +774,7 @@ h3 {
 
 }
 
-pre code {
-  color: #3dd12e;
-}
+
 
 .socials {
   margin: 1rem;

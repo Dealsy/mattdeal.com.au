@@ -10,11 +10,16 @@ import {
 import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
 import globalStylesUrl from "../styles/global.css";
 import Card from "../styles/card.css";
+import PrismCss from "../styles/prism.css";
 
 export const links = () => [
   {
     rel: "stylesheet",
     href: bootstrap,
+  },
+  {
+    rel: "stylesheet",
+    href: PrismCss,
   },
   {
     rel: "stylesheet",
