@@ -18,7 +18,7 @@ export default function Cards() {
             Pro-tekt is an Australian made GPS vehicle tracking system that
             helps you keep track of your assets{" "}
           </p>
-          <Link to="/protekt" className="button">
+          <Link prefetch="render" to="/protekt" className="button">
             Learn More
           </Link>
         </div>
@@ -31,7 +31,7 @@ export default function Cards() {
             Fulcrum Software Solutions is my business website, I help you build
             your Dream website or business app.{" "}
           </p>
-          <Link to="/fulcrum" className="fulcrum_button">
+          <Link prefetch="render" to="/fulcrum" className="fulcrum_button">
             Learn More
           </Link>
         </div>
@@ -43,7 +43,7 @@ export default function Cards() {
             LA Neon Events is a Ecommerce website, that sell Neon lights, this
             site is built fully with React and uses Storyblok as a Headless CMS
           </p>
-          <Link to="/laneon" className="La_button">
+          <Link prefetch="render" to="/laneon" className="La_button">
             Learn More
           </Link>
         </div>

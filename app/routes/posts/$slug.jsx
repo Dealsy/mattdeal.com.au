@@ -41,7 +41,11 @@ export default function ProductPage() {
   return (
     <div className="Post-background">
       <div className="post-Container">
-        <Link className="Return_Blog_button" to="/blog/posts/">
+        <Link
+          prefetch="intent"
+          className="Return_Blog_button"
+          to="/blog/posts/"
+        >
           <i className="return_arrow left"></i> Back to blog
         </Link>
         <h1 className="post-Header">{data.post.title}</h1>
@@ -52,18 +56,22 @@ export default function ProductPage() {
             renderers={{
               code_block: ({ children }) => {
                 return (
-                  <pre className="line-numbers">
+                  <pre className="line-numbers codeBackground">
                     <code className="language-js ">{children}</code>
                   </pre>
                 );
               },
             }}
           />
+          <Link
+            prefetch="intent"
+            className="Return_Blog_button"
+            to="/blog/posts/"
+          >
+            <i className="return_arrow left"></i> Back to blog
+          </Link>
         </div>
         ;{/* </Markdown> */}
-        <Link className="Return_Blog_button" to="/blog/posts/">
-          <i className="return_arrow left"></i> Back to blog
-        </Link>
       </div>
     </div>
   );

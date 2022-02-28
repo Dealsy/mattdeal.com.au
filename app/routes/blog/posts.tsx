@@ -43,7 +43,7 @@ export default function Blog() {
           title="Blog"
           subtitle="This blog is powered by Remix and GraphQL CMS"
         />
-        <Link className="Home_button" to="/">
+        <Link className="Home_button" prefetch="intent" to="/">
           <i className="arrow left"></i> Home
         </Link>
       </div>
