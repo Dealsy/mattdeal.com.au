@@ -622,6 +622,26 @@ h3 {
 
 }
 
+
+@media(max-width: 1000px) {
+  .BlogContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+  }
+
+  .Blog-main-container {
+    background: #fff;
+    min-height: 5rem;
+  }
+}
+
+
+
 .post-Container {
   width: 100ch;
   font-family: var(--Roboto);
@@ -644,11 +664,6 @@ h3 {
   padding: 1rem;
 }
 
-.Post-background {
-  min-height: 100rem;
-  background: linear-gradient(to bottom right, #e4e4e4 50%, #818cf8 30%);
-}
-
 .Markdown {
   line-height: 1.5rem;
   justify-content: center;
@@ -657,6 +672,43 @@ h3 {
   font-size: 1.2rem;
   background-color: #fff;
   padding: 1.5rem;
+}
+
+
+@media (max-width: 1000px) {
+  .Markdown {
+    line-height: 1.5rem;
+    justify-content: center;
+    align-content: center;
+    color: #0d0d0e;
+    font-size: .8rem;
+    background-color: #fff;
+    padding: 1.5rem;
+    width: 25ch;
+  }
+
+
+  .post-Header {
+    padding-top: 4rem;
+    color: #e4e4e4;
+    font-weight: 800;
+    font-size: 1.2rem;
+    background-color: #000;
+    padding: 1rem;
+    width: 15ch;
+  }
+
+  .codeBackground {
+    width: 100%;
+  }
+
+
+
+}
+
+.Post-background {
+  min-height: 100rem;
+  background: linear-gradient(to bottom right, #e4e4e4 50%, #818cf8 30%);
 }
 
 .codeBackground {

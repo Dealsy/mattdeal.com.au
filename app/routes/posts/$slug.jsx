@@ -57,7 +57,7 @@ export default function ProductPage() {
               code_block: ({ children }) => {
                 return (
                   <pre className="line-numbers codeBackground">
-                    <code className="language-js ">{children}</code>
+                    <code className="language-js CodeMobile ">{children}</code>
                   </pre>
                 );
               },
