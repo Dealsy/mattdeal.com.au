@@ -28,17 +28,20 @@ export default function Nav() {
         <SocialIcon
           className="Twittersocials "
           color="currentColor"
+          target="_blank"
           url="https://twitter.com/Dealsy01"
           style={{ height: 25, width: 25 }}
         />
         <SocialIcon
           color="currentColor"
+          target="_blank"
           className="Linkedinsocials socials"
           url="https://www.linkedin.com/in/matt-deal-038177b5/"
           style={{ height: 25, width: 25 }}
         />
         <SocialIcon
           color="currentColor"
+          target="_blank"
           className="Gitsocials "
           url="https://github.com/Dealsy?tab=repositories"
           style={{ height: 25, width: 25 }}
