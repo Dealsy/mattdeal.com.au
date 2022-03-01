@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 
 
 :root {
   --Roboto: 'Roboto', sans-serif;
+  --Alfa: 'Alfa Slab One', cursive;
   --Main_Button: rgb(238, 151, 166);
   --content: rgb(129, 129, 129)
 }
@@ -921,4 +923,38 @@ h3 {
 
   line-height: .5;
   font-size: .8rem;
+}
+
+.Problem_Statment {
+  font-size: 6rem;
+  margin: auto;
+  width: 100rem;
+  padding: 2rem;
+  font-family: var(--Alfa)
+}
+
+.Problem-Statement-Text {
+  font-size: 1.7rem;
+  padding-top: 1rem;
+  width: 110ch;
+  line-height: 1.8rem;
+  color: rgb(44, 42, 42);
+  font-family: var(--Roboto);
+
+
+}
+
+.layout {
+  margin-bottom: 10rem;
+}
+
+.flex-text {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Protekt_pc {
+  width: 40rem;
 }

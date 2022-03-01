@@ -7,6 +7,7 @@ export default function Banner(props) {
         <i className={props.arrow}></i> Home
       </Link>
       <h1 className={props.headerCss}>{props.header}</h1>
+      <img src={props.image}></img>
       <p className={props.subheaderCss}>{props.subheader}</p>
     </div>
   );
