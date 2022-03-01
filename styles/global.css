@@ -933,16 +933,33 @@ h3 {
   font-family: var(--Alfa)
 }
 
+.Problem_Statment_map {
+  font-size: 2.8rem;
+  margin: auto;
+  width: 100%;
+  padding: 2rem;
+  font-family: var(--Alfa)
+}
+
+.Problem_Statment_Event {
+  font-size: 1.8rem;
+  color: rgb(83, 81, 81);
+  margin: auto;
+  width: 100%;
+  padding: 2rem;
+  font-family: var(--Alfa)
+}
+
 .Problem-Statement-Text {
-  font-size: 1.7rem;
+  font-size: 1.9rem;
   padding-top: 1rem;
-  width: 90ch;
-  line-height: 1.8rem;
+  width: 70ch;
+  line-height: 2rem;
   color: rgb(44, 42, 42);
   font-family: var(--Roboto);
-
-
 }
+
+
 
 .layout {
   margin-bottom: 10rem;
@@ -955,6 +972,73 @@ h3 {
   align-items: center;
 }
 
+.flex-image-left {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.flex-image-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .Protekt_pc {
   width: 40rem;
+}
+
+.Pro-Tekt-Link {
+  text-decoration: none;
+  font-size: 1.7rem;
+  color: #0a58ca;
+}
+
+.Map {
+  width: 40rem;
+  margin: 3rem;
+  box-shadow: 0 15px 10px #00000033;
+  transition: ease 500ms;
+}
+
+.Map:hover {
+  transform: scale(1.8);
+}
+
+.Menu {
+  max-height: 30rem;
+  margin-right: 12rem;
+  margin-left: 1rem;
+  box-shadow: 0 15px 10px #00000033;
+  transition: ease 500ms;
+}
+
+.Menu:hover {
+  transform: scale(1.8);
+}
+
+.Event {
+  max-height: 50rem;
+  margin-right: 12rem;
+  margin-left: 1rem;
+  box-shadow: 0 15px 10px #00000033;
+  transition: ease 500ms;
+}
+
+.Event:hover {
+  transform: scale(1.1);
+}
+
+.History {
+  max-height: 20rem;
+  margin: 2rem;
+  box-shadow: 0 15px 10px #00000033;
+  transition: ease 500ms;
+}
+
+.History:hover {
+  transform: scale(1.8);
 }
