@@ -14,7 +14,7 @@ import {
 } from "react-icons/si";
 import { FaStripe, FaReact, FaCss3Alt } from "react-icons/fa";
 import LALogo from "../../public/assets/images/lalogo.jpg";
-import Instagram from "../../public/assets/images/instagram.png";
+import Instagram from "../../public/assets/images/Instagram.png";
 import Featured from "../../public/assets/images/featured.png";
 import LaBanner from "../../public/assets/images/LaBanner.png";
 import Shop from "../../public/assets/images/Shop.png";
