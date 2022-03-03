@@ -18,7 +18,7 @@ import Instagram from "../../public/assets/images/instagram.png";
 import Featured from "../../public/assets/images/featured.png";
 import LaBanner from "../../public/assets/images/LaBanner.png";
 import Shop from "../../public/assets/images/Shop.png";
-import Product from "../../public/assets/images/Product.png";
+import Product from "../../public/assets/images/product.png";
 import Cart from "../../public/assets/images/Cart.png";
 import Checkout from "../../public/assets/images/Checkout.png";
 import Custom from "../../public/assets/images/Custom.png";
