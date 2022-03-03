@@ -1,4 +1,5 @@
 import Banner from "../components/Sections/Banner/banner.jsx";
+import { Link } from "remix";
 import Logo from "../../public/assets/images/logo.png";
 import PCs from "../../public/assets/images/pcs.jpg";
 import MapView from "../../public/assets/images/MapView.png";
@@ -7,16 +8,31 @@ import History from "../../public/assets/images/History.png";
 import Event from "../../public/assets/images/Event.png";
 import SectionTitle from "~/components/Sections/Section_Title/Section-title.jsx";
 import { Container, Alert } from "react-bootstrap";
-
+import { SiJavascript, SiBootstrap, SiPython, SiFlask } from "react-icons/si";
+import { FaCss3Alt, FaArrowLeft } from "react-icons/fa";
 export default function Protekt() {
+  const Python = <SiPython />;
+  const JS = <SiJavascript />;
+  const Bootstrap = <SiBootstrap />;
+  const CSS = <FaCss3Alt />;
+  const Flask = <SiFlask />;
+  const Arrow = <FaArrowLeft />;
   return (
     <div>
+      <nav className="Project_Nav">
+        <Link className="Protekt-home" to="/">
+          <button className="button_Style ">
+            <div className="flex-Button">
+              <div className="ArrowSpace">{Arrow}</div>
+              <div>Home</div>
+            </div>
+          </button>
+        </Link>
+      </nav>
       <Banner
         subheaderCss="subheader_protekt"
         headerCss="header_protekt"
         style="banner_protekt"
-        homeButton="Protekt_Home_button "
-        arrow="Protekt-arrow left"
         image={Logo}
       />{" "}
       <Container className="layout Problem-Statement-Text">
@@ -55,9 +71,16 @@ export default function Protekt() {
         <p>
           I was given the role of the Lead Frontend Developer for this job, and
           was responsible for building out the UI/UX and design of the business
-          app called the fleet screen, the fleet screen is a platform that was
-          built on Javascript / HTML 5 / CSS3 with a Python backend. "
+          app called the fleet screen
         </p>
+        <SectionTitle title="Technologies Used" style="Problem_Statment_Tech" />
+        <div className="tech-flex Tech_div">
+          <div className="Python">{Python}</div>
+          <div className="Bootstrap">{Bootstrap}</div>
+          <div className="JS">{JS}</div>
+          <div className="CSS">{CSS}</div>
+          <div className="Flask">{Flask}</div>
+        </div>
         <SectionTitle title="Pro-Tekt Overview" style="Problem_Statment" />
         <p>
           In this section, I will run over the core features of Pro-Tekt and
@@ -72,7 +95,6 @@ export default function Protekt() {
           </a>
           ."
         </p>
-
         <SectionTitle title="Fleet Screen" style="Problem_Statment_map" />
         <p>
           The map view is the main viewpoint of the fleet screen, it has all of
@@ -150,7 +172,6 @@ export default function Protekt() {
             </p>
           </ul>
         </div>
-
         <SectionTitle title="Route History" style="Problem_Statment_map" />
         <div className="flex-image-left">
           <img className="History" src={History}></img>
@@ -169,15 +190,17 @@ export default function Protekt() {
         <Alert variant="info">
           Pro-tekt keeps up to 12 months of past data for you to dive through.
         </Alert>
-
         <SectionTitle title="Conculsion" style="Problem_Statment" />
         <p>
           Pro-Tekt is an asset tracking device that you can place onto just
           about anything with a power source and track it for peace of mind.
         </p>
-
+        <p>
+          We covered the main features of the fleet screen above, however there
+          are some more features in the app, which you can check out once you
+          have a Pro-Tekt Device!
+        </p>
         <p>here is a small list of things that Pro-Tekt can and does track.</p>
-
         <ul type="bullet">
           <li>Cars</li>
           <li>Trucks</li>
@@ -187,19 +210,17 @@ export default function Protekt() {
           <li>Boats</li>
           <li>Shipping containers</li>
         </ul>
-
         <p>
           Pro-Tekt is also avaliable as an Andriod and Apple App you can find
-          that here{" "}
+          that{" "}
           <a
             className="Pro-Tekt-Link"
             href="https://play.google.com/store/apps/details?id=com.protekt.app"
             target="_blank"
           >
-            Pro-Tekt.
+            here
           </a>{" "}
         </p>
-
         <p>
           {" "}
           Head to{" "}

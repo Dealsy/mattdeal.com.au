@@ -24,18 +24,6 @@ export default function Cards() {
         </div>
       </div>
 
-      <div className="fulcrum_card">
-        <div className="fulcrum_card-content">
-          <p className="fulcrum_card-title"> Fulcrum Software Solutions </p>
-          <p className="card-body">
-            Fulcrum Software Solutions is my business website, I help you build
-            your Dream website or business app.{" "}
-          </p>
-          <Link prefetch="render" to="/fulcrum" className="fulcrum_button">
-            Learn More
-          </Link>
-        </div>
-      </div>
       <div className="La_card">
         <div className="La_card-content">
           <p className="La_card-title"> LA Neon Events </p>
@@ -44,6 +32,19 @@ export default function Cards() {
             site is built fully with React and uses Storyblok as a Headless CMS
           </p>
           <Link prefetch="render" to="/laneon" className="La_button">
+            Learn More
+          </Link>
+        </div>
+      </div>
+
+      <div className="fulcrum_card">
+        <div className="fulcrum_card-content">
+          <p className="fulcrum_card-title"> Fulcrum Software Solutions </p>
+          <p className="card-body">
+            Fulcrum Software Solutions is my business website, I help you build
+            your Dream website or business app.{" "}
+          </p>
+          <Link prefetch="render" to="/fulcrum" className="fulcrum_button">
             Learn More
           </Link>
         </div>

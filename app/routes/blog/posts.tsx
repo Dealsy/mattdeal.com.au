@@ -41,11 +41,13 @@ export default function Blog() {
   return (
     <div>
       <div className="blog-title-flex">
-        <SectionTitle
-          style="Section-Title-Blog-Header"
-          title="Blog"
-          subtitle="This blog is powered by Remix and GraphQL CMS"
-        />
+        <div className="blogtitle">
+          <SectionTitle
+            style="Section-Title-Blog-Header"
+            title="Blog"
+            subtitle="This blog is powered by Remix and GraphQL CMS"
+          />
+        </div>
         <BackButton
           btnStyle="Home_button"
           url="/"

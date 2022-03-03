@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro&family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
+
+@font-face {
+  font-family: Cherishline_Script;
+  src: url('/assets/fonts/Cherishline_Script.otf') format("opentype"),
+    url('/assets/fonts/Cherishline_Script.ttf') format('truetype');
+  display: swap;
+}
 
 
 :root {
@@ -62,13 +70,13 @@ h3 {
   color: #fff;
   font-size: 45px;
   font-weight: 700;
-  font-family: Rubik, sans-serif;
+  font-family: var(--Roboto);
 }
 
 .subheader_Fulcrum {
   color: #fff;
   font-size: 16px;
-  font-family: Rubik, sans-serif;
+  font-family: var(--Roboto);
 }
 
 .banner_Fulcrum {
@@ -80,9 +88,10 @@ h3 {
 /* LA Neon  */
 
 .header_LA {
-  color: #fff;
-  font-size: 45px;
-  font-weight: 700;
+  color: #000;
+  font-size: 10rem;
+  font-family: "Cherishline_Script";
+
 }
 
 .subheader_LA {
@@ -582,7 +591,7 @@ h3 {
 
 .blog-title-flex {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   flex-wrap: nowrap;
   align-items: baseline;
   justify-content: space-around;
@@ -744,26 +753,116 @@ h3 {
   padding: 8px;
 }
 
+
 .Home_button:hover {
   text-decoration: none;
   color: #fff;
   background-color: #818cf8;
 }
 
-.Protekt_Home_button {
-  text-decoration: none;
-  color: #3dd12e;
-  font-family: var(--Roboto);
+.Project_Nav {
+  background-color: #000;
 }
 
-.Protekt_Home_button:hover {
+.La_Nav {
+  background-color: #fbe2e1;
+}
+
+.Ful_Nav {
+  background-color: #5c02cc;
+}
+
+.button_Style {
+  text-decoration: none;
+  color: #000;
+  width: 8rem;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 1rem;
+  font-family: var(--Roboto);
+  background-color: #3dd12e;
+  background: #3dd12e;
+}
+
+.button_Style:hover {
   text-decoration: none;
   color: black;
-  padding: .5rem;
   text-align: center;
   font-weight: 600;
   font-family: var(--Roboto);
-  background-color: #3dd12e;
+  background-color: #42e92f;
+  text-decoration: none;
+}
+
+.flex-Button {
+  display: flex;
+  flex-direction: row;
+}
+
+.Protekt-home {
+  padding-left: 1rem;
+  text-decoration: none;
+  color: #000;
+  font-family: var(--Roboto);
+}
+
+.La_Button_style {
+  text-decoration: none;
+  color: #fbe2e1;
+  width: 8rem;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 1rem;
+  font-family: var(--Roboto);
+  background-color: #000;
+}
+
+.La_Button_style :hover {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  font-weight: 600;
+  font-family: var(--Roboto);
+  background-color: #fbeeee;
+  text-decoration: none;
+}
+
+.La-home {
+  padding-left: 1rem;
+  text-decoration: none;
+  color: #fbe2e1;
+  font-family: var(--Roboto);
+}
+
+.Ful_Button_style {
+  text-decoration: none;
+  color: #8a4ad8;
+  width: 8rem;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 1rem;
+  font-family: var(--Roboto);
+  background-color: #000;
+}
+
+.Ful_Button_style :hover {
+  text-decoration: none;
+  color: #721dda;
+  text-align: center;
+  font-weight: 600;
+  font-family: var(--Roboto);
+  background-color: #000;
+  text-decoration: none;
+}
+
+.flex-arrow {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: baseline;
+}
+
+.ArrowSpace {
+  padding-right: 1rem;
 }
 
 
@@ -805,6 +904,10 @@ h3 {
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
+}
+
+.LA_Nav {
+  background-color: #fbe2e1;
 }
 
 .Fulcrum-arrow {
@@ -941,6 +1044,20 @@ h3 {
   font-family: var(--Alfa)
 }
 
+.Problem_Statment_Tech {
+  font-size: 4rem;
+  margin: auto;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Faster One', cursive;
+}
+
+.Tech_div {
+  padding-bottom: 5rem;
+
+}
+
 .Problem_Statment_Event {
   font-size: 1.8rem;
   color: rgb(83, 81, 81);
@@ -1022,7 +1139,7 @@ h3 {
 
 .Event {
   max-height: 50rem;
-  margin-right: 12rem;
+  margin-right: 5rem;
   margin-left: 1rem;
   box-shadow: 0 15px 10px #00000033;
   transition: ease 500ms;
@@ -1041,4 +1158,117 @@ h3 {
 
 .History:hover {
   transform: scale(1.8);
+}
+
+.LaLogo {
+  width: 25rem;
+  margin: 1rem;
+}
+
+.Instagram {
+  width: 40rem;
+  transition: ease 500ms;
+  margin: 1rem;
+  box-shadow: 0 15px 10px #00000033;
+}
+
+.Instagram:hover {
+  transform: scale(1.8);
+
+}
+
+.Product {
+  width: 20rem;
+  transition: ease 500ms;
+  margin: 1rem;
+  box-shadow: 0 15px 10px #00000033;
+}
+
+.Product:hover {
+  transform: scale(1.8);
+
+}
+
+.Cart {
+  width: 20rem;
+  transition: ease 500ms;
+  margin: 2rem;
+  box-shadow: 0 15px 10px #00000033;
+}
+
+.Cart:hover {
+  transform: scale(1.8);
+}
+
+.Checkout {
+  width: 40rem;
+  transition: ease 500ms;
+  margin: 2rem;
+  box-shadow: 0 15px 10px #00000033;
+}
+
+
+.Checkout:hover {
+  transform: scale(1.8);
+}
+
+.Custom {
+  width: 25rem;
+  transition: ease 500ms;
+  margin: 2rem;
+}
+
+.Custom:hover {
+  transform: scale(1.8);
+}
+
+.tech-flex {
+  display: flex;
+  justify-content: space-around;
+  font-size: 3.5rem;
+}
+
+.React {
+  color: #5ed3f3;
+
+}
+
+.Redux {
+  color: #7d42bf;
+}
+
+.JS {
+  color: #efd81d;
+}
+
+.CSS {
+  color: #254bdd;
+}
+
+.Tailwind {
+  color: #0bb0cd;
+}
+
+.Bootstrap {
+  color: #6f11ef;
+}
+
+.Storyblok {
+  color: #09adaa;
+}
+
+.Stripe {
+  color: #646ede;
+}
+
+.Netlify {
+  color: #30b0b4;
+}
+
+.Firebase {
+  color: #f7c52c;
+}
+
+.Python {
+  color: #3674a9;
 }

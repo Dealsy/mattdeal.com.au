@@ -1,69 +1,62 @@
 import Banner from "../components/Sections/Banner/banner.jsx";
 import SectionTitle from "~/components/Sections/Section_Title/Section-title.jsx";
+import { Link } from "remix";
 import { Container } from "react-bootstrap";
-import Text from "../components/Sections/Text/ProblemText";
+import { FaArrowLeft } from "react-icons/fa";
 
 export default function Fulcrom() {
+  const Arrow = <FaArrowLeft />;
   return (
     <div>
+      <div className="Ful_Nav">
+        <nav className="Ful_Nav">
+          <Link className="La-home" to="/">
+            <button className="Ful_Button_style ">
+              <div className="flex-Button">
+                <div className="ArrowSpace">{Arrow}</div>
+                <div>Home</div>
+              </div>
+            </button>
+          </Link>
+        </nav>
+      </div>
       <Banner
         subheaderCss="subheader_Fulcrum"
         headerCss="header_Fulcrum"
         style="banner_Fulcrum"
-        header="Fulcrum Software solutions"
+        header="Fulcrum Software Solutions"
         subheader="Desgin Your Dream Website "
       />
-      <Container className="layout">
+      <Container className="layout Problem-Statement-Text">
         <div></div>
         <SectionTitle title="Problem Statment" style="Problem_Statment" />
-
-        <Text
-          text=" Commodo labore consequat sunt proident fugiat proident dolore eiusmod
-        commodo cupidatat est ipsum voluptate mollit voluptate laborum mollit
-        pariatur occaecat. Amet quis Lorem labore deserunt exercitation anim
-        sunt quis velit sunt. In dolor ex est esse laboris voluptate non eiusmod
-        ut. Commodo minim aute tempor officia nulla enim cupidatat ullamco quis
-        labore do ex sint laborum qui. Sint duis laboris id ea labore aliqua non
-        nisi sint aute minim fugiat mollit. Ut irure ex ea enim minim
-        consectetur nostrud nulla eiusmod consectetur enim. Est adipisicing
-        eiusmod qui adipisicing dolore ea elit consectetur non quis adipisicing.
-        Elit aliqua laborum veniam id elit nulla est anim eiusmod ut non et.
-        Laboris proident excepteur est laboris quis sit nisi ullamco quis sunt
-        et id laboris occaecat non eiusmod ad qui sunt. Laboris minim
-        reprehenderit non incididunt aute commodo non aliqua ea qui pariatur ut
-        sint adipisicing est incididunt amet irure ut. Do voluptate aliqua non
-        labore. Incididunt dolor do veniam velit duis exercitation quis veniam
-        aute non adipisicing ipsum dolor laboris voluptate pariatur dolore. Anim
-        nisi quis pariatur quis reprehenderit officia eiusmod reprehenderit
-        adipisicing nisi et in ut cupidatat tempor. Amet elit proident nostrud
-        culpa do duis quis in ex pariatur duis."
-        />
-
+        <p>
+          I started to do freelancing but typically found that customers where
+          after a busssiness to work with not, just some guy named Matt. I
+          needed a better way to advertise myself and promote my work"
+        </p>
         <SectionTitle
           title="How I Helped Solve The Issue"
           style="Problem_Statment"
         />
-        <Text
-          text=" Commodo labore consequat sunt proident fugiat proident dolore eiusmod
-        commodo cupidatat est ipsum voluptate mollit voluptate laborum mollit
-        pariatur occaecat. Amet quis Lorem labore deserunt exercitation anim
-        sunt quis velit sunt. In dolor ex est esse laboris voluptate non eiusmod
-        ut. Commodo minim aute tempor officia nulla enim cupidatat ullamco quis
-        labore do ex sint laborum qui. Sint duis laboris id ea labore aliqua non
-        nisi sint aute minim fugiat mollit. Ut irure ex ea enim minim
-        consectetur nostrud nulla eiusmod consectetur enim. Est adipisicing
-        eiusmod qui adipisicing dolore ea elit consectetur non quis adipisicing.
-        Elit aliqua laborum veniam id elit nulla est anim eiusmod ut non et.
-        Laboris proident excepteur est laboris quis sit nisi ullamco quis sunt
-        et id laboris occaecat non eiusmod ad qui sunt. Laboris minim
-        reprehenderit non incididunt aute commodo non aliqua ea qui pariatur ut
-        sint adipisicing est incididunt amet irure ut. Do voluptate aliqua non
-        labore. Incididunt dolor do veniam velit duis exercitation quis veniam
-        aute non adipisicing ipsum dolor laboris voluptate pariatur dolore. Anim
-        nisi quis pariatur quis reprehenderit officia eiusmod reprehenderit
-        adipisicing nisi et in ut cupidatat tempor. Amet elit proident nostrud
-        culpa do duis quis in ex pariatur duis."
-        />
+        <p>
+          I created Fulcrum Software Solutions to help get more freelancing
+          opportunities.
+        </p>
+        <p>
+          I built Fulcrums website with React and hooked the form up using
+          Email.JS
+        </p>
+        <p>
+          Currently the website is just a single page with a list of things we
+          can do for you, I plan to completly rebuild this webpage at some stage
+          to have a lot more functionallity with it's own blog and portfolio
+          section.
+        </p>
+        You can check out Fulcrum Software Solutions{" "}
+        <a href="https://fulcrumsoftwaresolutions.com.au/" target="_blank">
+          here
+        </a>
       </Container>
     </div>
   );
