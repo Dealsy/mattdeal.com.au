@@ -29,7 +29,7 @@ export default function Cards() {
           <p className="La_card-title"> LA Neon Events </p>
           <p className="card-body">
             LA Neon Events is a Ecommerce website, that sell Neon lights, this
-            site is built fully with React and uses Storyblok as a Headless CMS
+            site is built fully with React and uses Storyblok as a Headless CMS.
           </p>
           <Link prefetch="render" to="/laneon" className="La_button">
             Learn More
