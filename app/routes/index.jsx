@@ -1,4 +1,4 @@
-import PhonePlaceHolder from "../../public/assets/images/Frame_5.svg";
+import PhonePlaceHolder from "../../public/assets/images/devices_1.svg";
 import MainButton from "~/components/button/main_button";
 import { Container, Row, Col } from "react-bootstrap";
 import Cards from "../components/Cards/Cards";
@@ -17,7 +17,7 @@ export default function Home() {
 
         <Container className="TopContainer">
           <Row>
-            <Col md={7}>
+            <Col md={5}>
               <div>
                 <div className="Responsive-Container">
                   <h1 className="topHeader">
