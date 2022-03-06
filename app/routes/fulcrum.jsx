@@ -57,6 +57,7 @@ export default function Fulcrom() {
         <a href="https://fulcrumsoftwaresolutions.com.au/" target="_blank">
           here
         </a>
+        <SectionTitle title="Technologies Used" style="Problem_Statment_Tech" />
       </Container>
     </div>
   );
