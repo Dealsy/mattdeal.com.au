@@ -187,9 +187,11 @@ export default function Protekt() {
           and bam, you can see the route you took. It's also handy if you need
           to see where a work vehicle was a month ago.
         </p>
-        <Alert variant="info">
-          Pro-tekt keeps up to 12 months of past data for you to dive through.
-        </Alert>
+        <div>
+          <Alert variant="info">
+            Pro-tekt keeps up to 12 months of past data for you to dive through.
+          </Alert>
+        </div>
         <SectionTitle title="Conculsion" style="Problem_Statment" />
         <p>
           Pro-Tekt is an asset tracking device that you can place onto just

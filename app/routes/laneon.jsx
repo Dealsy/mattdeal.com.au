@@ -37,7 +37,7 @@ export default function LaNeon() {
   const FirebaseIcon = <SiFirebase />;
   const Arrow = <FaArrowLeft />;
   return (
-    <div className="La_Nav">
+    <div>
       <nav className="LA_Nav">
         <Link className="La-home" to="/">
           <button className="La_Button_style ">

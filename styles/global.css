@@ -251,6 +251,7 @@ h3 {
   text-decoration: none;
   align-items: flex-end;
   justify-content: space-between;
+
 }
 
 .navbar1 ul {
@@ -771,14 +772,20 @@ h3 {
 
 .Project_Nav {
   background-color: #000;
+  position: sticky;
+  top: 0;
+
 }
 
 .La_Nav {
   background-color: #fbe2e1;
+
 }
 
 .Ful_Nav {
   background-color: #5c02cc;
+  position: sticky;
+  top: 0;
 }
 
 .button_Style {
@@ -917,6 +924,8 @@ h3 {
 
 .LA_Nav {
   background-color: #fbe2e1;
+  position: sticky;
+  top: 0;
 }
 
 .Fulcrum-arrow {
@@ -1088,7 +1097,7 @@ h3 {
 
 
 .layout {
-  padding-bottom: 10rem;
+  padding-bottom: 4.8rem;
 }
 
 .flex-text {
