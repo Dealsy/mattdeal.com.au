@@ -17,7 +17,7 @@ export default function Home() {
 
         <Container className="TopContainer">
           <Row>
-            <Col md={5}>
+            <Col md={2}>
               <div>
                 <div className="Responsive-Container">
                   <h1 className="topHeader">
