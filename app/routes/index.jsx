@@ -3,6 +3,7 @@ import MainButton from "~/components/button/main_button";
 import { Container, Row, Col } from "react-bootstrap";
 import Cards from "../components/Cards/Cards";
 import About from "../components/About/About";
+import TechStack from "../components/TechStack/TechStack";
 import Contact from "../components/Contact/Contact";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import Nav from "../components/Nav/nav";
@@ -45,6 +46,9 @@ export default function Home() {
       <div className="backgroundStripe2">
         <Container id="projects">
           <Cards />
+        </Container>
+        <Container>
+          <TechStack />
         </Container>
         <Container id="about">
           <About />

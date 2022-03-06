@@ -13,6 +13,7 @@ import {
   SiFirebase,
 } from "react-icons/si";
 import { FaStripe, FaReact, FaCss3Alt } from "react-icons/fa";
+
 import LALogo from "../../public/assets/images/lalogo.jpg";
 import Instagram from "../../public/assets/images/Instagram.png";
 import Featured from "../../public/assets/images/featured.png";
@@ -36,6 +37,7 @@ export default function LaNeon() {
   const NetlifyIcon = <SiNetlify />;
   const FirebaseIcon = <SiFirebase />;
   const Arrow = <FaArrowLeft />;
+
   return (
     <div>
       <nav className="LA_Nav">

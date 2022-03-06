@@ -4,7 +4,7 @@ import SectionTitle from "../Sections/Section_Title/Section-title";
 
 export default function Cards() {
   return (
-    <Row>
+    <Row style={{ marginBottom: "5rem" }}>
       <SectionTitle
         style="Section-Title-Header"
         title="Projects"

@@ -138,11 +138,11 @@ h3 {
   width: 60ch;
   color: var(--content);
   line-height: 1.7rem;
-  padding: 5px;
-  justify-content: center;
+  padding: 0.7rem;
   font-family: var(--Roboto);
-  text-align: center;
+  text-align: left;
   margin: auto;
+  font-size: 1.3rem;
 }
 
 .About-content.a {
@@ -1076,6 +1076,12 @@ h3 {
 
 }
 
+.Tech_div_Index {
+  padding-bottom: 5rem;
+  padding-top: 1rem;
+}
+
+
 .Problem_Statment_Event {
   font-size: 1.8rem;
   color: rgb(83, 81, 81);
@@ -1289,4 +1295,14 @@ h3 {
 
 .Python {
   color: #3674a9;
+}
+
+.HTML {
+  color: #f16529;
+}
+
+.Remix {
+  width: 4.5rem;
+  max-height: 4rem;
+  margin-top: 1rem;
 }
