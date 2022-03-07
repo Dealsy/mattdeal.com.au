@@ -9,6 +9,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import Nav from "../components/Nav/nav";
 import MobileNav from "../components/Nav/mobileNav";
 import Fade from "react-reveal/Fade";
+import Rotate from "react-reveal/Rotate";
 
 export default function Home() {
   return (
@@ -38,9 +39,9 @@ export default function Home() {
 
               <div>
                 <AnchorLink href="#projects">
-                  <Fade big>
+                  <Rotate bottom left>
                     <MainButton children="Learn More" />
-                  </Fade>
+                  </Rotate>
                 </AnchorLink>
               </div>
             </Col>
@@ -61,12 +62,16 @@ export default function Home() {
         <Container>
           <TechStack />
         </Container>
-        <Container id="about">
-          <About />
-        </Container>
-        <div id="contact">
-          <Contact />
-        </div>
+        <Fade bottom>
+          <Container id="about">
+            <About />
+          </Container>
+        </Fade>
+        <Fade bottom>
+          <div id="contact">
+            <Contact />
+          </div>
+        </Fade>
       </div>
     </div>
   );

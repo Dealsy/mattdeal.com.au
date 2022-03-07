@@ -192,7 +192,7 @@ export default function Protekt() {
             Pro-tekt keeps up to 12 months of past data for you to dive through.
           </Alert>
         </div>
-        <SectionTitle title="Conculsion" style="Problem_Statment" />
+        <SectionTitle title="Conclusion" style="Problem_Statment" />
         <p>
           Pro-Tekt is an asset tracking device that you can place onto just
           about anything with a power source and track it for peace of mind.

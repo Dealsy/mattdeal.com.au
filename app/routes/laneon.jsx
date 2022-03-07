@@ -281,7 +281,7 @@ export default function LaNeon() {
             Here
           </a>
         </p>
-        <SectionTitle title="Conculsion" style="Problem_Statment" />
+        <SectionTitle title="Conclusion" style="Problem_Statment" />
         <p>
           {" "}
           LA Neon events is a Ecommerce site that sells Neon Signage, and allows
