@@ -1,4 +1,5 @@
 import Banner from "../components/Sections/Banner/banner.jsx";
+import Footer from "~/components/Footer/Footer";
 import SectionTitle from "~/components/Sections/Section_Title/Section-title.jsx";
 import { Link } from "remix";
 import Tech from "../components/Technologies/Technologies";
@@ -292,6 +293,7 @@ export default function LaNeon() {
           headless CMS
         </p>
       </Container>
+      <Footer />
     </div>
   );
 }

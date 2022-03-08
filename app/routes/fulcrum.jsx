@@ -1,4 +1,5 @@
 import Banner from "../components/Sections/Banner/banner.jsx";
+import Footer from "~/components/Footer/Footer";
 import SectionTitle from "~/components/Sections/Section_Title/Section-title.jsx";
 import { Link } from "remix";
 import { Container } from "react-bootstrap";
@@ -59,6 +60,7 @@ export default function Fulcrom() {
         </a>
         {/* <SectionTitle title="Technologies Used" style="Problem_Statment_Tech" /> */}
       </Container>
+      <Footer />
     </div>
   );
 }

@@ -18,7 +18,7 @@ export default function About() {
         <p>
           I am mainly a React Developer who actually loves CSS! I love all
           things web development related and just can't get enough of that
-          feeling you get when you fianlly get that project done, or even that
+          feeling you get when you finally get that project done, or even that
           one part of the project that's been a bit of a pain, and now it's
           compelete and you get a great sense of satisfaction.
         </p>

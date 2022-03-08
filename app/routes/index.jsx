@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Cards from "../components/Cards/Cards";
 import About from "../components/About/About";
 import TechStack from "../components/TechStack/TechStack";
-import Contact from "../components/Contact/Contact";
+import Footer from "../components/Footer/Footer";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import Nav from "../components/Nav/nav";
 import MobileNav from "../components/Nav/mobileNav";
@@ -69,7 +69,7 @@ export default function Home() {
         </Fade>
         <Fade bottom>
           <div id="contact">
-            <Contact />
+            <Footer />
           </div>
         </Fade>
       </div>

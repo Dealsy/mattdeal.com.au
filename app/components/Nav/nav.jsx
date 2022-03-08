@@ -25,8 +25,7 @@ export default function Nav() {
             <Link to="#contact">Contact</Link>
           </li>
         </ul>
-      </Fade>
-      <Fade right big>
+
         <div className="SocialBackground">
           <SocialIcon
             className="Twittersocials "

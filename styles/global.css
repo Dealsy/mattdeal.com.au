@@ -15,7 +15,8 @@
   --Roboto: 'Roboto', sans-serif;
   --Alfa: 'Alfa Slab One', cursive;
   --Main_Button: rgb(238, 151, 166);
-  --content: rgb(129, 129, 129)
+  --content: rgb(129, 129, 129);
+  --shadow: 2px 2px 2px #bcbcbcad;
 }
 
 
@@ -194,16 +195,12 @@ h3 {
 
   }
 
-}
-
-
-
-@media (max-width: 1000px) {
   .PhoneImage {
     display: none;
   }
 
 }
+
 
 
 .backgroundStripe {
@@ -377,25 +374,20 @@ h3 {
 
 
 .myForm {
-  display: flex;
-  width: 90%;
-  margin: auto;
-  background-color: #fff;
-  border-radius: 3px;
+  width: 30rem;
+  margin-right: 25rem;
+  background: #fff;
+  border-radius: 10px;
   border: 2px solid #bcbcbcad;
   box-shadow: 2px 2px 2px #bcbcbcad;
   padding: 1.8em;
   font-size: 1.2rem;
 }
 
-
 .message {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-grow: 1;
   order: 2;
-  width: 70%;
+  margin: auto;
+  border-right: #bcbcbcad solid;
 }
 
 .message>textarea {
@@ -404,16 +396,58 @@ h3 {
 }
 
 .contact {
-  padding-left: 6.8rem;
-  padding-top: 1.8rem;
-  border: 0;
-  width: 50%;
+  margin: auto;
+  width: 32rem;
   order: 1;
-  margin-right: 0.5rem;
-  flex-grow: -1;
+
 }
 
+.contact-Button {
+  margin: auto;
+  width: 50%;
+}
 
+.flex-contact {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: auto;
+  margin-top: 5rem;
+  padding: 3rem;
+
+}
+
+.footer-text {
+  font-family: var(--Roboto);
+  font-size: 1rem;
+  line-height: 1.8rem;
+  margin-left: 10rem;
+}
+
+.Footer-Link {
+  text-decoration: none;
+  color: var(--content);
+  font-weight: 700;
+
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-info {
+  padding: 2rem;
+  padding-right: 5rem;
+  margin: auto;
+  font-family: var(--content);
+  font-size: 1rem;
+  line-height: 1.8rem;
+}
+
+.Footer-center-text {
+  text-align: center;
+  width: 25rem;
+}
 
 .contact input {
   width: 80%;
@@ -692,7 +726,7 @@ h3 {
   align-content: center;
   color: #0d0d0e;
   font-size: 1.2rem;
-  background-color: #fff;
+  background-color: rgb(248, 248, 248);
   padding: 1.5rem;
 }
 
@@ -730,7 +764,7 @@ h3 {
 
 .Post-background {
   min-height: 100rem;
-  background: linear-gradient(to bottom right, #e4e4e4 50%, #818cf8 30%);
+  background: #818cf8;
 }
 
 .codeBackground {

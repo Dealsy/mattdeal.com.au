@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap";
 import { FaArrowLeft } from "react-icons/fa";
 import Card from "react-bootstrap/Card";
 import BackButton from "../../components/button/backButton";
+import Footer from "../../components/Footer/Footer";
 import SectionTitle from "../../components/Sections/Section_Title/Section-title";
 const GetPostsQuery = gql`
   {
@@ -82,6 +83,7 @@ export default function Blog() {
           )}
         </div>
       </Container>
+      <Footer />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { useLoaderData, json, Link } from "remix";
 import { GraphQLClient, gql } from "graphql-request";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import BackButton from "../../components/button/backButton";
+import Footer from "~/components/Footer/Footer";
 import { FaArrowLeft } from "react-icons/fa";
 import { useEffect } from "react";
 // import Markdown from "markdown-to-jsx";
@@ -74,6 +75,7 @@ export default function ProductPage() {
         </div>
         ;{/* </Markdown> */}
       </div>
+      <Footer />
     </div>
   );
 }

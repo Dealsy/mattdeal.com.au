@@ -1,4 +1,5 @@
 import Banner from "../components/Sections/Banner/banner.jsx";
+import Footer from "~/components/Footer/Footer";
 import { Link } from "remix";
 import Logo from "../../public/assets/images/logo.png";
 import PCs from "../../public/assets/images/pcs.jpg";
@@ -236,6 +237,7 @@ export default function Protekt() {
           today to grab your tracker!
         </p>
       </Container>
+      <Footer />
     </div>
   );
 }
