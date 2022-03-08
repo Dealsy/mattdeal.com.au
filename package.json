@@ -9,6 +9,7 @@
     "postinstall": "remix setup node"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.4.0",
     "@graphcms/rich-text-react-renderer": "^0.4.2",
     "@netlify/functions": "^0.10.0",
     "@remix-run/netlify": "^1.1.3",

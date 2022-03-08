@@ -1,10 +1,38 @@
+import { useState, useRef } from "react";
 import { Form, Link } from "remix";
 import MainButton from "../button/main_button";
 import SectionTitle from "../Sections/Section_Title/Section-title";
 import { SiMinutemailer } from "react-icons/si";
 import { MdOutlinePhoneIphone } from "react-icons/md";
+import emailjs from "@emailjs/browser";
 
 export default function Footer() {
+  const [data, setData] = useState([]);
+  const [error, setError] = useState([]);
+  const form = useRef();
+
+  function sendEmail(e) {
+    e.preventDefault();
+    // remove user ID when testing
+    emailjs
+      .sendForm(
+        "service_laihw1g",
+        "template_8d7hq2j",
+        form.current,
+        "user_d26VhSs3DYJc5NEo7CNfY"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setData(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+          setError(error);
+        }
+      );
+  }
+
   return (
     <div className="backgroundStripe3">
       <div className="flex-contact">
@@ -34,16 +62,30 @@ export default function Footer() {
           </div>
         </div>
 
-        <Form id="#contact" className="myForm">
+        <Form ref={form} onSubmit={sendEmail} id="#contact" className="myForm">
           <SectionTitle
             style="Section-Title-Header"
             title="Reach Out"
             subtitle="Lets chat about your web needs"
           />
           <div className="contact">
-            <input placeholder="Your Name" type="text" id="name" />
+            <input
+              name="user_name"
+              placeholder="Your Name"
+              type="text"
+              id="name"
+              required
+              minLength={3}
+            />
 
-            <input placeholder="Email" type="email" id="email" />
+            <input
+              name="user_email"
+              placeholder="Email"
+              type="email"
+              id="email"
+              required
+              minLength={3}
+            />
 
             <div className="img_message">
               <textarea
@@ -51,6 +93,8 @@ export default function Footer() {
                 className="messageBox"
                 placeholder="Message"
                 id="msg"
+                name="message"
+                required
               ></textarea>
             </div>
             <div className="contact-Button">
