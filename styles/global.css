@@ -375,7 +375,7 @@ h3 {
 
 .myForm {
   width: 30rem;
-  margin-right: 20rem;
+  margin-right: 25rem;
   background: #fff;
   border-radius: 10px;
   border: 2px solid #bcbcbcad;
@@ -437,10 +437,10 @@ h3 {
 
 .footer-info {
   padding: 2rem;
-  padding-right: 10rem;
+  padding-right: 5rem;
   margin: auto;
   font-family: var(--content);
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.8rem;
 }
 
@@ -1339,4 +1339,12 @@ h3 {
   width: 4.5rem;
   max-height: 4rem;
   margin-top: 1rem;
+}
+
+.Mail {
+  color: #818cf8;
+}
+
+.Phone {
+  color: var(--Main_Button);
 }

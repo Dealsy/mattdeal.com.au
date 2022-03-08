@@ -1,7 +1,10 @@
 import { Form, Link } from "remix";
 import MainButton from "../button/main_button";
 import SectionTitle from "../Sections/Section_Title/Section-title";
+import { SiMinutemailer } from "react-icons/si";
+import { MdOutlinePhoneIphone } from "react-icons/md";
 import Image from "../../../public/assets/images/home-2-img.png";
+import { Container } from "react-bootstrap";
 
 export default function Footer() {
   return (
@@ -60,11 +63,11 @@ export default function Footer() {
         <div className="footer-info">
           <div>
             {" "}
-            <b>Phone Number:</b> 0400 640 639{" "}
+            <SiMinutemailer className="Mail" /> 0400 640 639{" "}
           </div>
           <div>
             {" "}
-            <b>Email:</b> contact@mattdeal.com.au{" "}
+            <MdOutlinePhoneIphone className="Phone" /> contact@mattdeal.com.au{" "}
           </div>
         </div>
       </div>
