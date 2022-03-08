@@ -375,7 +375,7 @@ h3 {
 
 .myForm {
   width: 30rem;
-  margin-right: 25rem;
+  margin-right: 20rem;
   background: #fff;
   border-radius: 10px;
   border: 2px solid #bcbcbcad;
@@ -437,7 +437,7 @@ h3 {
 
 .footer-info {
   padding: 2rem;
-  padding-right: 5rem;
+  padding-right: 10rem;
   margin: auto;
   font-family: var(--content);
   font-size: 1rem;

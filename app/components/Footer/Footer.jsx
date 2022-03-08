@@ -60,7 +60,7 @@ export default function Footer() {
         <div className="footer-info">
           <div>
             {" "}
-            <b>Phone Number:</b> 0400640639{" "}
+            <b>Phone Number:</b> 0400 640 639{" "}
           </div>
           <div>
             {" "}
