@@ -1286,6 +1286,13 @@ h3 {
   font-size: 3.5rem;
 }
 
+@media (max-width: 1000px) {
+  .tech-flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 .React {
   color: #5ed3f3;
 

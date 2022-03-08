@@ -69,11 +69,7 @@ export default function Protekt() {
             depending on which device you get."
           </p>
         </div>
-        <p>
-          I was given the role of the Lead Frontend Developer for this job, and
-          was responsible for building out the UI/UX and design of the business
-          app called the fleet screen
-        </p>
+
         <SectionTitle title="Technologies Used" style="Problem_Statment_Tech" />
         <div className="tech-flex Tech_div">
           <div className="Python">{Python}</div>
