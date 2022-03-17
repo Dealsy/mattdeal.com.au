@@ -1,7 +1,7 @@
 import Banner from "../components/Sections/Banner/banner.jsx";
 import Footer from "~/components/Footer/Footer";
 import SectionTitle from "~/components/Sections/Section_Title/Section-title.jsx";
-import { Link } from "remix";
+import ProjectsNav from "../components/Nav/projectsNav";
 import Tech from "../components/Technologies/Technologies";
 import { Container } from "react-bootstrap";
 import {
@@ -24,7 +24,6 @@ import Product from "../../public/assets/images/product.png";
 import Cart from "../../public/assets/images/Cart.png";
 import Checkout from "../../public/assets/images/Checkout.png";
 import Custom from "../../public/assets/images/Custom.png";
-import { FaArrowLeft } from "react-icons/fa";
 
 export default function LaNeon() {
   const ReactIcon = <FaReact />;
@@ -37,20 +36,18 @@ export default function LaNeon() {
   const StripeIcon = <FaStripe />;
   const NetlifyIcon = <SiNetlify />;
   const FirebaseIcon = <SiFirebase />;
-  const Arrow = <FaArrowLeft />;
 
   return (
     <div>
-      <nav className="LA_Nav">
-        <Link className="La-home" to="/">
-          <button className="La_Button_style ">
-            <div className="flex-Button">
-              <div className="ArrowSpace">{Arrow}</div>
-              <div>Home</div>
-            </div>
-          </button>
-        </Link>
-      </nav>
+      <ProjectsNav
+        Style="LA_Nav"
+        url="/"
+        btn="Labtn"
+        content="Home"
+        Blogcontent="Blog"
+        Blogbtn="LaBlogButton"
+      />
+
       <Banner
         subheaderCss="subheader_LA"
         headerCss="header_LA"
@@ -63,45 +60,47 @@ export default function LaNeon() {
         <div></div>
         <SectionTitle title="Problem Statment" style="Problem_Statment" />
         <p>
-          LA Neon Events is an Ecommerce website that sells Neon Signage and
-          event Baloons and is owned and operated by La-Shea and her Dad Adrian.
+          LA Neon Events is a creative Ecommerce business owned and operated by
+          La-Shea and her father Adrian. The company designs and supplies neon
+          signage and event balloons tailored to your event, be it a new product
+          launch, rebranding, grand opening, corporate or private function.
         </p>
         <div className="flex-text">
           <img className="LaLogo" src={LALogo}></img>
 
           <p>
-            La-Shea and Adrian have being using Facebook and Instagram to
-            advertise and sell their products, this was working at the start of
-            the business, But now as time has gone on La-Shea has discovered
-            that it is to hard to keep up with customer orders through these
-            soical media platforms.
+            In the beginning the owners were using Facebook and Instagram as
+            advertising platforms to promote their business and get their name
+            and products out into the marketplace. This worked quite well
+            initially however as time progressed it became obvious to La-Shea
+            that using these platforms made it increasingly difficult to stay
+            abreast and keep track of customer orders
           </p>
         </div>
         <p>
-          She started to lose business as people were never locked into buying
-          something and would often just stop replying over messenger, on top of
-          that she had to handle every customer request, right down to someone
-          just wanting to buy one of the pre made Neon signs
+          The company started to lose business using this model as people were
+          not locked into making or completing a purchase and would often just
+          stop replying over messenger when La Shae followed up. Added to this
+          she had to physically respond to every customer request, even if it
+          was just an enquiry to buy one of their pre made Neon signs
         </p>
         <SectionTitle
           title="How I Helped Solve The Issue"
           style="Problem_Statment"
         />
+        <p>LA Neon Events was my first major web app as a freelancer</p>
         <p>
-          LA Neon Events was my first major web app as a freelancer, I happened
-          to see that La-Shea had posted in a facebook resdiancey page, that she
-          was after a web developer
-        </p>
-        <p>
-          I thought I would just reach out, explain who I was and see if I could
-          get the job, Luckly for me La-Shea was kind enough to give me this
-          role and so I began the proccess of building the site.
+          I happened to see that La-Shea had posted in a Facebook residency page
+          she was looking for a web developer so I thought I would reach out,
+          explain who I was and see if they would give me the opportunity to
+          build their Ecommerce site. Luckily for me La-Shea was kind enough to
+          grant me the role and thus I began the building process.
         </p>
         <p>
           {" "}
           I built LA Neon Events from the ground up with only a very basic
-          knowdlege of Ecommerce sites, as typically in the past, I had worked
-          on landing pages or web apps but never Ecommerce.
+          knowledge of Ecommerce sites, as typically in the past I had worked on
+          landing pages or web apps. This was my first Ecommerce project.
         </p>
         <SectionTitle title="Technologies Used" style="Problem_Statment_Tech" />
         <div className="Tech_div">
@@ -130,9 +129,10 @@ export default function LaNeon() {
           Event hire.
         </p>
         <p>
-          In this section, I will run over the core features ofLA Neon Events
-          and what they do, you can visit the official site for more information
-          and to purchase a Neon Light for yourself by clicking this link{" "}
+          In this section, I will give an overview of the core features of LA
+          Neon Events and what they do. You can also visit their official site
+          for more information or to purchase a Neon Light for yourself by
+          clicking this link :{" "}
           <a
             className="Pro-Tekt-Link"
             href="https://epic-shirley.netlify.app/"
@@ -168,31 +168,34 @@ export default function LaNeon() {
         </div>
         <p>
           {" "}
-          The Call to action banner will take the user straight to the shop, and
-          hopefully inspire an implus buy
+          The Call To Action banner will take the user straight to the shop, and
+          hopefully inspire an impulse buy
         </p>
         <p>
           {" "}
-          The Featured Products section is an oppurtunity for the user to
-          impluse buy one of the Featured products, These products are the best
-          sellers and this should create more sales for La-Shea{" "}
+          The Featured Products section creates an opportunity for the user to
+          impulse buy one of the featured products. These product in this
+          section are the best sellers and thus should create more sales for
+          La-Shea{" "}
         </p>
         <p>
           {" "}
-          The instagram section is purley to show off LA Neon Events products,
-          and its a great way for users to see what they will be buying
+          The Instagram section is purely to showcase LA Neon Events’ products,
+          and its a great way for users to see what they will be buying or to
+          mimic or duplicate the creative events featured.
         </p>
         <SectionTitle title="Shop Page" style="Problem_Statment_map" />
         <p>
           {" "}
-          The shop page is where the user can find all of the items for sale,
-          there is a search field and a search by category field as well.
+          The shop page is where the user will find all of the items for sale,
+          or they can refine their search by using the built in ‘search’ field
+          or the ‘search by category’ field on this page.
         </p>
         <img className="Instagram" src={Shop}></img>
         <SectionTitle title="Product Page" style="Problem_Statment_map" />
         <p>
           The Product page displays information about the product that the user
-          has selected, from here they can see a:
+          has selected. For each product they will see:
         </p>
         <div className="flex-image-left">
           <img className="Product" src={Product}></img>
@@ -220,17 +223,17 @@ export default function LaNeon() {
           <img className="Cart" src={Cart}></img>
           <p>
             Snipcart provide a fully fleshed out and functional cart experience
-            for our users to just open up and start using, and the nice thing is
-            for developers, all we need to do is reffrence some ID classes on
-            the prodcuts that we want to be able to add to the cart, so when a
-            user hits add to cart, snipcart looks at that ID and then can add
-            the item straight into the cart.
+            for customers to just open up and start using. An added bonus here
+            is for developers - all we need to do is reference some ID classes
+            on the products that we want to add to the cart, so when a user hits
+            add to cart, Snipcart looks at that ID and adds the item straight
+            into the cart.
           </p>
         </div>
         <p>
           {" "}
-          Snipcart also allows us to have custom fields, In the case of LA Neon
-          Events, There are some products that require fields for more
+          Snipcart also allows us to have custom fields. In the case of LA Neon
+          Events, there are some products that require fields for more
           information, such as a name, colour or size of the object
         </p>
         <div className="flex-image-left">
@@ -238,9 +241,9 @@ export default function LaNeon() {
           <p>
             {" "}
             Snipcart doesn't just give us a cart, it also handles the full
-            checkout proccess, from entering all of your details like name.
-            address etc, to taking payment from the user, and even sending them
-            an invoice once the transaction is completed.{" "}
+            checkout process, from the customer entering all their details like
+            name. address etc, to then taking payment from the user, and even
+            sending them an invoice once the transaction is completed.{" "}
           </p>
         </div>
         <SectionTitle title="Custom Neons" style="Problem_Statment_map" />
@@ -248,33 +251,34 @@ export default function LaNeon() {
         <div className="flex-image-right">
           <img className="Custom" src={Custom}></img>
           <p>
-            I went and built a screen that allows the user to interact with,
-            which allows them to choose a name and a color with a background to
-            get a good idea of what it is that they will be buying
+            I went and built a screen which was interactive with the user. This
+            allows them to choose a name, a color, and a background which gives
+            the customer a good idea of what they are purchasing.
           </p>
         </div>
         <p>
-          Once the user has created their sign, they can submit the form and
-          La-Shea will receive an email with all of the details to get that
-          ready to ship.
+          Once the user has created their sign they then submit the form. From
+          here La-Shea will receive an email with all the order details, which
+          she can then process and get ready to ship.
         </p>
         <SectionTitle title="Storyblok" style="Problem_Statment_map" />
+        <p> The last section is Stroyblok.</p>
         <p>
-          {" "}
-          The Last section is Stroyblok, Storyblok is the main thing driving
-          this website, it is a Headless CMS which allows La-Shea to upload all
-          of her products, and update all of her content on the website, without
-          having to come back to me every time she wants to make a change
+          Storyblok is the driving force for this website. It’s a Headless CMS
+          which allows La-Shea to upload all of her products and update all of
+          her content on the website, without having to refer to me every time
+          she needs to make a change.
         </p>
         <p>
+          {" "}
           The way it works is, I call the Storyblok API and then render the
           products out in a map function.
         </p>
         <p>
-          {" "}
-          Then if La-Shea opens up the Storyblok management screen, she can add,
-          remove or update a product or any content on the page, and it will
-          automatically appear on the screen for her users to see, like magic!
+          Then, if La-Shea opens up the Storyblok management screen, she can
+          add, remove or update a product or any content on the page, and it
+          will automatically appear on the screen for her users to see, like
+          magic!
         </p>
         <p>
           You can checkout Stroyblok{" "}
@@ -285,12 +289,12 @@ export default function LaNeon() {
         <SectionTitle title="Conclusion" style="Problem_Statment" />
         <p>
           {" "}
-          LA Neon events is a Ecommerce site that sells Neon Signage, and allows
-          customers to build out there own custom signs.
+          LA Neon Events is a Ecommerce site that sells Neon Signage, and allows
+          customers to build their own custom signs.
         </p>
         <p>
-          Which is built on React.JS utilising Snipcart and Stroyblok as a
-          headless CMS
+          The site is built using React.JS and incorporates Snipcart and
+          Stroyblok as a headless CMS
         </p>
       </Container>
       <Footer />

@@ -270,6 +270,17 @@ h3 {
   text-decoration: none;
 }
 
+@media screen and (min-width: 3000px) {
+  .navbar1 {
+    background-color: #818cf8;
+    width: 150rem;
+  }
+
+  .navbar1 ul li a {
+    font-size: 2rem;
+  }
+}
+
 @media (min-width: 2200) {
   .navbar1 {
     width: 90rem;
@@ -281,8 +292,10 @@ h3 {
     text-decoration: none;
     align-items: flex-end;
     justify-content: space-between;
-
   }
+
+
+
 
   .navbar1 ul {
     display: flex;
@@ -495,6 +508,22 @@ h3 {
   100% {
     transform: translateY(-20px);
   }
+}
+
+@media screen and (min-width: 3000px) {
+  .footer-text {
+    margin-left: 50rem;
+  }
+
+  .myForm {
+    margin-right: 60rem;
+  }
+
+  .footer-info {
+    margin-right: 10rem;
+
+  }
+
 }
 
 @media (max-width: 1000px) {
@@ -806,6 +835,7 @@ h3 {
 
 .Project_Nav {
   background-color: #000;
+  padding: 0.5rem;
   position: sticky;
   top: 0;
 
@@ -813,25 +843,26 @@ h3 {
 
 .La_Nav {
   background-color: #fbe2e1;
+  padding: 0.5rem;
 
 }
 
 .Ful_Nav {
   background-color: #5c02cc;
+  padding: 0.5rem;
   position: sticky;
   top: 0;
 }
 
 .button_Style {
   text-decoration: none;
-  color: #000;
-  width: 8rem;
+  padding: 0.5rem;
+  color: black;
+  text-align: center;
   font-weight: 600;
-  font-size: 1rem;
-  margin: 1rem;
   font-family: var(--Roboto);
-  background-color: #3dd12e;
-  background: #3dd12e;
+  background-color: #3dd42f;
+  border: solid #3dd42f;
 }
 
 .button_Style:hover {
@@ -841,12 +872,71 @@ h3 {
   font-weight: 600;
   font-family: var(--Roboto);
   background-color: #42e92f;
+}
+
+.btnContent {
+  text-align: center;
+  margin: auto;
+}
+
+.BlogButton {
   text-decoration: none;
+  padding: 0.5rem;
+  width: 5rem;
+  margin-left: 1rem;
+  color: black;
+  text-align: center;
+  font-weight: 600;
+  font-family: var(--Roboto);
+  background-color: #3dd42f;
+  border: solid #3dd42f;
+}
+
+.BlogButton:hover {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  font-weight: 600;
+  font-family: var(--Roboto);
+  background-color: #42e92f;
+  border: solid #42e92f;
+}
+
+
+
+.Probtn {
+  text-decoration: none;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  color: black;
+  text-align: center;
+  font-weight: 600;
+  font-family: var(--Roboto);
+  background-color: #3dd42f;
+}
+
+.Probtn:hover {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  font-weight: 600;
+  font-family: var(--Roboto);
+  background-color: #42e92f;
+  border: solid #42e92f;
+}
+
+
+.projects-btn-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
 }
 
 .flex-Button {
   display: flex;
   flex-direction: row;
+
 }
 
 .Protekt-home {
@@ -856,53 +946,93 @@ h3 {
   font-family: var(--Roboto);
 }
 
-.La_Button_style {
+.LaBlogButton {
   text-decoration: none;
-  color: #fbe2e1;
-  width: 8rem;
+  padding: 0.5rem;
+  width: 5rem;
+  margin-left: 1rem;
+  color: #fff;
+  text-align: center;
   font-weight: 600;
-  font-size: 1rem;
-  margin: 1rem;
   font-family: var(--Roboto);
   background-color: #000;
+  border: solid #000;
 }
 
-.La_Button_style :hover {
+.LaBlogButton:hover {
   text-decoration: none;
   color: black;
   text-align: center;
   font-weight: 600;
   font-family: var(--Roboto);
   background-color: #fbeeee;
-  text-decoration: none;
+  border: solid #fbeeee;
 }
 
-.La-home {
-  padding-left: 1rem;
+.Labtn {
   text-decoration: none;
-  color: #fbe2e1;
-  font-family: var(--Roboto);
-}
-
-.Ful_Button_style {
-  text-decoration: none;
-  color: #8a4ad8;
-  width: 8rem;
-  font-weight: 600;
-  font-size: 1rem;
-  margin: 1rem;
-  font-family: var(--Roboto);
-  background-color: #000;
-}
-
-.Ful_Button_style :hover {
-  text-decoration: none;
-  color: #721dda;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  color: white;
   text-align: center;
   font-weight: 600;
   font-family: var(--Roboto);
   background-color: #000;
+  border: solid #000;
+}
+
+.Labtn:hover {
   text-decoration: none;
+  color: black;
+  text-align: center;
+  font-weight: 600;
+  font-family: var(--Roboto);
+  background-color: #fbeeee;
+  border: solid #fbeeee;
+}
+
+
+.Ful_Button_style {
+  text-decoration: none;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  font-family: var(--Roboto);
+  background-color: #000;
+}
+
+.Ful_Button_style:hover {
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  font-family: var(--Roboto);
+  background-color: #8a4ad8;
+  border: solid #8a4ad8;
+}
+
+.FulBlog {
+  text-decoration: none;
+  padding: 0.5rem;
+  width: 5rem;
+  margin-left: 1rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  font-family: var(--Roboto);
+  background-color: #000;
+}
+
+.FulBlog:hover {
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  font-family: var(--Roboto);
+  background-color: #8a4ad8;
+  border: solid #8a4ad8;
 }
 
 .flex-arrow {
@@ -912,7 +1042,7 @@ h3 {
 }
 
 .ArrowSpace {
-  padding-right: 1rem;
+  padding-right: 0.5rem;
 }
 
 
@@ -958,6 +1088,7 @@ h3 {
 
 .LA_Nav {
   background-color: #fbe2e1;
+  padding: 0.5rem;
   position: sticky;
   top: 0;
 }

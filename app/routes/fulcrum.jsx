@@ -1,26 +1,22 @@
 import Banner from "../components/Sections/Banner/banner.jsx";
 import Footer from "~/components/Footer/Footer";
+import ProjectsNav from "~/components/Nav/projectsNav.jsx";
 import SectionTitle from "~/components/Sections/Section_Title/Section-title.jsx";
 import { Link } from "remix";
 import { Container } from "react-bootstrap";
-import { FaArrowLeft } from "react-icons/fa";
 
 export default function Fulcrom() {
-  const Arrow = <FaArrowLeft />;
   return (
     <div>
-      <div className="Ful_Nav">
-        <nav className="Ful_Nav">
-          <Link className="La-home" to="/">
-            <button className="Ful_Button_style ">
-              <div className="flex-Button">
-                <div className="ArrowSpace">{Arrow}</div>
-                <div>Home</div>
-              </div>
-            </button>
-          </Link>
-        </nav>
-      </div>
+      <ProjectsNav
+        Style="Ful_Nav"
+        url="/"
+        btn="Ful_Button_style"
+        content="Home"
+        Blogcontent="Blog"
+        Blogbtn="FulBlog"
+      />
+
       <Banner
         subheaderCss="subheader_Fulcrum"
         headerCss="header_Fulcrum"
