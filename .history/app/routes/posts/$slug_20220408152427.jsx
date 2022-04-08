@@ -38,10 +38,11 @@ export default function ProductPage() {
     Prism.highlightAll();
   }, []);
   let data = useLoaderData();
+  console.log(data);
 
   // function to sort data by date
 
-  console.log("data".data);
+  console.log(data);
   const BackArrow = <FaArrowLeft />;
 
   return (

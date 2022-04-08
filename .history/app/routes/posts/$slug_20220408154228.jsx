@@ -39,6 +39,10 @@ export default function ProductPage() {
   }, []);
   let data = useLoaderData();
 
+  data.sort((a, b) => {
+    return a.posts.date - b.posts.date;
+  });
+
   // function to sort data by date
 
   console.log("data".data);
