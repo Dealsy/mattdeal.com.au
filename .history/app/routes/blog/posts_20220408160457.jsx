@@ -35,13 +35,13 @@ export let loader = async () => {
   posts.sort((a, b) => {
     return new Date(b.date) - new Date(a.date);
   });
-  return json({ posts });
 };
 
 export default function Blog() {
   const data = useLoaderData();
   const BackArrow = <FaArrowLeft />;
-  console.log(data);
+
+  // console.log("data", data);
   return (
     <div>
       <div className="blog-title-flex">
