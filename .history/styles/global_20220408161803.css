@@ -676,6 +676,7 @@ h3 {
   line-height: 1.5rem;
   font-style: italic;
   width: 35ch;
+
 }
 
 .blog-date {
@@ -703,7 +704,8 @@ h3 {
 }
 
 .blog-image {
-  width: 22.9rem;
+  width: 30rem;
+
 }
 
 
@@ -715,6 +717,7 @@ h3 {
     justify-content: center;
     align-items: center;
     align-content: center;
+
   }
 
   .Blog-main-container {

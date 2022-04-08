@@ -628,7 +628,7 @@ h3 {
   padding-bottom: .2rem;
   margin: 2rem;
   width: 23rem;
-  min-height: 35rem !important;
+  min-height: 25rem !important;
   transition: 500ms ease-in-out;
   box-shadow: 0 15px 10px #00000033;
 
@@ -676,6 +676,7 @@ h3 {
   line-height: 1.5rem;
   font-style: italic;
   width: 35ch;
+
 }
 
 .blog-date {
@@ -704,6 +705,7 @@ h3 {
 
 .blog-image {
   width: 22.9rem;
+
 }
 
 
@@ -715,6 +717,7 @@ h3 {
     justify-content: center;
     align-items: center;
     align-content: center;
+
   }
 
   .Blog-main-container {
