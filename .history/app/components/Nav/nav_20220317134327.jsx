@@ -17,7 +17,7 @@ export default function Nav() {
             <Link to="#about">About</Link>
           </li>
           <li>
-            <Link prefetch="render" to="/blog/posts">
+            <Link prefetch="intent" to="/blog/posts">
               Blog
             </Link>
           </li>

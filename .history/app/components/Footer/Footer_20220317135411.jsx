@@ -33,20 +33,6 @@ export default function Footer() {
       );
   }
 
-  // Get average runtime of successful runs in seconds
-  function averageRuntimeInSecond() {
-    let sum = 0;
-    let count = 0;
-    for (let i = 0; i < data.length; i++) {
-      if (data[i].runtime > 0) {
-        sum += data[i].runtime;
-        count++;
-      }
-    }
-    return sum / count;
-  }
-  console.log("average time", averageRuntimeInSecond());
-
   return (
     <div className="backgroundStripe3">
       <div className="flex-contact">

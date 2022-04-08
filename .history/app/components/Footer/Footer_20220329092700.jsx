@@ -34,7 +34,7 @@ export default function Footer() {
   }
 
   // Get average runtime of successful runs in seconds
-  function averageRuntimeInSecond() {
+  function averageRuntimeInSecond(sum, count) {
     let sum = 0;
     let count = 0;
     for (let i = 0; i < data.length; i++) {
@@ -45,7 +45,7 @@ export default function Footer() {
     }
     return sum / count;
   }
-  console.log("average time", averageRuntimeInSecond());
+  console.log("average time", averageRuntimeInSecond(sum / count));
 
   return (
     <div className="backgroundStripe3">

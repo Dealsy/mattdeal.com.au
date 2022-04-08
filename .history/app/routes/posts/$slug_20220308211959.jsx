@@ -5,6 +5,7 @@ import BackButton from "../../components/button/backButton";
 import Footer from "~/components/Footer/Footer";
 import { FaArrowLeft } from "react-icons/fa";
 import { useEffect } from "react";
+// import Markdown from "markdown-to-jsx";
 import Prism from "prismjs";
 
 const GetPostBySlug = gql`

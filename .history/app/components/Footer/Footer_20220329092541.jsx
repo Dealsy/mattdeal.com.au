@@ -45,7 +45,7 @@ export default function Footer() {
     }
     return sum / count;
   }
-  console.log("average time", averageRuntimeInSecond());
+  console.log(averageRuntimeInSecond(sum / count));
 
   return (
     <div className="backgroundStripe3">
