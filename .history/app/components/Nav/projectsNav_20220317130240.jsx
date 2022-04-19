@@ -14,7 +14,7 @@ export default function ProjectsNav(props) {
             </div>
           </button>
         </Link>
-        <Link className={props.LinkStyle} prefetch="render" to="/blog/posts">
+        <Link className={props.LinkStyle} prefetch="intent" to="/blog/posts">
           <button className={props.Blogbtn}>
             <div className="flex-Button">
               <div className="btnContent">{props.Blogcontent}</div>
