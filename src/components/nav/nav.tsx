@@ -6,15 +6,8 @@ import { Button } from '@/components/ui/button'
 import { Sun, Moon, Menu } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { useState, useEffect } from 'react'
-import { Links } from '@/contasnts'
+import { NavLinks } from '@/contasnts'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
-
-const NavLinks = [
-  { href: Links.Blog, label: 'Blog' },
-  { href: Links.Workshops, label: 'Workshops' },
-  { href: Links.Projects, label: 'Projects' },
-  { href: Links.Packages, label: 'Packages' },
-]
 
 export default function Nav() {
   const { theme, setTheme } = useTheme()
