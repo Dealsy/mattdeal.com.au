@@ -10,22 +10,27 @@ export function useViewMode(defaultView: ViewMode = 'list') {
 
   useEffect(() => {
     setMounted(true)
-    // Check if we're on mobile (less than 768px)
-    const isMobile = window.innerWidth < 768
-    setView(isMobile ? 'grid' : 'list')
+    const mediaQuery = window.matchMedia('(max-width: 768px)')
 
-    // Update view mode if window is resized
-    const handleResize = () => {
-      const isMobile = window.innerWidth < 768
-      setView(isMobile ? 'grid' : 'list')
+    const updateViewMode = () => {
+      setView(mediaQuery.matches ? 'grid' : 'list')
     }
 
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
+    // Initial check
+    updateViewMode()
+
+    // Listen for changes
+    mediaQuery.addEventListener('change', updateViewMode)
+
+    return () => {
+      mediaQuery.removeEventListener('change', updateViewMode)
+    }
   }, [])
 
-  // Prevent hydration mismatch
-  if (!mounted) return { view: defaultView, setView }
+  // During SSR and initial client render, return the default view
+  if (!mounted) {
+    return { view: defaultView, setView: () => {} }
+  }
 
   return { view, setView }
 }

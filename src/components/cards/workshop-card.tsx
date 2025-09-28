@@ -1,18 +1,44 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { Play, Github, Book, Clock, Bookmark, ArrowRight } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
+import { ArrowRight, Clock } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import type { Workshop } from '@/lib/data'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
+import { useRef } from 'react'
+import {
+  getBackgroundColor,
+  getBadgeColor,
+  getBorderColor,
+  getDotColor,
+  getFallbackImage,
+  getGlowColor,
+  getTextColor,
+} from '@/lib/utils/workshop-helpers'
 
-interface WorkshopCardProps {
+type WorkshopCardProps = {
   workshop: Workshop
+  imagePosition?: 'left' | 'right'
+  primaryImage: string
 }
 
-export function WorkshopCard({ workshop }: WorkshopCardProps) {
+export default function WorkshopCard({
+  workshop,
+  imagePosition = 'right',
+  primaryImage,
+}: WorkshopCardProps) {
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
+  const cardRef = useRef<HTMLDivElement>(null)
+
+  function onMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
+    const { left, top } = currentTarget.getBoundingClientRect()
+    mouseX.set(clientX - left)
+    mouseY.set(clientY - top)
+  }
+
   if (!workshop.github) return null
 
   return (
@@ -20,105 +46,197 @@ export function WorkshopCard({ workshop }: WorkshopCardProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       className="relative group"
+      ref={cardRef}
+      onMouseMove={onMouseMove}
+      whileHover={{ scale: 1.02 }}
+      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
     >
+      <motion.div
+        className={cn(
+          'absolute -inset-px rounded-xl opacity-0 group-hover:opacity-100',
+          'transition-opacity duration-500',
+          getGlowColor(workshop.level)
+        )}
+        style={{
+          background: useMotionTemplate`
+            radial-gradient(
+              650px circle at ${mouseX}px ${mouseY}px,
+              var(--glow-color) 0%,
+              transparent 60%
+            )
+          `,
+        }}
+      />
       <Link
         href={workshop.github}
         target="_blank"
         rel="noopener noreferrer"
         className={cn(
-          'block transition-all duration-300 border-2 border-blue-500 rounded-xl',
-          'hover:shadow-xl hover:scale-[1.02]'
+          'block transition-all duration-500 border-2 rounded-xl relative overflow-hidden',
+          getBorderColor(workshop.level),
+          'hover:shadow-2xl'
         )}
       >
-        <div className="grid md:grid-cols-[2fr_1fr] gap-6 bg-card rounded-xl overflow-hidden shadow-lg border border-border">
-          {/* Main Content */}
-          <div className="p-6 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-            <div className="relative z-10">
+        <div
+          className={cn(
+            'flex flex-col-reverse bg-card rounded-xl overflow-hidden shadow-lg',
+            'md:grid md:grid-cols-2',
+            imagePosition === 'left' && 'md:[grid-template-areas:_"image_content"]',
+            imagePosition === 'right' && 'md:[grid-template-areas:_"content_image"]'
+          )}
+        >
+          {/* Content Section */}
+          <motion.div
+            className="p-10 flex flex-col justify-center relative overflow-hidden md:[grid-area:content]"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] opacity-0 group-hover:opacity-20"
+              transition={{ duration: 0.5 }}
+            />
+            <div className="relative z-10 h-full flex flex-col">
               <div className="flex items-center gap-3 mb-4">
-                <Badge
-                  variant={
-                    workshop.level === 'Beginner'
-                      ? 'default'
-                      : workshop.level === 'Intermediate'
-                        ? 'secondary'
-                        : 'destructive'
-                  }
-                  className="rounded-full text-xs font-semibold px-3 py-1"
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: [0, -10, 10, 0] }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 10 }}
                 >
-                  {workshop.level}
-                </Badge>
-                <div className="flex items-center text-muted-foreground text-sm">
-                  <Clock className="w-4 h-4 mr-1" />
-                  {workshop.duration}
-                </div>
+                  <Badge
+                    variant="secondary"
+                    className={cn(
+                      'rounded-full text-xs font-semibold px-3 py-1 transition-all duration-300',
+                      getBadgeColor(workshop.level)
+                    )}
+                  >
+                    {workshop.level}
+                  </Badge>
+                </motion.div>
+                <motion.div
+                  className="flex items-center text-muted-foreground text-sm group-hover:text-primary"
+                  whileHover={{ x: 5 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+                >
+                  <motion.div
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  >
+                    <Clock
+                      className={cn(
+                        'w-4 h-4 mr-1 text-muted-foreground group-hover:animate-spin',
+                        getTextColor(workshop.level)
+                      )}
+                    />
+                  </motion.div>
+                  <span className={cn('text-muted-foreground', getTextColor(workshop.level))}>
+                    {workshop.duration}
+                  </span>
+                </motion.div>
               </div>
 
-              <h4 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">
+              <motion.h4
+                className={cn(
+                  'text-2xl font-bold mb-3 text-foreground',
+                  getTextColor(workshop.level)
+                )}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                whileHover={{ x: 10 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 10 }}
+              >
                 {workshop.title}
-              </h4>
-              <p className="text-muted-foreground mb-6">{workshop.description}</p>
+              </motion.h4>
+              <motion.p
+                className="text-muted-foreground mb-6 group-hover:text-muted-foreground/80"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+              >
+                {workshop.description}
+              </motion.p>
 
               <div className="space-y-4">
-                <h5 className="font-semibold text-lg">Workshop Content:</h5>
+                <motion.h5
+                  className={cn(
+                    'font-semibold text-lg text-foreground',
+                    getTextColor(workshop.level)
+                  )}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4 }}
+                >
+                  Workshop Content:
+                </motion.h5>
                 <div className="grid grid-cols-2 gap-3">
-                  {workshop.topics
-                    ? workshop.topics.map(topic => (
-                        <div key={topic} className="flex items-center gap-2 text-sm">
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                          {topic}
-                        </div>
-                      ))
-                    : null}
+                  {workshop.topics?.map((topic, index) => (
+                    <motion.div
+                      key={topic}
+                      className="flex items-center gap-2 text-sm"
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 * (index + 5) }}
+                      whileHover={{ x: 10, scale: 1.05 }}
+                    >
+                      <motion.div
+                        className={cn('w-1.5 h-1.5 rounded-full', getDotColor(workshop.level))}
+                        whileHover={{ scale: 2, rotate: 360 }}
+                        transition={{ type: 'spring', stiffness: 300, damping: 10 }}
+                      />
+                      <span className="text-muted-foreground group-hover:text-muted-foreground/80">
+                        {topic}
+                      </span>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Side Panel */}
-          <div className="bg-muted p-6 flex flex-col justify-between">
-            <div className="space-y-4">
-              {workshop.recordingLink && (
-                <Button
-                  className="w-full group"
-                  size="lg"
-                  onClick={e => {
-                    e.preventDefault()
-                    window.open(workshop.recordingLink, '_blank')
-                  }}
-                >
-                  <Play className="w-4 h-4 mr-2 group-hover:animate-pulse" />
-                  Watch Workshop
-                </Button>
+          {/* Image Section */}
+          <motion.div
+            className={cn(
+              'relative md:[grid-area:image] h-[300px] md:h-full p-8',
+              getBackgroundColor(workshop.level)
+            )}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+          >
+            <Image
+              src={primaryImage || workshop.image || getFallbackImage(0)}
+              alt={workshop.title}
+              fill
+              className={cn(
+                'object-contain transition-all duration-700 group-hover:scale-125',
+                imagePosition === 'right' ? 'group-hover:-rotate-2' : 'group-hover:rotate-2'
               )}
-              <div className="bg-background p-4 rounded-lg shadow-inner">
-                <h5 className="font-semibold mb-3 text-lg">Workshop Resources</h5>
-                <ul className="text-sm space-y-3">
-                  {workshop.resources.map(resource => (
-                    <li key={resource} className="flex items-center gap-2 group/item">
-                      {resource === 'Code Examples' ? (
-                        <Github className="w-4 h-4 text-primary" />
-                      ) : resource === 'Slides' ? (
-                        <Book className="w-4 h-4 text-primary" />
-                      ) : (
-                        <Bookmark className="w-4 h-4 text-primary" />
-                      )}
-                      <span className="group-hover/item:text-primary transition-colors duration-300">
-                        {resource}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="mt-4 text-sm text-muted-foreground">
-              Click to view workshop details and resources
-            </div>
-          </div>
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority
+            />
+            <motion.div
+              className="absolute inset-0 opacity-0 group-hover:opacity-100"
+              transition={{ duration: 0.5 }}
+            />
+          </motion.div>
         </div>
-        <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+
+        <motion.div
+          className="absolute bottom-4 right-8 opacity-0 group-hover:opacity-100"
+          initial={{ x: 20 }}
+          whileHover={{
+            x: [-5, 5, -5],
+            transition: {
+              repeat: Infinity,
+              duration: 1,
+            },
+          }}
+        >
           <ArrowRight className="w-6 h-6 text-primary" />
-        </div>
+        </motion.div>
       </Link>
     </motion.div>
   )

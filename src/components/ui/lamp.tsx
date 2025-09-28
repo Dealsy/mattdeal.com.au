@@ -100,8 +100,8 @@ export default function LampContainer({
             }}
             className="absolute inset-auto right-1/2 h-32 sm:h-56 overflow-visible bg-gradient-conic from-[var(--lamp-color-500)] via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top] opacity-90"
           >
-            <div className="absolute w-[100%] left-0 bg-gray-900 h-24 sm:h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)] opacity-90" />
-            <div className="absolute w-24 sm:w-40 h-[100%] left-0 bg-gray-900 bottom-0 z-20 [mask-image:linear-gradient(to_right,white,transparent)] opacity-90" />
+            <div className="absolute w-[100%] left-0 h-24 sm:h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)] opacity-90" />
+            <div className="absolute w-24 sm:w-40 h-[100%] left-0  bottom-0 z-20 [mask-image:linear-gradient(to_right,white,transparent)] opacity-90" />
           </motion.div>
 
           <motion.div
@@ -111,11 +111,11 @@ export default function LampContainer({
             }}
             className="absolute inset-auto left-1/2 h-32 sm:h-56 bg-gradient-conic from-transparent via-transparent to-[var(--lamp-color-500)] text-white [--conic-position:from_290deg_at_center_top] opacity-90"
           >
-            <div className="absolute w-24 sm:w-40 h-[100%] right-0 bg-gray-900 bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)] opacity-90" />
-            <div className="absolute w-[100%] right-0 bg-gray-900 h-24 sm:h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)] opacity-90" />
+            <div className="absolute w-24 sm:w-40 h-[100%] right-0 bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)] opacity-90" />
+            <div className="absolute w-[100%] right-0 h-24 sm:h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)] opacity-90" />
           </motion.div>
 
-          <div className="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 bg-gray-900 blur-[80px] opacity-75" />
+          <div className="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150  blur-[80px] opacity-75" />
 
           <motion.div
             {...blurAnimationConfig}
@@ -131,13 +131,10 @@ export default function LampContainer({
 
           <div className="absolute right-0 z-60 -translate-y-[6.8rem] translate-x-[-8rem]"></div>
 
-          <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-gray-900" />
+          <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] " />
         </div>
       ) : (
-        <div
-          className="relativ
-        e flex w-full items-center justify-center isolate z-0 h-[5vh] min-h-[200px] scale-[0.7] sm:scale-100"
-        >
+        <div className="relative flex w-full items-center justify-center isolate z-0 h-[5vh] min-h-[200px] scale-[0.7] sm:scale-100">
           <div className="flex flex-row gap-4 mb-65 relative z-50">
             <div className="flex items-center gap-4">
               <div
