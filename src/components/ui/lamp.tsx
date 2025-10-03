@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, cubicBezier } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { useTheme } from 'next-themes'
 
@@ -69,7 +69,7 @@ export default function LampContainer({
     animate: isInView
       ? { opacity: 1, width: isMobile ? '20rem' : '25rem' }
       : { opacity: 0.5, width: '8rem' },
-    transition: { duration: 1, ease: [0.33, 1, 0.68, 1] },
+    transition: { duration: 1, ease: cubicBezier(0.33, 1, 0.68, 1) },
   }
 
   const blurAnimationConfig = {
@@ -79,7 +79,7 @@ export default function LampContainer({
       hidden: { opacity: 0, width: '8rem' },
       visible: { opacity: 0.5, width: isMobile ? '16rem' : '25rem' },
     },
-    transition: { duration: 1, ease: [0.33, 1, 0.68, 1] },
+    transition: { duration: 1, ease: cubicBezier(0.33, 1, 0.68, 1) },
   }
 
   return (

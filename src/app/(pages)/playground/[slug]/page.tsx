@@ -1,10 +1,15 @@
 import { PlayGroundComponents } from '@/components/playground/playroundComponents/playGroundComponents'
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { unstable_ViewTransition as ViewTransition } from 'react'
 
 type PlaygroundSlug = keyof typeof PlayGroundComponents
 
-export default async function Page({ params }: { params: { slug: string } }) {
+interface Props {
+  params: Promise<{ slug: string }>
+}
+
+export default async function Page({ params }: Props) {
   const { slug } = await params
 
   const content = PlayGroundComponents[slug as PlaygroundSlug]
