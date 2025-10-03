@@ -86,7 +86,7 @@ export default function BlogCardNoImage({
                     <span>{readTime} min read</span>
                   </div>
                 </div>
-                <CardTitle className="line-clamp-2 text-2xl font-bold transition-all duration-500 group-hover:text-primary group-hover:translate-x-1">
+                <CardTitle className="line-clamp-2 text-2xl font-bold font-cinzel transition-all duration-500 group-hover:text-primary group-hover:translate-x-1">
                   {title}
                 </CardTitle>
               </CardHeader>

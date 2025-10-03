@@ -1,0 +1,228 @@
+export const metadata = {
+  title: 'Server Actions in Next.js',
+  excerpt:
+    'Server Actions are a powerful feature in Next JS, they allow you to perform server-side actions from your client components.',
+  publishedAt: '28-03-2025',
+  readTime: 8,
+  type: 'Next JS',
+  difficulty: 'Intermediate',
+}
+
+The `'use server'` directive in Next.js is used to create a door between the client and the server, this is called a server action.
+
+`'use server'` is not saying that this is a server component, it is actually saying that the client can use the server to do something, Vercel
+probably should have called it `'use action'` or `'use server action'` as this is the actual fucntion of the directive.
+
+Server actions should be used to perform an action, such as:
+
+- Creating a todo item
+- Updating a user's profile
+- Deleting a comment
+- Processing form submissions
+
+<Alert type="warning">
+You should think of server actions as a public API that you can call from your client components.
+
+Next JS still leaves authentication and authorization checks up to you. So it is important that you implement these checks in your server actions.
+
+</Alert>
+
+### Don't fetch data with server actions
+
+You should not use server actions to perform a query, such as fetching data from a database. This is because server actions can only run one at a time,
+so if you have multiple queries then you're creating a bottleneck, where each query has to wait for the previous one to complete before it can start.
+
+<ArticleImage
+  darkSrc="/images/blog/dark_mode_waterfall.svg"
+  lightSrc="/images/blog/light_mode_waterfall.svg"
+  alt="Diagram showing how use server works in Next.js Here's how you can implement this pattern:"
+  size="xlarge"
+/>
+
+The image above shows a waterfall of queries, where each query has to wait for the previous one to complete before it can start, this is exactly
+what happens when you use a server action to fetch data.
+
+### **Understanding** Server Actions
+
+Server actions serve as a bridge for performing server-side operations from client components.
+
+They're particularly valuable when you need to mutate data in your database, process form submissions securely,
+or handle any server-side CRUD operations that require authorization or data validation. By keeping these operations on the server,
+you maintain better security and data integrity while reducing the amount of sensitive logic exposed to the client.
+
+### Implementation Patterns
+
+There are two main patterns for implementing server actions in Next.js.
+
+The first and most common approach is to define your server actions in a separate file.
+This pattern promotes better code organization and reusability.
+
+<ArticleImage
+  darkSrc="/images/blog/sep_dark_use_server.svg"
+  lightSrc="/images/blog/sep_light_use_server.svg"
+  alt="Diagram showing how use server works in Next.js Here's how you can implement this pattern:"
+  size="large"
+/>
+
+This is also the reccomended way to use a server action, as it seprates the server logic from the client logic, and helps imrpove
+readability and maintainability.
+
+Here's how you can implement this pattern:
+
+```tsx
+// action.ts
+'use server'
+// This code only runs on the server
+import { db } from '@/lib/db'
+
+export async function createTodo(title: string) {
+  const user = await getCurrentUser()
+
+  // Always validate the user is authenticated
+  if (!user.id) {
+    throw new Error('Unauthorized')
+  }
+
+  await db.todo.create({
+    data: { title },
+  })
+
+  revalidatePath('/') // revalidates the page
+
+  return { success: true }
+}
+```
+
+```tsx
+'use client'
+
+// In a separate file using the server action
+import { createTodo } from './action'
+
+export default function TodoForm() {
+  return (
+    <form action={createTodo}>
+      <input type="text" name="title" />
+      <button type="submit">Add Todo</button>
+    </form>
+  )
+}
+```
+
+The second pattern involves defining server actions directly within your server components. This approach can be useful for simpler operations or when the server action is specific to a single component.
+
+<ArticleImage
+  darkSrc="/images/blog/dark_use_server.svg"
+  lightSrc="/images/blog/light_use_server.svg"
+  alt="Diagram showing how use server works in Next.js"
+  size="large"
+/>
+
+Here's an example of this inline pattern:
+
+```tsx
+export default function TodoList() {
+  async function deleteTodo(formData: FormData) {
+    'use server' // Opens a door to the client
+
+    const user = await getCurrentUser()
+
+    if (!user.id) {
+      throw new Error('Unauthorized')
+    }
+
+    const id = Number(formData.get('id'))
+    await db.todo.delete({
+      where: { id },
+    })
+    revalidatePath('/') // revalidates the page
+
+    return { success: true }
+  }
+
+  return (
+    <form action={deleteTodo}>
+      <button type="submit">Delete Todo</button>
+    </form>
+  )
+}
+Info
+```
+
+Note that server actions can only be created in server components, you cannot add `'use server'` in a client component.
+
+### Building Robust Server Actions
+
+When implementing server actions, it's crucial to build them with security and reliability in mind, as I stated
+above, Next JS leaves authentication and authorization checks up to you, so if you have sensitive data that
+you want to mutate with a server action, you must do auth checks.
+
+You can perform auth checks very easily by checking that the current user has persmissions to invoke the server action.
+
+Here is a simple example:
+
+```tsx
+'use server'
+
+export async function createTodo(formData: FormData) {
+  const user = await getCurrentUser() // You would use your own auth logic here
+
+  // Then you would check if the user has the authorization to perform the action
+  if (!user.id) throw new Error('Unauthorized') // [!code highlight]
+
+  // Create the todo item in the database
+  await db.todo.create({ data: { title, description, completed } })
+}
+```
+
+By doing this we can gurantee that the currently logged in user is the only one that can
+perform this action, if we do not do this step, a user can actually hit this endpoint from something
+like postman and perform the action without any authorization checks.
+
+Remember that `'use server'` is a public API, and you MUST treat it as such.
+
+Here is a list of things you should do when implementing server actions:
+
+- Keep actions focused on a single responsibility
+- Return only necessary data to minimize exposure
+- Implement proper error handling
+- Validate input data server-side
+
+Input validation is a critical aspect of server actions. Using a schema validation library like Zod can help ensure your server actions receive and process the expected data format. Here's how you can implement robust validation:
+
+```tsx
+'use server'
+
+import { z } from 'zod'
+
+// Define the schema for the input data
+const schema = z.object({
+  title: z.string().min(1),
+  description: z.string().min(1),
+  completed: z.boolean(),
+})
+
+export async function createTodo(formData: FormData) {
+  // Parse the input data using the schema
+  const { title, description, completed } = schema.parse(Object.fromEntries(formData.entries()))
+
+  await db.todo.create({
+    // Create the todo item in the database
+    data: { title, description, completed },
+  })
+
+  return { success: true }
+}
+```
+
+### Important Considerations
+
+When working with server actions, keep these key points in mind:
+
+- Server actions must be async functions
+- Server actions cannot be created in client components
+- Server actions can't access client-side APIs
+- Each server action call results in a network request
+- Always implement proper security checks
+- Validate and sanitize all inputs
+- If you call an API route with a server action, you must use the full path to the route.

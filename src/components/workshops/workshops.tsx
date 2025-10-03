@@ -57,13 +57,14 @@ export default function Workshops() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <header className="mb-12">
           <motion.h1
             className="text-4xl font-bold mb-4"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}>
+            animate={{ opacity: 1, y: 0 }}
+          >
             Technical Workshops
           </motion.h1>
           <p className="text-muted-foreground text-lg">
@@ -72,7 +73,7 @@ export default function Workshops() {
         </header>
 
         {/* Filter/Search Section */}
-        <div className="bg-card p-4 rounded-lg mb-8">
+        <div className="bg-background-lighter border border-t-0 border-background-border dark:border-t dark:border-b-0 dark:border-background-border/80 p-4 rounded-xl mb-8">
           <div className="flex gap-4 flex-wrap items-center">
             <div className="relative flex-1 max-w-xs">
               <Input
@@ -82,10 +83,10 @@ export default function Workshops() {
               />
             </div>
             <Select value={selectedLevel} onValueChange={setSelectedLevel}>
-              <SelectTrigger className="w-[180px]">
+              <SelectTrigger>
                 <SelectValue placeholder="Difficulty" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-background-elevated">
                 <SelectItem value="all">All Levels</SelectItem>
                 <SelectItem value="Beginner">Beginner</SelectItem>
                 <SelectItem value="Intermediate">Intermediate</SelectItem>
@@ -93,10 +94,10 @@ export default function Workshops() {
               </SelectContent>
             </Select>
             <Select value={selectedDuration} onValueChange={setSelectedDuration}>
-              <SelectTrigger className="w-[180px]">
+              <SelectTrigger>
                 <SelectValue placeholder="Duration" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-background-elevated">
                 <SelectItem value="all">All Durations</SelectItem>
                 <SelectItem value="1 hour">1 hour</SelectItem>
                 <SelectItem value="2 hours">2 hours</SelectItem>

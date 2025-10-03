@@ -20,13 +20,22 @@ export function WorkshopCard({ workshop, view }: WorkshopCardProps) {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="group">
-        <Card className="overflow-hidden border-2 border-transparent hover:border-primary transition-colors">
+        className="group"
+      >
+        <Card className="overflow-hidden transition-colors border inset-shadow-sm dark:bg-background-elevated bg-background inset-shadow-black/40 dark:inset-shadow-black/60 border-background-border dark:border-background-border hover:border-primary">
           <div className={`${view === 'list' ? 'flex gap-6' : 'flex flex-col'}`}>
             {/* Image */}
-            <div className={`relative ${view === 'list' ? 'w-1/3' : 'w-full h-96'} `}>
-              <Image src={workshop.image} alt={workshop.title} fill className="object-cover " />
-              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div
+              className={`relative ${view === 'list' ? 'w-1/3' : 'w-full h-96'} overflow-hidden`}
+            >
+              <Image
+                src={workshop.image}
+                alt={workshop.title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
 
             {/* Content */}
@@ -39,7 +48,10 @@ export function WorkshopCard({ workshop, view }: WorkshopCardProps) {
                     {workshop.duration}
                   </div>
                 </div>
-                <Badge variant={workshop.level === 'Beginner' ? 'default' : 'secondary'}>
+                <Badge
+                  variant={workshop.level === 'Beginner' ? 'default' : 'secondary'}
+                  className="bg-background-elevated border-background-border dark:border-b-0 border-b-0 shadow-sm shadow-black/40 dark:shadow-black/60 text-foreground"
+                >
                   {workshop.level}
                 </Badge>
               </div>
@@ -52,7 +64,11 @@ export function WorkshopCard({ workshop, view }: WorkshopCardProps) {
                   <h4 className="text-sm font-semibold mb-2">Topics Covered</h4>
                   <div className="flex flex-wrap gap-2">
                     {workshop.topics.map(topic => (
-                      <Badge key={topic} variant="outline">
+                      <Badge
+                        key={topic}
+                        variant="outline"
+                        className="inset-shadow-sm inset-shadow-black/40 dark:inset-shadow-black/60"
+                      >
                         {topic}
                       </Badge>
                     ))}
@@ -80,7 +96,8 @@ export function WorkshopCard({ workshop, view }: WorkshopCardProps) {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={e => e.stopPropagation()}
-                        className="text-sm text-primary hover:underline inline-flex items-center gap-2">
+                        className="text-sm text-primary hover:underline inline-flex items-center gap-2"
+                      >
                         <Play className="w-4 h-4" />
                         Watch Recording
                       </a>

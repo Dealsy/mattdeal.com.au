@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Sun, Moon, Menu } from 'lucide-react'
@@ -12,6 +13,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/co
 export default function Nav() {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     setMounted(true)
@@ -25,7 +27,7 @@ export default function Nav() {
     <nav className="print:hidden sticky top-0 z-40 backdrop-blur-md bg-slate-200/40 dark:bg-gray-900/40 border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         <motion.h1
-          className="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))]"
+          className="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-[oklch(var(--gradient-start))] to-[oklch(var(--gradient-end))]"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
@@ -35,15 +37,21 @@ export default function Nav() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-4">
-          {NavLinks.map(link => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {NavLinks.map(link => {
+            const isActive = pathname === link.href
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={isActive ? 'page' : undefined}
+                className={`text-sm font-medium transition-colors ${
+                  isActive ? 'text-primary' : 'text-foreground hover:text-primary'
+                }`}
+              >
+                {link.label}
+              </Link>
+            )
+          })}
           <Button
             variant="ghost"
             size="icon"
