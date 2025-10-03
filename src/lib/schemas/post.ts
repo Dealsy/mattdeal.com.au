@@ -53,14 +53,6 @@ export default defineType({
       rows: 4,
     }),
     defineField({
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
       name: 'type',
       title: 'Post Type',
       type: 'string',

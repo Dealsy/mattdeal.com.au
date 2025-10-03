@@ -8,7 +8,7 @@ import { difficultyColors, type Difficulty } from '@/contasnts'
 import { parsePublishedDate } from '@/lib/utils/formatters'
 import { cn } from '@/lib/utils'
 
-const EXCERPT_MAX_LENGTH = 100
+const EXCERPT_MAX_LENGTH = 75
 
 function truncateExcerpt(text: string): string {
   if (text.length <= EXCERPT_MAX_LENGTH) return text
@@ -86,7 +86,7 @@ export default function BlogCardNoImage({
                     <span>{readTime} min read</span>
                   </div>
                 </div>
-                <CardTitle className="line-clamp-2 text-2xl font-bold font-cinzel transition-all duration-500 group-hover:text-primary group-hover:translate-x-1">
+                <CardTitle className="line-clamp-2 text-2xl font-medium font-cinzel transition-all duration-500 group-hover:text-primary group-hover:translate-x-1">
                   {title}
                 </CardTitle>
               </CardHeader>

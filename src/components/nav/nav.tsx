@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Sun, Moon, Menu } from 'lucide-react'
@@ -9,6 +8,7 @@ import { useTheme } from 'next-themes'
 import { useState, useEffect } from 'react'
 import { NavLinks } from '@/contasnts'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
+import { usePathname } from 'next/navigation'
 
 export default function Nav() {
   const { theme, setTheme } = useTheme()

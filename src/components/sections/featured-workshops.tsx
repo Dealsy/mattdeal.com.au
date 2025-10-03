@@ -3,12 +3,18 @@
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
-import { WorkshopCard } from '@/components/cards/workshop-card'
+import WorkshopCard from '@/components/cards/workshop-card'
 import { useWorkshops } from '@/lib/hooks/usePortfolioData'
 import { Skeleton } from '@/components/ui/skeleton'
 import { Workshop } from '@/lib/data'
 import { Links } from '@/contasnts'
 import Section from '../section'
+
+const WORKSHOP_IMAGES = [
+  '/images/nextjs.png',
+  '/images/workshop.png',
+  '/images/mac-test.png',
+] as const
 
 export function FeaturedWorkshops() {
   const { data: workshops, isLoading, error } = useWorkshops()
@@ -33,18 +39,28 @@ export function FeaturedWorkshops() {
         </Link>
       </div>
 
-      <div className="grid gap-12 sm:gap-8">
-        {isLoading
-          ? Array(3)
-              .fill(0)
-              .map((_, i) => (
-                <div key={i} className="h-[300px] rounded-lg">
-                  <Skeleton className="w-full h-full" />
-                </div>
-              ))
-          : workshops
-              ?.slice(0, 3)
-              .map((workshop: Workshop) => <WorkshopCard key={workshop._id} workshop={workshop} />)}
+      <div className="grid gap-24 sm:gap-10 relative">
+        {isLoading ? (
+          Array(3)
+            .fill(0)
+            .map((_, i) => (
+              <div key={i} className="h-[300px] rounded-lg">
+                <Skeleton className="w-full h-full" />
+              </div>
+            ))
+        ) : (
+          <>
+            {workshops?.slice(0, 3).map((workshop: Workshop, index: number) => (
+              <div key={workshop._id}>
+                <WorkshopCard
+                  workshop={workshop}
+                  imagePosition={index % 2 === 0 ? 'right' : 'left'}
+                  primaryImage={WORKSHOP_IMAGES[index]}
+                />
+              </div>
+            ))}
+          </>
+        )}
       </div>
     </Section>
   )

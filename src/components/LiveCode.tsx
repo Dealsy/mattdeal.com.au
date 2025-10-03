@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import CodeEditor from './CodeEditor'
 import CodePreview from './CodePreview'
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '@/components/ui/resizable'
@@ -10,7 +10,6 @@ import { cn } from '@/lib/utils'
 
 type LiveCodeProps = {
   code: string
-  height?: string
   language?: string
 }
 
@@ -40,8 +39,10 @@ function formatCode(code: string): string {
 
 function useMediaQuery(query: string) {
   const [matches, setMatches] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     const media = window.matchMedia(query)
     if (media.matches !== matches) {
       setMatches(media.matches)
@@ -51,14 +52,42 @@ function useMediaQuery(query: string) {
     return () => window.removeEventListener('resize', listener)
   }, [matches, query])
 
+  if (!mounted) return false
   return matches
 }
 
-export default function LiveCode({ code, height = '400px' }: LiveCodeProps) {
+export default function LiveCode({ code }: LiveCodeProps) {
   const formattedCode = formatCode(code)
   const [editorCode, setEditorCode] = useState(formattedCode)
   const [copied, setCopied] = useState(false)
   const isMobile = useMediaQuery('(max-width: 1024px)')
+  const previewRef = useRef<HTMLDivElement>(null)
+  const [previewHeight, setPreviewHeight] = useState<number>(0)
+
+  useEffect(() => {
+    const updatePreviewHeight = () => {
+      if (previewRef.current) {
+        const previewContent = previewRef.current.querySelector('.preview-content')
+        if (previewContent) {
+          const height = previewContent.getBoundingClientRect().height
+          setPreviewHeight(Math.max(300, height + 32)) // 32px for padding
+        }
+      }
+    }
+
+    // Initial height calculation
+    updatePreviewHeight()
+
+    // Create a ResizeObserver to watch for content changes
+    const resizeObserver = new ResizeObserver(updatePreviewHeight)
+    if (previewRef.current) {
+      resizeObserver.observe(previewRef.current)
+    }
+
+    return () => {
+      resizeObserver.disconnect()
+    }
+  }, [editorCode])
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(editorCode)
@@ -67,43 +96,45 @@ export default function LiveCode({ code, height = '400px' }: LiveCodeProps) {
   }
 
   return (
-    <ResizablePanelGroup
-      direction={isMobile ? 'vertical' : 'horizontal'}
-      className={cn(
-        isMobile ? 'min-h-[600px]' : 'min-h-[400px]',
-        'w-full rounded-lg border border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900'
-      )}
-    >
-      <ResizablePanel defaultSize={60} minSize={30}>
-        <div className="relative h-full">
-          <Button
-            size="sm"
-            variant="ghost"
-            className="absolute right-6 top-6 z-10"
-            onClick={handleCopy}
-          >
-            {copied ? (
-              <CheckIcon className="h-4 w-4 text-green-500" />
-            ) : (
-              <ClipboardIcon className="h-4 w-4" />
-            )}
-          </Button>
-          <div className="h-full p-4">
-            <CodeEditor
-              initialValue={editorCode}
-              onChange={setEditorCode}
-              language={'html'}
-              height={isMobile ? '400px' : height}
-            />
+    <div suppressHydrationWarning className="w-full">
+      <ResizablePanelGroup
+        direction={isMobile ? 'vertical' : 'horizontal'}
+        className={cn(
+          'w-full rounded-lg border border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900',
+          isMobile ? 'min-h-[600px]' : ''
+        )}
+      >
+        <ResizablePanel defaultSize={60} minSize={30}>
+          <div className="relative h-full">
+            <Button
+              size="sm"
+              variant="ghost"
+              className="absolute right-6 top-6 z-10"
+              onClick={handleCopy}
+            >
+              {copied ? (
+                <CheckIcon className="h-4 w-4 text-green-500" />
+              ) : (
+                <ClipboardIcon className="h-4 w-4" />
+              )}
+            </Button>
+            <div className="h-full p-4">
+              <CodeEditor
+                initialValue={editorCode}
+                onChange={setEditorCode}
+                language={'html'}
+                height={isMobile ? '300px' : `${previewHeight}px`}
+              />
+            </div>
           </div>
-        </div>
-      </ResizablePanel>
-      <ResizableHandle withHandle />
-      <ResizablePanel defaultSize={40} minSize={30}>
-        <div className="h-full p-4">
-          <CodePreview code={editorCode} />
-        </div>
-      </ResizablePanel>
-    </ResizablePanelGroup>
+        </ResizablePanel>
+        <ResizableHandle withHandle />
+        <ResizablePanel defaultSize={40} minSize={30}>
+          <div ref={previewRef} className="h-full p-4">
+            <CodePreview code={editorCode} />
+          </div>
+        </ResizablePanel>
+      </ResizablePanelGroup>
+    </div>
   )
 }

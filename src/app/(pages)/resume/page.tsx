@@ -118,12 +118,18 @@ export default function ResumePage() {
                   ROCKETLAB PTY LTD
                 </h3>
                 <span className="text-indigo-600 text-sm font-medium px-4 py-1.5 mr-5 bg-indigo-50 rounded-full print:bg-indigo-50">
-                  Dec 2022 – Present
+                  Dec 2022 – March 2025
                 </span>
               </div>
               <p className="text-slate-700 italic mb-3 font-medium">Software Engineer – Remote</p>
               <p className="font-medium mb-2 text-slate-700">Responsibilities:</p>
               <ul className="space-y-2 text-slate-600">
+                <li className="flex items-start">
+                  <span className="text-indigo-500 mr-2 h-[lh]">•</span>
+                  Helped build an internal reporting tool for Rocketlab to show employment and
+                  project data, this was a Full stack Next.js application where I was responsible
+                  for both frontend and backend development.
+                </li>
                 <li className="flex items-start">
                   <span className="text-indigo-500 mr-2 h-[lh]">•</span>
                   Led the Frontend development of a new app for Quantco hospitality, to help their
@@ -151,9 +157,10 @@ export default function ResumePage() {
                 </li>
                 <li className="flex items-start">
                   <span className="text-indigo-500 mr-2 h-[lh]">•</span>
-                  Utilized a diverse tech stack, including Next JS, React, TypeScript, Zod, REST,
-                  GraphQL, React Query, React Hook Form, Tailwind CSS, ShadCn, Charaka UI, Styled
-                  components and Directus to create high-quality web applications.
+                  Utilized a diverse tech stack, including Next JS, React, TypeScript, Node.js,{' '}
+                  express.js, Zod, REST, GraphQL, React Query, React Hook Form, Tailwind CSS,
+                  ShadCn, Charaka UI, Styled components, postgresSQL and Directus to create
+                  high-quality web applications.
                 </li>
                 <li className="flex items-start">
                   <span className="text-indigo-500 mr-2 h-[lh]">•</span>
@@ -338,7 +345,7 @@ export default function ResumePage() {
               SKILLS & VALUES
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1">
               <div className="bg-gradient-to-br from-white to-slate-50 p-6 rounded-lg border border-slate-100 shadow-sm hover:shadow-md transition-all print:bg-transparent print:shadow-none print:border-slate-100">
                 <h3 className="text-xl font-semibold text-slate-800 mb-4 flex items-center">
                   <span className="w-2 h-2 rounded-full bg-indigo-500 mr-2"></span>
@@ -350,11 +357,11 @@ export default function ResumePage() {
                   Design, Charak UI, REST API, GraphQL, Directus and Storyblok.
                 </p>
                 <p className="text-slate-600 mb-3 leading-relaxed">
-                  Backend familiarity with Node.JS, Directus and Sainty.
+                  Backend familiarity with Node.JS, postgresSQL, Directus and Sainty.
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  Confident with tools including GIT, Bitbucket, Confluence, VS Code, Cursor,
-                  Prettier, Clickup, Warp.
+                  Confident with tools including GIT, Github, Bitbucket, VS Code, Cursor, Prettier,
+                  Clickup, Warp.
                 </p>
               </div>
 

@@ -35,4 +35,5 @@ export type Workshop = {
   recordingLink?: string
   resources: string[]
   github?: string
+  image?: string
 }

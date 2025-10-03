@@ -1,12 +1,12 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Clock, Github, Play } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Workshop } from '@/types/types'
+import { unstable_ViewTransition as ViewTransition } from 'react'
 
 interface WorkshopCardProps {
   workshop: Workshop
@@ -16,12 +16,7 @@ interface WorkshopCardProps {
 export function WorkshopCard({ workshop, view }: WorkshopCardProps) {
   return (
     <Link href={workshop.github} target="_blank" rel="noopener noreferrer">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="group"
-      >
+      <div className="group">
         <Card className="overflow-hidden transition-colors border inset-shadow-sm dark:bg-background-elevated bg-background inset-shadow-black/40 dark:inset-shadow-black/60 border-background-border dark:border-background-border hover:border-primary">
           <div className={`${view === 'list' ? 'flex gap-6' : 'flex flex-col'}`}>
             {/* Image */}
@@ -39,14 +34,19 @@ export function WorkshopCard({ workshop, view }: WorkshopCardProps) {
             </div>
 
             {/* Content */}
-            <div className={`p-6 ${view === 'list' ? 'flex-1' : ''}`}>
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <h3 className="text-xl font-bold mb-1">{workshop.title}</h3>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Clock className="w-4 h-4" />
-                    {workshop.duration}
+            <ViewTransition name={`workshop-content-${workshop._id}`}>
+              <div className={`p-6 ${view === 'list' ? 'flex-1' : ''}`}>
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold mb-1">{workshop.title}</h3>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Clock className="w-4 h-4" />
+                      {workshop.duration}
+                    </div>
                   </div>
+                  <Badge variant={workshop.level === 'Beginner' ? 'default' : 'secondary'}>
+                    {workshop.level}
+                  </Badge>
                 </div>
                 <Badge
                   variant={workshop.level === 'Beginner' ? 'default' : 'secondary'}
@@ -73,14 +73,14 @@ export function WorkshopCard({ workshop, view }: WorkshopCardProps) {
                       </Badge>
                     ))}
                   </div>
-                </div>
 
-                {/* Resources Count */}
-                <div>
-                  <h4 className="text-sm font-semibold mb-2">Resources</h4>
-                  <p className="text-sm text-muted-foreground">
-                    {workshop.resources.length} resources available
-                  </p>
+                  {/* Resources Count */}
+                  <div>
+                    <h4 className="text-sm font-semibold mb-2">Resources</h4>
+                    <p className="text-sm text-muted-foreground">
+                      {workshop.resources.length} resources available
+                    </p>
+                  </div>
                 </div>
 
                 {/* Links */}
@@ -105,10 +105,10 @@ export function WorkshopCard({ workshop, view }: WorkshopCardProps) {
                   </div>
                 </div>
               </div>
-            </div>
+            </ViewTransition>
           </div>
         </Card>
-      </motion.div>
+      </div>
     </Link>
   )
 }

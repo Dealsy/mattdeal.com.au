@@ -61,7 +61,7 @@ export default function BlogList({ initialPosts }: BlogListProps) {
         selectedDifficulties={selectedDifficulties}
         setSelectedDifficulties={setSelectedDifficulties}
       />
-      <ViewTransition>
+      <ViewTransition name="blog-list">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredPosts.map(post => (
             <BlogCard key={post.slug} {...post} />

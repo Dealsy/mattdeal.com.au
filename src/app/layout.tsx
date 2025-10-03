@@ -1,9 +1,9 @@
 import localFont from 'next/font/local'
-import { Cinzel } from 'next/font/google'
 import './globals.css'
 import { Providers } from './providers'
 import NavWrapper from '@/components/nav/nav-wrapper'
 import { Footer } from '@/components/footer'
+import { Cinzel } from 'next/font/google'
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -18,8 +18,8 @@ const geistMono = localFont({
 
 const cinzel = Cinzel({
   subsets: ['latin'],
+  weight: ['400', '700'],
   variable: '--font-cinzel',
-  weight: ['400', '500', '600', '700', '800', '900'],
 })
 
 export const metadata = {
@@ -27,11 +27,7 @@ export const metadata = {
   description: 'Portfolio website',
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
