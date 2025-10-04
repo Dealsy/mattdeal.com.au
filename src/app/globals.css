@@ -6,37 +6,37 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-cinzel: var(--font-cinzel), serif;
-  --font-geist-sans: var(--font-geist-sans), sans-serif;
-  --font-geist-mono: var(--font-geist-mono), monospace;
+  --font-cinzel: var(--font-cinzel);
+  --color-background: oklch(var(--background));
+  --color-background-lighter: oklch(var(--background-lighter));
+  --color-background-elevated: oklch(var(--background-elevated));
+  --color-background-border: oklch(var(--background-border));
+  --color-foreground: oklch(var(--foreground));
 
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
+  --color-card: oklch(var(--card));
+  --color-card-foreground: oklch(var(--card-foreground));
 
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: oklch(var(--popover));
+  --color-popover-foreground: oklch(var(--popover-foreground));
 
-  --color-popover: hsl(var(--popover));
-  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: oklch(var(--primary));
+  --color-primary-foreground: oklch(var(--primary-foreground));
 
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: oklch(var(--secondary));
+  --color-secondary-foreground: oklch(var(--secondary-foreground));
 
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: oklch(var(--muted));
+  --color-muted-foreground: oklch(var(--muted-foreground));
 
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: oklch(var(--accent));
+  --color-accent-foreground: oklch(var(--accent-foreground));
 
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: oklch(var(--destructive));
+  --color-destructive-foreground: oklch(var(--destructive-foreground));
 
-  --color-destructive: hsl(var(--destructive));
-  --color-destructive-foreground: hsl(var(--destructive-foreground));
-
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
+  --color-border: oklch(var(--border));
+  --color-input: oklch(var(--input));
+  --color-ring: oklch(var(--ring));
 
   --color-chart-1: hsl(var(--chart-1));
   --color-chart-2: hsl(var(--chart-2));
@@ -47,9 +47,10 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
-}
 
-/*
+  --shadow-inset-light: inset 0 2px 8px 0 oklch(0% 0 0 / 0.1);
+  --shadow-inset-dark: inset 0 2px 8px 0 oklch(0% 0 0 / 0.3);
+  /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
   looks the same as it did with Tailwind CSS v3.
@@ -57,6 +58,7 @@
   If we ever want to remove these styles, we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
+}
 @layer base {
   *,
   ::after,
@@ -69,71 +71,77 @@
 
 @layer base {
   :root {
-    --background: 100 100 100;
-    --foreground: 222.2 84% 4.9%;
+    --background: 92% 0 0;
+    --background-lighter: 95% 0 0;
+    --background-elevated: 98% 0 0;
+    --background-border: 86% 0 0;
+    --foreground: 17% 0.04 265;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 100% 0 0;
+    --card-foreground: 17% 0.04 265;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 100% 0 0;
+    --popover-foreground: 17% 0.04 265;
 
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 60% 0.19 260;
+    --primary-foreground: 98% 0.01 240;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 96% 0.02 240;
+    --secondary-foreground: 24% 0.04 265;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 96% 0.02 240;
+    --muted-foreground: 54% 0.025 245;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 96% 0.02 240;
+    --accent-foreground: 24% 0.04 265;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 63% 0.25 25;
+    --destructive-foreground: 98% 0.01 240;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
+    --border: 92% 0.025 240;
+    --input: 92% 0.025 240;
+    --ring: 60% 0.19 260;
 
     --radius: 0.5rem;
 
-    --gradient-start: 221.2 83.2% 53.3%;
-    --gradient-end: 271.2 81.3% 55.9%;
+    --gradient-start: 60% 0.19 260;
+    --gradient-end: 62% 0.23 300;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 14% 0.04 265;
+    --background-lighter: 25% 0.04 265;
+    --background-elevated: 40% 0.04 265;
+    --background-border: 55% 0.04 265;
+    --foreground: 98% 0.01 240;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 17% 0.04 265;
+    --card-foreground: 98% 0.01 240;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 17% 0.04 265;
+    --popover-foreground: 98% 0.01 240;
 
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 65% 0.2 250;
+    --primary-foreground: 24% 0.04 265;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 28% 0.04 250;
+    --secondary-foreground: 98% 0.01 240;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 28% 0.04 250;
+    --muted-foreground: 68% 0.025 245;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 28% 0.04 250;
+    --accent-foreground: 98% 0.01 240;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 43% 0.15 25;
+    --destructive-foreground: 98% 0.01 240;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
+    --border: 28% 0.04 250;
+    --input: 28% 0.04 250;
+    --ring: 55% 0.17 265;
 
-    --gradient-start: 217.2 91.2% 59.8%;
-    --gradient-end: 271.2 81.3% 55.9%;
+    --gradient-start: 65% 0.2 250;
+    --gradient-end: 62% 0.23 300;
   }
 }
 
