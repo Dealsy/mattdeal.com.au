@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useTransition } from 'react'
 import { BlogMetadata } from '@/types/blog'
 import BlogCard from './blog-card'
 import { BlogFilters } from './blog-filters'
@@ -16,6 +16,7 @@ export default function BlogList({ initialPosts }: BlogListProps) {
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedTypes, setSelectedTypes] = useState<string[]>([])
   const [selectedDifficulties, setSelectedDifficulties] = useState<string[]>([])
+  const [, startTransition] = useTransition()
 
   // Filter posts based on search, types, difficulty, and date
   const filteredPosts = initialPosts.filter(post => {
@@ -55,19 +56,31 @@ export default function BlogList({ initialPosts }: BlogListProps) {
       <BlogFilters
         posts={initialPosts}
         searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
+        setSearchQuery={(value: string) =>
+          startTransition(() => {
+            setSearchQuery(value)
+          })
+        }
         selectedTypes={selectedTypes}
-        setSelectedTypes={setSelectedTypes}
+        setSelectedTypes={(updater: React.SetStateAction<string[]>) =>
+          startTransition(() => {
+            setSelectedTypes(updater)
+          })
+        }
         selectedDifficulties={selectedDifficulties}
-        setSelectedDifficulties={setSelectedDifficulties}
+        setSelectedDifficulties={(updater: React.SetStateAction<string[]>) =>
+          startTransition(() => {
+            setSelectedDifficulties(updater)
+          })
+        }
       />
-      <ViewTransition name="blog-list">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredPosts.map(post => (
-            <BlogCard key={post.slug} {...post} />
-          ))}
-        </div>
-      </ViewTransition>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredPosts.map(post => (
+          <ViewTransition key={post.slug} name={`blog-card-${post.slug}`}>
+            <BlogCard {...post} />
+          </ViewTransition>
+        ))}
+      </div>
     </div>
   )
 }
