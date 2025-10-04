@@ -1,5 +1,4 @@
 import { Input } from '@/components/ui/input'
-import { Badge } from '@/components/ui/badge'
 import { Search } from 'lucide-react'
 import { BlogMetadata } from '@/types/blog'
 import { useDebounce } from '@/hooks/useDebounce'
